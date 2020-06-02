@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><proxy xmlns="http://ws.apache.org/ns/synapse" name="wsAseguradoras" transports="http https" startOnLoad="true">
+    <description/>
+    <target>
+        <inSequence>
+            <script language="js" key="jsAseguradoras" function="InSequence"/>
+            <header name="soapAction" scope="transport" value="urn:exec_spAseguradoras"/>
+            <send>
+                <endpoint key="wsAseguradoras"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log level="full"/>
+            <script language="js" key="jsAseguradoras" function="OutSequence"/>
+            <respond/>
+        </outSequence>
+    </target>
+</proxy>
