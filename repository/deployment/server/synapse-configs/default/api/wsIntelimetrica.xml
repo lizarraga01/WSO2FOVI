@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><api xmlns="http://ws.apache.org/ns/synapse" name="wsIntelimetrica" context="/wsIntelimetrica">
+    <resource methods="PUT" url-mapping="/AvaluoService">
+        <inSequence>
+            <script language="js" key="wsIntelimetricaAvaluos" function="InSeQuence"/>
+            <header name="SOAPAction" scope="transport" value="http://soapfovissstestaging.intelimetrica.com/AvaluoService/soap11/createAvaluoXML"/>
+            <property name="DISABLE_CHUNKING" value="true" scope="axis2"/>
+            <log level="full"/>
+            <send>
+                <endpoint key="wsIntelimetricaAvaluo"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <script language="js">var payload = mc.getPayloadXML();</script>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="PUT" url-mapping="/WS_Actualiza_Status">
+        <inSequence>
+            <script language="js">var payload = mc.getPayloadJSON();var newPayload =&lt;urn:ActualizaCUV soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:WS_Actualiza_Status"&gt;&lt;info xsi:type="urn:ActualizaCUV"&gt;&lt;contrasenia xsi:type="xsd:string"&gt;{payload.contrasenia}&lt;/contrasenia&gt;&lt;datos xsi:type="urn:EstadoCUV"&gt;&lt;APELLIDO xsi:type="xsd:string"&gt;{payload.datos.APELLIDO}&lt;/APELLIDO&gt;&lt;CUV xsi:type="xsd:string"&gt;{payload.datos.CUV}&lt;/CUV&gt;&lt;EMAIL xsi:type="xsd:string"&gt;{payload.datos.EMAIL}&lt;/EMAIL&gt;&lt;ESTATUS xsi:type="xsd:string"&gt;{payload.datos.ESTATUS}&lt;/ESTATUS&gt;&lt;NOMBRE xsi:type="xsd:string"&gt;{payload.datos.NOMBRE}&lt;/NOMBRE&gt;&lt;OBSERVACIONES xsi:type="xsd:string"&gt;{payload.datos.OBSERVACIONES}&lt;/OBSERVACIONES&gt;&lt;SHF xsi:type="xsd:string"&gt;{payload.datos.SHF}&lt;/SHF&gt;&lt;/datos&gt;&lt;usuario xsi:type="xsd:string"&gt;{payload.usuario}&lt;/usuario&gt;&lt;/info&gt;&lt;/urn:ActualizaCUV&gt;;mc.setPayloadXML(newPayload);</script>
+            <header name="Action" scope="default" value="http://soapfovissstestaging.intelimetrica.com/WS_Actualiza_Status/soap11/ActualizaCUV"/>
+            <property name="DISABLE_CHUNKING" value="true" scope="axis2"/>
+            <log level="full"/>
+            <send>
+                <endpoint key="wsIntelimetricaActualiza"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <script language="js">var payload = mc.getPayloadXML();</script>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/> 
+            <send/>
+        </outSequence>
+    </resource>
+</api>

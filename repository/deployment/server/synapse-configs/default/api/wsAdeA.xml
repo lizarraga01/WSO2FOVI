@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api xmlns="http://ws.apache.org/ns/synapse" name="wsAdeA" context="/wsAdeA">
+  <resource methods="PUT" url-mapping="/wsCargaFovissste">
+    <inSequence>
+      <script language="js">var payload = mc.getPayloadJSON();var newPayload = &lt;fov:CargaFovisssteWS xmlns:fov="http://fovissste.ws.adeadms.com/"&gt;&lt;userName&gt;{payload.userName}&lt;/userName&gt;&lt;password&gt;{payload.password}&lt;/password&gt;&lt;xmlRequest&gt;{payload.xmlRequest}&lt;/xmlRequest&gt;&lt;/fov:CargaFovisssteWS&gt;;mc.setPayloadXML(newPayload);</script>
+      <header name="Action" scope="default" value="http://fovissste.ws.adeadms.com/FovisssteWS/CargaFovisssteWS"/>
+      <send>
+        <endpoint key="wsAdeA"/>
+      </send>
+    </inSequence>
+    <outSequence>
+      <script language="js">var payload = mc.getPayloadXML();</script>
+      <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+      <send/>
+    </outSequence>
+  </resource>
+  <resource methods="PUT" url-mapping="/wsValidarEtiqueta">
+    <inSequence>
+      <script language="js">var payload = mc.getPayloadJSON();var newPayload = &lt;fov:ValidarEtiqueta xmlns:fov="http://fovissste.ws.adeadms.com/"&gt;&lt;userName&gt;{payload.userName}&lt;/userName&gt;&lt;password&gt;{payload.password}&lt;/password&gt;&lt;etiqueta&gt;{payload.etiqueta}&lt;/etiqueta&gt;&lt;/fov:ValidarEtiqueta&gt;;mc.setPayloadXML(newPayload);</script>
+      <header name="Action" scope="default" value="http://fovissste.ws.adeadms.com/FovisssteWS/ValidarEtiqueta"/>
+      <send>
+        <endpoint key="wsAdeA"/>
+      </send>
+    </inSequence>
+    <outSequence>
+      <script language="js">var payload = mc.getPayloadXML();</script>
+      <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+      <send/>
+    </outSequence>
+  </resource>
+</api>
