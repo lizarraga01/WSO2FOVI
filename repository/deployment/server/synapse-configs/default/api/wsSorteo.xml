@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><api xmlns="http://ws.apache.org/ns/synapse" name="wsSorteo" context="/wsSorteoFovissste">
+    <resource methods="POST" url-mapping="/altaOtorgamientoPuntuaje">
+        <inSequence>
+			<log level="full"/>
+            <script language="js">var payload = mc.getPayloadJSON();var newPayload = &lt;dat:altaOtorgamientoPuntuaje xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:P_KEY&gt;{payload.claveSorteo}&lt;/dat:P_KEY&gt;         &lt;dat:P_DESCRIPTION&gt;{payload.descripcionSorteo}&lt;/dat:P_DESCRIPTION&gt;         &lt;dat:P_YEAR&gt;{payload.anio}&lt;/dat:P_YEAR&gt;         &lt;dat:P_NUMBER&gt;{payload.numero}&lt;/dat:P_NUMBER&gt;         &lt;dat:P_USER_ID&gt;{payload.idUsuario}&lt;/dat:P_USER_ID&gt;         &lt;dat:P_CREDIT_NUMBER&gt;{payload.numeroCreditos}&lt;/dat:P_CREDIT_NUMBER&gt;      &lt;/dat:altaOtorgamientoPuntuaje&gt;;mc.setPayloadXML(newPayload);</script>
+            <header name="Action" scope="default" value="urn:altaOtorgamientoPuntuaje"/>
+			<log level="full"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="POST" url-mapping="/consultaHomonimias">
+        <inSequence>
+			<log level="full"/>
+            <script language="js">var payload = mc.getPayloadJSON();var newPayload = &lt;dat:consultaHomonimias xmlns:dat="http://ws.wso2.org/dataservice"&gt;                   &lt;dat:P_ACTIVE_DRAW_ID&gt;{payload.depuracionId}&lt;/dat:P_ACTIVE_DRAW_ID&gt;&lt;/dat:consultaHomonimias&gt;;print(payload.rfc);if(typeof(payload.rfc) !== 'undefined'){     var rfcXml = &lt;dat:P_RFC xmlns:dat="http://ws.wso2.org/dataservice"&gt;{payload.rfc}&lt;/dat:P_RFC&gt;;    newPayload.appendChild(rfcXml);  }    if(typeof(payload.statusId) !== 'undefined'){    var statusXml = &lt;dat:P_STATUS_ID xmlns:dat="http://ws.wso2.org/dataservice"&gt;{payload.statusId}&lt;/dat:P_STATUS_ID&gt;;        newPayload.appendChild(statusXml);}   if(typeof(payload.revisado) !== 'undefined'){   var revisadoXml = &lt;dat:P_REVISED xmlns:dat="http://ws.wso2.org/dataservice"&gt;{payload.revisado}&lt;/dat:P_REVISED&gt;;      newPayload.appendChild(revisadoXml);}    if(typeof(payload.fechaAlta) !== 'undefined'){   var fechaXml = &lt;dat:P_DATE xmlns:dat="http://ws.wso2.org/dataservice"&gt;{payload.fechaAlta}&lt;/dat:P_DATE&gt;;   newPayload.appendChild(fechaXml);  }mc.setPayloadXML(newPayload);</script>
+            <header name="Action" scope="default" value="urn:consultaHomonimias"/>
+            <log level="full"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+</api>

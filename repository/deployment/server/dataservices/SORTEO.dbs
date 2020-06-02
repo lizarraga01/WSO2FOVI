@@ -1,0 +1,66 @@
+<data name="SORTEO" transports="http">
+   <config enableOData="false" id="SORTEO">
+      <property name="driverClassName">oracle.jdbc.driver.OracleDriver</property>
+      <property name="url">jdbc:oracle:thin:sorteo/prueba99#@10.4.1.10:1521/D_SORTEO</property>
+      <property name="username">sorteo</property>
+      <property name="password">prueba99#</property>
+   </config>
+   <query id="altaOtorgamientoPuntuaje" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL PKG_DRAWING.INSERT_DRAWING (?,?,?,?,?,?)</sql>
+      <result element="altaOtorgamientoPuntuajeResp" rowName="altaOtorgamientoPuntuaje" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param name="P_KEY" optional="false" sqlType="STRING"/>
+      <param name="P_DESCRIPTION" optional="false" sqlType="STRING"/>
+      <param name="P_YEAR" optional="false" sqlType="INTEGER"/>
+      <param name="P_NUMBER" optional="false" sqlType="INTEGER"/>
+      <param name="P_USER_ID" optional="false" sqlType="INTEGER"/>
+      <param name="P_CREDIT_NUMBER" optional="false" sqlType="INTEGER"/>
+   </query>
+   <query id="consultaHomonimias" useConfig="SORTEO">
+      <sql>CALL PKG_DEPURATION.GET_HOMONYMS (?,?,?,?,?,?)</sql>
+      <result element="consultaHomonimias" escapeNonPrintableChar="true" rowName="Homonimia">
+         <element column="ID_PERSONA" name="ID_PERSONA" xsdType="string"/>
+         <element column="NOMBRECOMPLETO" name="NOMBRECOMPLETO" xsdType="string"/>
+         <element column="RFC" name="RFC" xsdType="string"/>
+         <element column="CURP" name="CURP" xsdType="string"/>
+         <element column="NO_SOLICITUD" name="NO_SOLICITUD" xsdType="string"/>
+         <element column="ID_SOLICITUD" name="ID_SOLICITUD" xsdType="string"/>
+         <element column="ID_ESTATUS" name="ID_ESTATUS" xsdType="string"/>
+         <element column="ESTATUS" name="ESTATUS" xsdType="string"/>
+         <element column="REVISADA" name="REVISADA" xsdType="string"/>
+         <element column="NOMBRECOMPLETOCONYUGUE" name="NOMBRECOMPLETOCONYUGUE" xsdType="string"/>
+         <element column="RFCCONYUGUE" name="RFCCONYUGUE" xsdType="string"/>
+         <element column="CURPCONYUGUE" name="CURPCONYUGUE" xsdType="string"/>
+         <element column="HOMORFCBLOQ" name="HOMORFCBLOQ" xsdType="string"/>
+         <element column="HOMOSOR" name="HOMOSOR" xsdType="string"/>
+         <element column="HOMOORI" name="HOMOORI" xsdType="string"/>
+         <element column="HOMOCAR" name="HOMOCAR" xsdType="string"/>
+      </result>
+      <param name="P_ACTIVE_DRAW_ID" optional="false" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="P_RFC" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="P_STATUS_ID" optional="true" sqlType="INTEGER"/>
+      <param defaultValue="#{NULL}" name="P_REVISED" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="P_DATE" optional="true" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <operation name="altaOtorgamientoPuntuaje">
+      <call-query href="altaOtorgamientoPuntuaje">
+         <with-param name="P_KEY" query-param="P_KEY"/>
+         <with-param name="P_DESCRIPTION" query-param="P_DESCRIPTION"/>
+         <with-param name="P_YEAR" query-param="P_YEAR"/>
+         <with-param name="P_NUMBER" query-param="P_NUMBER"/>
+         <with-param name="P_USER_ID" query-param="P_USER_ID"/>
+         <with-param name="P_CREDIT_NUMBER" query-param="P_CREDIT_NUMBER"/>
+      </call-query>
+   </operation>
+   <operation name="consultaHomonimias">
+      <call-query href="consultaHomonimias">
+         <with-param name="P_ACTIVE_DRAW_ID" query-param="P_ACTIVE_DRAW_ID"/>
+         <with-param name="P_RFC" query-param="P_RFC"/>
+         <with-param name="P_STATUS_ID" query-param="P_STATUS_ID"/>
+         <with-param name="P_REVISED" query-param="P_REVISED"/>
+         <with-param name="P_DATE" query-param="P_DATE"/>
+      </call-query>
+   </operation>
+</data>

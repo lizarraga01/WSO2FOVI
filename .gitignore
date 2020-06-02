@@ -11,7 +11,13 @@ servicepacks
 solr
 updates
 webapp-mode
+icons
+yajsw
+jdk
 wso2
+repository/logs/*
+repository/database/*
+repository/data/*
 LICENSE.txt
 README.txt
 release-notes.html
