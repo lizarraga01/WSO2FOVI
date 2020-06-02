@@ -15,9 +15,9 @@ icons
 yajsw
 jdk
 wso2
-repository/logs/*
 repository/database/*
 repository/data/*
+repository/logs/*
 LICENSE.txt
 README.txt
 release-notes.html
