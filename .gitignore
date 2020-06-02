@@ -1,0 +1,17 @@
+bin
+conf
+dbscripts
+dropins
+extensions
+lib
+patches
+resources
+samples
+servicepacks
+solr
+updates
+webapp-mode
+wso2
+LICENSE.txt
+README.txt
+release-notes.html
