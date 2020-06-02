@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><proxy xmlns="http://ws.apache.org/ns/synapse" name="RecibeOfertasWebService" transports="http https" startOnLoad="true">
+    <description/>
+    <target>
+        <inSequence>
+            <script language="js" key="jsRuvOfertas" function="InSequence"/>
+            <header name="soapAction" scope="transport" value="urn:exec_OfertasSP"/>
+            <send>
+                <endpoint key="MifosRuvEndpoint"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <script language="js" key="jsRuvOfertas" function="OutSequence"/>
+            <respond/>
+        </outSequence>
+    </target>
+</proxy>

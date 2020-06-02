@@ -1,0 +1,53 @@
+<data name="MifosTenantDataService" transports="http https">
+   <config enableOData="false" id="tenantMifos">
+      <property name="driverClassName">com.mysql.jdbc.Driver</property>
+      <property name="url">jdbc:mysql://localhost:3306/mifostenant-default?serverTimezone=UTC</property>
+      <property name="username">root</property>
+      <property name="password">mysql</property>
+      <property name="dataSourceProps"/>
+      <property name="dynamicUserAuthMapping">
+         <configuration/>
+      </property>
+   </config>
+   <query id="ruv_oferentes_sp" useConfig="tenantMifos">
+      <sql>CALL ctm_recibe_oferentes_sp(?,?)</sql>
+      <result element="recibirResponse" rowName="recibirReturn">
+         <element column="actualizado" name="actualizado" xsdType="string"/>
+      </result>
+      <param name="xmlOferentes" optional="false" sqlType="STRING"/>
+      <param name="actualizado" optional="false" sqlType="STRING" type="OUT"/>
+   </query>
+   <query id="ruv_verificacion_sp" useConfig="tenantMifos">
+      <sql>CALL ctm_recibe_verificacion_sp(?,?)</sql>
+      <result element="recibirResponse" rowName="recibirReturn">
+         <element column="response" name="response" xsdType="string"/>
+      </result>
+      <param name="xmlVerificacion" optional="false" sqlType="STRING"/>
+      <param name="response" optional="false" sqlType="STRING" type="OUT"/>
+   </query>
+   <query id="ruv_ofertas_sp" useConfig="tenantMifos">
+      <sql>call ctm_recibe_ofertas_vivienda_sp(?)</sql>
+      <result element="respuesta" rowName="">
+         <element column="resultado" name="resultado" xsdType="string"/>
+         <element column="mensaje" name="mensaje" xsdType="string"/>
+      </result>
+      <param name="xmlText" optional="false" sqlType="STRING"/>
+   </query>
+   <operation name="exec_OferentesSP">
+      <description>Ejecuta servicio SP para el servicio de Oferentes                                                                                                                                                                                                                                                                                                                                                                                                                                                 &#xd;                                    </description>
+      <call-query href="ruv_oferentes_sp">
+         <with-param name="xmlOferentes" query-param="xmlOferentes"/>
+      </call-query>
+   </operation>
+   <operation name="exec_VerificacionSP">
+      <description>Ejecuta servicio SP para el servicio de Verificacion</description>
+      <call-query href="ruv_verificacion_sp">
+         <with-param name="xmlVerificacion" query-param="xmlVerificacion"/>
+      </call-query>
+   </operation>
+   <operation name="exec_OfertasSP">
+      <call-query href="ruv_ofertas_sp">
+         <with-param name="xmlText" query-param="xmlText"/>
+      </call-query>
+   </operation>
+</data>

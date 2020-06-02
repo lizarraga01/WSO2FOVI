@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><api xmlns="http://ws.apache.org/ns/synapse" name="wsProcesarFovissste" context="/wsProcesarFovissste">
+    <resource methods="GET" uri-template="/consultaSaldoFovissste/{curp}">
+        <inSequence>
+            <property name="messageType" value="application/soap+xml" scope="axis2"/>
+            <property name="ContentType" value="text/xml" scope="axis2"/>
+            <payloadFactory media-type="xml">
+                <format>
+                    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+                        <soapenv:Header/>
+                        <soapenv:Body>
+                            <con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/">
+                                <cuerpo xmlns="">
+                                    <curp>$1</curp>
+                                    <idProcesar/>
+                                </cuerpo>
+                            </con:consultarSaldoFovisssteRequest>
+                        </soapenv:Body>
+                    </soapenv:Envelope>
+                </format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('uri.var.curp')"/>
+                </args>
+            </payloadFactory>
+            <header name="Action" scope="default" value="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"/>
+            <sequence key="seqProcesarBasicAuthentication"/>
+            <property name="DISABLE_CHUNKING" value="true" scope="axis2"/>
+            <log level="full"/>
+            <script language="js">var payload = mc.getPayloadXML();mc.setProperty("XML", payload.toXMLString());</script>
+            <dblookup>
+                <connection>
+                    <pool>
+                        <dsName>Mysql</dsName>
+                    </pool>
+                </connection>
+                <statement>
+                    <sql>CALL sp_ProcesarInsertaPeticion (?)</sql>
+                    <parameter expression="get-property('XML')" type="VARCHAR"/>
+                    <result name="ID" column="ID"/>
+                </statement>
+            </dblookup>
+            <send>
+                <endpoint key="wsSolicitudCredito"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <script language="js">var payload = mc.getPayloadXML();var codigoResultado = payload..*::codigoResultadoOperacion.toString();if(codigoResultado!='01'){ mc.setProperty("icp", "0");mc.setProperty("diagnosticoProcesar", payload..*::diagnosticoProcesar.toString());}else{   mc.setProperty("icp", payload..*::listaDependencia.dependencia.icp.toString());   mc.setProperty("diagnosticoProcesar", "0");}mc.setProperty("XML", payload.toXMLString());</script>
+            <dblookup>
+                <connection>
+                    <pool>
+                        <dsName>Mysql</dsName>
+                    </pool>
+                </connection>
+                <statement>
+                    <sql>CALL sp_ProcesarActualizaRespuesta (?, ?)</sql>
+                    <parameter expression="get-property('XML')" type="VARCHAR"/>
+                    <parameter expression="get-property('ID')" type="INTEGER"/>
+                    <result name="ID" column="ID"/>
+                </statement>
+                <statement>
+                    <sql>CALL sp_Procesar_detalle (?, ?)</sql>
+                    <parameter expression="get-property('icp')" type="INTEGER"/>
+                    <parameter expression="get-property('diagnosticoProcesar')" type="VARCHAR"/>
+                    <result name="ADEUDO2" column="ADEUDO2"/>
+                    <result name="ESTATUSSORTEO" column="ESTATUSSORTEO"/>
+                    <result name="ADEUDO" column="ADEUDO"/>
+                    <result name="DESCRIPCION" column="DESCRIPCION"/>
+                </statement>
+                <statement>
+                    <sql>CALL sp_getAivValueProcesar</sql>
+                    <result name="AIV" column="AIV"/>
+                </statement>
+            </dblookup>
+            <script language="js">var newPayload = &lt;respuesta&gt; &lt;estatusRespuesta&gt;&lt;/estatusRespuesta&gt; &lt;codigoMotivoRechazo&gt;&lt;/codigoMotivoRechazo&gt; &lt;descripcionMotivoRechazo&gt;&lt;/descripcionMotivoRechazo&gt; &lt;curp&gt;&lt;/curp&gt; &lt;rfc&gt;&lt;/rfc&gt; &lt;nombreTrabajador&gt;&lt;/nombreTrabajador&gt; &lt;apellidoPaterno&gt;&lt;/apellidoPaterno&gt; &lt;apellidoMaterno&gt;&lt;/apellidoMaterno&gt; &lt;nssISSSTE&gt;&lt;/nssISSSTE&gt; &lt;fuente&gt;PROCESAR&lt;/fuente&gt; &lt;procesoVigente&gt;&lt;/procesoVigente&gt;&lt;fueraSector&gt;&lt;/fueraSector&gt; &lt;tieneCreditoFovissste&gt;&lt;/tieneCreditoFovissste&gt; &lt;existe&gt;true&lt;/existe&gt; &lt;sueldoBaseProcesar&gt;&lt;/sueldoBaseProcesar&gt; &lt;sueldoBase&gt;&lt;/sueldoBase&gt; &lt;saldoSubcuentaVivienda&gt;&lt;/saldoSubcuentaVivienda&gt; &lt;montoSAR&gt;&lt;/montoSAR&gt; &lt;saldoSubcuentaVivienda92&gt;&lt;/saldoSubcuentaVivienda92&gt; &lt;montoSAR92&gt;&lt;/montoSAR92&gt; &lt;saldoSubcuentaVivienda08&gt;&lt;/saldoSubcuentaVivienda08&gt; &lt;montoSAR08&gt;&lt;/montoSAR08&gt; &lt;listaDependencias&gt;  &lt;idCentroPago&gt;&lt;/idCentroPago&gt;  &lt;nombreCentroPago&gt;&lt;/nombreCentroPago&gt;  &lt;nombramiento&gt;&lt;/nombramiento&gt;  &lt;fechaBajaTrabajador&gt;&lt;/fechaBajaTrabajador&gt;  &lt;fechaUltimaAportacion&gt;&lt;/fechaUltimaAportacion&gt;  &lt;tieneAdeudo&gt;&lt;/tieneAdeudo&gt;  &lt;tieneAdeudoRespalda2M&gt;&lt;/tieneAdeudoRespalda2M&gt;  &lt;estatusSorteo&gt;&lt;/estatusSorteo&gt;  &lt;marcaBajaTrabajador&gt;&lt;/marcaBajaTrabajador&gt;  &lt;bimestresCotizados&gt;&lt;/bimestresCotizados&gt;  &lt;sueldoBasicoCotizacionIssste&gt;&lt;/sueldoBasicoCotizacionIssste&gt; &lt;/listaDependencias&gt; &lt;listaDependenciasActivas&gt;  &lt;idCentroPago&gt;&lt;/idCentroPago&gt; &lt;/listaDependenciasActivas&gt;&lt;/respuesta&gt;;var payload = mc.getPayloadXML();var descripcion = mc.getProperty('DESCRIPCION');var adeudo = mc.getProperty('ADEUDO');var adeudo2 = mc.getProperty('ADEUDO2');var estatusSorteo = mc.getProperty('ESTATUSSORTEO');var AIV = mc.getProperty('AIV');var codigoResultado = payload..*::codigoResultadoOperacion.toString();if(codigoResultado!='01'){    newPayload.estatusRespuesta = codigoResultado;  newPayload.codigoMotivoRechazo = payload..*::diagnosticoProcesar.toString();   newPayload.descripcionMotivoRechazo= descripcion;}else{    newPayload.estatusRespuesta = codigoResultado;  newPayload.codigoMotivoRechazo = "";  newPayload.descripcionMotivoRechazo= "";  newPayload.curp = payload..*::curp.toString();newPayload.tieneCreditoFovissste= payload..*::tieneCreditoFovissste.toString();newPayload.rfc = payload..*::rfc.toString();  newPayload.nombreTrabajador = payload..*::nombreTrabajador.toString();  newPayload.apellidoPaterno = payload..*::apellidoPaterno.toString();  newPayload.apellidoMaterno = payload..*::apellidoMaterno.toString();  newPayload.nssISSSTE = payload..*::nssISSSTE.toString();  newPayload.procesoVigente = "";  if(payload..*::listaDependencia.dependencia.icp.toString()!==""){    newPayload.fueraSector = true;  }else{    newPayload.fueraSector = false;  }  newPayload.procesoVigente = "";  newPayload.sueldoBaseProcesar = parseFloat(payload..*::sueldoBasicoCotizacionIssste.toString())/2;  newPayload.sueldoBase = (parseFloat(payload..*::sueldoBasicoCotizacionIssste.toString())/2)*(parseFloat(30.40));  newPayload.saldoSubcuentaVivienda = payload..*::saldoSubcuentaVivienda92.toString();  newPayload.montoSAR= parseFloat(payload..*::saldoSubcuentaVivienda92.toString())* parseFloat(AIV);  newPayload.saldoSubcuentaVivienda92 = payload..*::saldoSubcuentaVivienda92.toString();  newPayload.montoSAR92= parseFloat(payload..*::saldoSubcuentaVivienda92.toString())* parseFloat(AIV);  newPayload.saldoSubcuentaVivienda08 = payload..*::saldoSubcuentaVivienda08.toString(); newPayload.montoSAR08= parseFloat(payload..*::saldoSubcuentaVivienda08.toString())* parseFloat(AIV);  newPayload.listaDependencias.idCentroPago = payload..*::listaDependencia.dependencia.icp.toString();  newPayload.listaDependencias.nombreCentroPago= payload..*::listaDependencia.dependencia.nombreCentroPago.toString();  newPayload.listaDependencias.nombramiento = payload..*::listaDependencia.dependencia.nombramiento.toString();  newPayload.listaDependencias.fechaBajaTrabajador = payload..*::listaDependencia.dependencia.fechaBajaTrabajador.toString();  if(payload..*::listaDependencia.dependencia.fechaUltimaAportacion.toString() ==='00010101'){    newPayload.listaDependencias.fechaUltimaAportacion = "";  }else{    newPayload.listaDependencias.fechaUltimaAportacion = payload..*::listaDependencia.dependencia.fechaUltimaAportacion.toString();  }  print(adeudo);if(adeudo){     newPayload.listaDependencias.tieneAdeudo = true;  }else{     newPayload.listaDependencias.tieneAdeudo = false;  }  print(adeudo2);if(adeudo2){     newPayload.listaDependencias.tieneAdeudoRespalda2M= true;  }else{     newPayload.listaDependencias.tieneAdeudoRespalda2M= false;  }  print(estatusSorteo);if(estatusSorteo){     newPayload.listaDependencias.estatusSorteo= true;  }else{     newPayload.listaDependencias.estatusSorteo = false;  }  if(payload..*::listaDependencia.dependencia.marcaBajaTrabajador.toString() !== 1){     newPayload.listaDependencias.marcaBajaTrabajador = false;  }else{     newPayload.listaDependencias.marcaBajaTrabajador = true;  }  newPayload.listaDependencias.bimestresCotizados = payload..*::listaDependencia.dependencia.bimestresCotizados.toString();  newPayload.listaDependencias.sueldoBasicoCotizacionIssste = payload..*::listaDependencia.dependencia.sueldoBasicoCotizacionIssste.toString();  if((!newPayload.listaDependencias.marcaBajaTrabajador)&amp;&amp;(newPayload.listaDependencias.estatusSorteo)&amp;&amp;(newPayload.listaDependencias.nombreCentroPago !== "")){     newPayload.listaDependenciasActivas.idCentroPago= newPayload.listaDependencias.idCentroPago;  }}mc.setPayloadXML(newPayload);</script>
+            <log level="full"/>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+</api>

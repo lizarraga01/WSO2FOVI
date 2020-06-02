@@ -1,0 +1,862 @@
+TID: [-1234] [2020-05-25 20:14:55,874]  INFO {API_LOGGER.wsProcesarFovissste} - Initializing API: wsProcesarFovissste
+TID: [-1234] [2020-05-29 21:12:33,951]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/LETA530228HZSNRL08, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:52a1a87d-ab68-4478-8106-fcec779a48c4, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>LETA530228HZSNRL08</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-29 21:12:33,955]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/LETA530228HZSNRL08, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:52a1a87d-ab68-4478-8106-fcec779a48c4, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>LETA530228HZSNRL08</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-29 21:12:35,096]  INFO {API_LOGGER.wsProcesarFovissste} - To: http://www.w3.org/2005/08/addressing/anonymous, WSAction: , SOAPAction: , MessageID: urn:uuid:cc22b449-3e50-40b0-91b7-e6576a70b9fd, Direction: response, Envelope: <?xml version='1.0' encoding='utf-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><respuesta>
+  <estatusRespuesta>02</estatusRespuesta>
+  <codigoMotivoRechazo>049</codigoMotivoRechazo>
+  <descripcionMotivoRechazo>TRABAJADOR NO SE ENCUENTRA AFILIADO</descripcionMotivoRechazo>
+  <curp/>
+  <rfc/>
+  <nombreTrabajador/>
+  <apellidoPaterno/>
+  <apellidoMaterno/>
+  <nssISSSTE/>
+  <fuente>PROCESAR</fuente>
+  <procesoVigente/>
+  <fueraSector/>
+  <tieneCreditoFovissste/>
+  <existe>true</existe>
+  <sueldoBaseProcesar/>
+  <sueldoBase/>
+  <saldoSubcuentaVivienda/>
+  <montoSAR/>
+  <saldoSubcuentaVivienda92/>
+  <montoSAR92/>
+  <saldoSubcuentaVivienda08/>
+  <montoSAR08/>
+  <listaDependencias>
+    <idCentroPago/>
+    <nombreCentroPago/>
+    <nombramiento/>
+    <fechaBajaTrabajador/>
+    <fechaUltimaAportacion/>
+    <tieneAdeudo/>
+    <tieneAdeudoRespalda2M/>
+    <estatusSorteo/>
+    <marcaBajaTrabajador/>
+    <bimestresCotizados/>
+    <sueldoBasicoCotizacionIssste/>
+  </listaDependencias>
+  <listaDependenciasActivas>
+    <idCentroPago/>
+  </listaDependenciasActivas>
+</respuesta></S:Body></S:Envelope>
+TID: [-1234] [2020-05-29 21:15:20,333]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:9cabe1f1-6c95-48f7-9e14-147d2cb4714e, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-29 21:15:20,334]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:9cabe1f1-6c95-48f7-9e14-147d2cb4714e, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-29 21:15:20,722]  INFO {API_LOGGER.wsProcesarFovissste} - To: http://www.w3.org/2005/08/addressing/anonymous, WSAction: , SOAPAction: , MessageID: urn:uuid:7357449e-bf81-49dc-bb78-8a8064d8bf14, Direction: response, Envelope: <?xml version='1.0' encoding='utf-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><respuesta>
+  <estatusRespuesta>01</estatusRespuesta>
+  <codigoMotivoRechazo/>
+  <descripcionMotivoRechazo/>
+  <curp>AAOJ930416HDFYRR04</curp>
+  <rfc/>
+  <nombreTrabajador>JORGE CARLOS</nombreTrabajador>
+  <apellidoPaterno>AYALA</apellidoPaterno>
+  <apellidoMaterno>ORTIZ</apellidoMaterno>
+  <nssISSSTE>00000000000</nssISSSTE>
+  <fuente>PROCESAR</fuente>
+  <procesoVigente/>
+  <fueraSector>true</fueraSector>
+  <tieneCreditoFovissste>0</tieneCreditoFovissste>
+  <existe>true</existe>
+  <sueldoBaseProcesar>9331.94</sueldoBaseProcesar>
+  <sueldoBase>283690.976</sueldoBase>
+  <saldoSubcuentaVivienda>0</saldoSubcuentaVivienda>
+  <montoSAR>0</montoSAR>
+  <saldoSubcuentaVivienda92>0</saldoSubcuentaVivienda92>
+  <montoSAR92>0</montoSAR92>
+  <saldoSubcuentaVivienda08>6020.636607</saldoSubcuentaVivienda08>
+  <montoSAR08>14483.688860502716</montoSAR08>
+  <listaDependencias>
+    <idCentroPago>6091056</idCentroPago>
+    <nombreCentroPago>GOBIERNO DEL DISTRITO FEDERAL</nombreCentroPago>
+    <nombramiento>2</nombramiento>
+    <fechaBajaTrabajador/>
+    <fechaUltimaAportacion/>
+    <tieneAdeudo>true</tieneAdeudo>
+    <tieneAdeudoRespalda2M>true</tieneAdeudoRespalda2M>
+    <estatusSorteo>true</estatusSorteo>
+    <marcaBajaTrabajador>false</marcaBajaTrabajador>
+    <bimestresCotizados>20</bimestresCotizados>
+    <sueldoBasicoCotizacionIssste>18663.88</sueldoBasicoCotizacionIssste>
+  </listaDependencias>
+  <listaDependenciasActivas>
+    <idCentroPago/>
+  </listaDependenciasActivas>
+</respuesta></S:Body></S:Envelope>
+TID: [-1234] [2020-05-31 15:14:44,108]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/LETA530228HZSNRL08, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:ba39857d-480b-4694-bd46-7894893385d5, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>LETA530228HZSNRL08</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:14:44,108]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/LETA530228HZSNRL08, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:ba39857d-480b-4694-bd46-7894893385d5, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>LETA530228HZSNRL08</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:15:05,213]  WARN {API_LOGGER.wsProcesarFovissste} - ERROR_CODE : 101503 ERROR_MESSAGE : Error connecting to the back end
+TID: [-1234] [2020-05-31 15:15:05,219]  WARN {API_LOGGER.wsProcesarFovissste} - ERROR_CODE : 101503 ERROR_MESSAGE : Error connecting to the back end
+TID: [-1234] [2020-05-31 15:15:05,219]  WARN {API_LOGGER.wsProcesarFovissste} - Executing fault sequence mediator : fault
+TID: [-1234] [2020-05-31 15:15:05,221]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/LETA530228HZSNRL08, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:ba39857d-480b-4694-bd46-7894893385d5, Direction: request, MESSAGE = Executing default 'fault' sequence, ERROR_CODE = 101503, ERROR_MESSAGE = Error connecting to the back end, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>LETA530228HZSNRL08</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:15:19,730]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:3ae862cc-029e-4150-b013-8cb79fbee9d5, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:15:19,731]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:3ae862cc-029e-4150-b013-8cb79fbee9d5, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:15:19,784]  INFO {API_LOGGER.wsProcesarFovissste} - FaultHandler executing impl: org.apache.synapse.mediators.MediatorFaultHandler
+TID: [-1234] [2020-05-31 15:15:19,784]  WARN {API_LOGGER.wsProcesarFovissste} - Executing fault sequence mediator : fault
+TID: [-1234] [2020-05-31 15:15:19,787]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:3ae862cc-029e-4150-b013-8cb79fbee9d5, Direction: request, MESSAGE = Executing default 'fault' sequence, ERROR_CODE = 303001, ERROR_MESSAGE = Currently , Address endpoint : [ Name : wsSolicitudCredito ] [ State : SUSPENDED ], Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:15:25,192]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:e008d399-25f2-4ee2-a065-1da86cce1b74, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:15:25,193]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:e008d399-25f2-4ee2-a065-1da86cce1b74, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:15:25,224]  INFO {API_LOGGER.wsProcesarFovissste} - FaultHandler executing impl: org.apache.synapse.mediators.MediatorFaultHandler
+TID: [-1234] [2020-05-31 15:15:25,225]  WARN {API_LOGGER.wsProcesarFovissste} - Executing fault sequence mediator : fault
+TID: [-1234] [2020-05-31 15:15:25,227]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:e008d399-25f2-4ee2-a065-1da86cce1b74, Direction: request, MESSAGE = Executing default 'fault' sequence, ERROR_CODE = 303001, ERROR_MESSAGE = Currently , Address endpoint : [ Name : wsSolicitudCredito ] [ State : SUSPENDED ], Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:16:40,699]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:36ced002-794a-4c46-a6fb-3e8f909cf403, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:16:40,700]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:36ced002-794a-4c46-a6fb-3e8f909cf403, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:16:40,978]  INFO {API_LOGGER.wsProcesarFovissste} - To: http://www.w3.org/2005/08/addressing/anonymous, WSAction: , SOAPAction: , MessageID: urn:uuid:67cb85b7-e230-4afa-821d-68615f89655a, Direction: response, Envelope: <?xml version='1.0' encoding='utf-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><respuesta>
+  <estatusRespuesta>01</estatusRespuesta>
+  <codigoMotivoRechazo/>
+  <descripcionMotivoRechazo/>
+  <curp>AAOJ930416HDFYRR04</curp>
+  <rfc/>
+  <nombreTrabajador>JORGE CARLOS</nombreTrabajador>
+  <apellidoPaterno>AYALA</apellidoPaterno>
+  <apellidoMaterno>ORTIZ</apellidoMaterno>
+  <nssISSSTE>00000000000</nssISSSTE>
+  <fuente>PROCESAR</fuente>
+  <procesoVigente/>
+  <fueraSector>true</fueraSector>
+  <tieneCreditoFovissste>0</tieneCreditoFovissste>
+  <existe>true</existe>
+  <sueldoBaseProcesar>9331.94</sueldoBaseProcesar>
+  <sueldoBase>283690.976</sueldoBase>
+  <saldoSubcuentaVivienda>0</saldoSubcuentaVivienda>
+  <montoSAR>0</montoSAR>
+  <saldoSubcuentaVivienda92>0</saldoSubcuentaVivienda92>
+  <montoSAR92>0</montoSAR92>
+  <saldoSubcuentaVivienda08>6020.636607</saldoSubcuentaVivienda08>
+  <montoSAR08>14483.688860502716</montoSAR08>
+  <listaDependencias>
+    <idCentroPago>6091056</idCentroPago>
+    <nombreCentroPago>GOBIERNO DEL DISTRITO FEDERAL</nombreCentroPago>
+    <nombramiento>2</nombramiento>
+    <fechaBajaTrabajador/>
+    <fechaUltimaAportacion/>
+    <tieneAdeudo>true</tieneAdeudo>
+    <tieneAdeudoRespalda2M>true</tieneAdeudoRespalda2M>
+    <estatusSorteo>true</estatusSorteo>
+    <marcaBajaTrabajador>false</marcaBajaTrabajador>
+    <bimestresCotizados>20</bimestresCotizados>
+    <sueldoBasicoCotizacionIssste>18663.88</sueldoBasicoCotizacionIssste>
+  </listaDependencias>
+  <listaDependenciasActivas>
+    <idCentroPago/>
+  </listaDependenciasActivas>
+</respuesta></S:Body></S:Envelope>
+TID: [-1234] [2020-05-31 15:16:54,334]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/LETA530228HZSNRL08, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:3a6089ec-bf39-4cd2-a3b5-e6a4422c38ee, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>LETA530228HZSNRL08</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:16:54,336]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/LETA530228HZSNRL08, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:3a6089ec-bf39-4cd2-a3b5-e6a4422c38ee, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>LETA530228HZSNRL08</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:16:54,534]  INFO {API_LOGGER.wsProcesarFovissste} - To: http://www.w3.org/2005/08/addressing/anonymous, WSAction: , SOAPAction: , MessageID: urn:uuid:f4b24b21-4373-4301-9a59-4d3c163282fd, Direction: response, Envelope: <?xml version='1.0' encoding='utf-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><respuesta>
+  <estatusRespuesta>02</estatusRespuesta>
+  <codigoMotivoRechazo>049</codigoMotivoRechazo>
+  <descripcionMotivoRechazo>TRABAJADOR NO SE ENCUENTRA AFILIADO</descripcionMotivoRechazo>
+  <curp/>
+  <rfc/>
+  <nombreTrabajador/>
+  <apellidoPaterno/>
+  <apellidoMaterno/>
+  <nssISSSTE/>
+  <fuente>PROCESAR</fuente>
+  <procesoVigente/>
+  <fueraSector/>
+  <tieneCreditoFovissste/>
+  <existe>true</existe>
+  <sueldoBaseProcesar/>
+  <sueldoBase/>
+  <saldoSubcuentaVivienda/>
+  <montoSAR/>
+  <saldoSubcuentaVivienda92/>
+  <montoSAR92/>
+  <saldoSubcuentaVivienda08/>
+  <montoSAR08/>
+  <listaDependencias>
+    <idCentroPago/>
+    <nombreCentroPago/>
+    <nombramiento/>
+    <fechaBajaTrabajador/>
+    <fechaUltimaAportacion/>
+    <tieneAdeudo/>
+    <tieneAdeudoRespalda2M/>
+    <estatusSorteo/>
+    <marcaBajaTrabajador/>
+    <bimestresCotizados/>
+    <sueldoBasicoCotizacionIssste/>
+  </listaDependencias>
+  <listaDependenciasActivas>
+    <idCentroPago/>
+  </listaDependenciasActivas>
+</respuesta></S:Body></S:Envelope>
+TID: [-1234] [2020-05-31 15:17:44,329]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/LETA530228HZSNRL08, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:05e0f4c3-7a2d-4648-b83d-af2a54778a0b, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>LETA530228HZSNRL08</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:17:44,332]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/LETA530228HZSNRL08, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:05e0f4c3-7a2d-4648-b83d-af2a54778a0b, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>LETA530228HZSNRL08</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:17:44,556]  INFO {API_LOGGER.wsProcesarFovissste} - To: http://www.w3.org/2005/08/addressing/anonymous, WSAction: , SOAPAction: , MessageID: urn:uuid:420dd0ca-239f-4f8d-9dff-801a36879a42, Direction: response, Envelope: <?xml version='1.0' encoding='utf-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><respuesta>
+  <estatusRespuesta>02</estatusRespuesta>
+  <codigoMotivoRechazo>049</codigoMotivoRechazo>
+  <descripcionMotivoRechazo>TRABAJADOR NO SE ENCUENTRA AFILIADO</descripcionMotivoRechazo>
+  <curp/>
+  <rfc/>
+  <nombreTrabajador/>
+  <apellidoPaterno/>
+  <apellidoMaterno/>
+  <nssISSSTE/>
+  <fuente>PROCESAR</fuente>
+  <procesoVigente/>
+  <fueraSector/>
+  <tieneCreditoFovissste/>
+  <existe>true</existe>
+  <sueldoBaseProcesar/>
+  <sueldoBase/>
+  <saldoSubcuentaVivienda/>
+  <montoSAR/>
+  <saldoSubcuentaVivienda92/>
+  <montoSAR92/>
+  <saldoSubcuentaVivienda08/>
+  <montoSAR08/>
+  <listaDependencias>
+    <idCentroPago/>
+    <nombreCentroPago/>
+    <nombramiento/>
+    <fechaBajaTrabajador/>
+    <fechaUltimaAportacion/>
+    <tieneAdeudo/>
+    <tieneAdeudoRespalda2M/>
+    <estatusSorteo/>
+    <marcaBajaTrabajador/>
+    <bimestresCotizados/>
+    <sueldoBasicoCotizacionIssste/>
+  </listaDependencias>
+  <listaDependenciasActivas>
+    <idCentroPago/>
+  </listaDependenciasActivas>
+</respuesta></S:Body></S:Envelope>
+TID: [-1234] [2020-05-31 15:23:45,596]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/LETA530228HZSNRL08, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:cc078b82-ad45-44da-9069-d28987931162, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>LETA530228HZSNRL08</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:23:45,597]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/LETA530228HZSNRL08, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:cc078b82-ad45-44da-9069-d28987931162, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>LETA530228HZSNRL08</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:23:45,830]  INFO {API_LOGGER.wsProcesarFovissste} - To: http://www.w3.org/2005/08/addressing/anonymous, WSAction: , SOAPAction: , MessageID: urn:uuid:373faa25-80ac-45e5-a68b-f6709c5a07a0, Direction: response, Envelope: <?xml version='1.0' encoding='utf-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><respuesta>
+  <estatusRespuesta>02</estatusRespuesta>
+  <codigoMotivoRechazo>049</codigoMotivoRechazo>
+  <descripcionMotivoRechazo>TRABAJADOR NO SE ENCUENTRA AFILIADO</descripcionMotivoRechazo>
+  <curp/>
+  <rfc/>
+  <nombreTrabajador/>
+  <apellidoPaterno/>
+  <apellidoMaterno/>
+  <nssISSSTE/>
+  <fuente>PROCESAR</fuente>
+  <procesoVigente/>
+  <fueraSector/>
+  <tieneCreditoFovissste/>
+  <existe>true</existe>
+  <sueldoBaseProcesar/>
+  <sueldoBase/>
+  <saldoSubcuentaVivienda/>
+  <montoSAR/>
+  <saldoSubcuentaVivienda92/>
+  <montoSAR92/>
+  <saldoSubcuentaVivienda08/>
+  <montoSAR08/>
+  <listaDependencias>
+    <idCentroPago/>
+    <nombreCentroPago/>
+    <nombramiento/>
+    <fechaBajaTrabajador/>
+    <fechaUltimaAportacion/>
+    <tieneAdeudo/>
+    <tieneAdeudoRespalda2M/>
+    <estatusSorteo/>
+    <marcaBajaTrabajador/>
+    <bimestresCotizados/>
+    <sueldoBasicoCotizacionIssste/>
+  </listaDependencias>
+  <listaDependenciasActivas>
+    <idCentroPago/>
+  </listaDependenciasActivas>
+</respuesta></S:Body></S:Envelope>
+TID: [-1234] [2020-05-31 15:24:28,025]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:a700e2fe-581e-4786-b154-2f28f4cc6ab0, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:24:28,027]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:a700e2fe-581e-4786-b154-2f28f4cc6ab0, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:24:28,403]  INFO {API_LOGGER.wsProcesarFovissste} - To: http://www.w3.org/2005/08/addressing/anonymous, WSAction: , SOAPAction: , MessageID: urn:uuid:ccdde4a8-e0e8-4a6a-a21b-ea772fb5dfd6, Direction: response, Envelope: <?xml version='1.0' encoding='utf-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><respuesta>
+  <estatusRespuesta>01</estatusRespuesta>
+  <codigoMotivoRechazo/>
+  <descripcionMotivoRechazo/>
+  <curp>AAOJ930416HDFYRR04</curp>
+  <rfc/>
+  <nombreTrabajador>JORGE CARLOS</nombreTrabajador>
+  <apellidoPaterno>AYALA</apellidoPaterno>
+  <apellidoMaterno>ORTIZ</apellidoMaterno>
+  <nssISSSTE>00000000000</nssISSSTE>
+  <fuente>PROCESAR</fuente>
+  <procesoVigente/>
+  <fueraSector>true</fueraSector>
+  <tieneCreditoFovissste>0</tieneCreditoFovissste>
+  <existe>true</existe>
+  <sueldoBaseProcesar>9331.94</sueldoBaseProcesar>
+  <sueldoBase>283690.976</sueldoBase>
+  <saldoSubcuentaVivienda>0</saldoSubcuentaVivienda>
+  <montoSAR>0</montoSAR>
+  <saldoSubcuentaVivienda92>0</saldoSubcuentaVivienda92>
+  <montoSAR92>0</montoSAR92>
+  <saldoSubcuentaVivienda08>6020.636607</saldoSubcuentaVivienda08>
+  <montoSAR08>14483.688860502716</montoSAR08>
+  <listaDependencias>
+    <idCentroPago>6091056</idCentroPago>
+    <nombreCentroPago>GOBIERNO DEL DISTRITO FEDERAL</nombreCentroPago>
+    <nombramiento>2</nombramiento>
+    <fechaBajaTrabajador/>
+    <fechaUltimaAportacion/>
+    <tieneAdeudo>true</tieneAdeudo>
+    <tieneAdeudoRespalda2M>true</tieneAdeudoRespalda2M>
+    <estatusSorteo>true</estatusSorteo>
+    <marcaBajaTrabajador>false</marcaBajaTrabajador>
+    <bimestresCotizados>20</bimestresCotizados>
+    <sueldoBasicoCotizacionIssste>18663.88</sueldoBasicoCotizacionIssste>
+  </listaDependencias>
+  <listaDependenciasActivas>
+    <idCentroPago/>
+  </listaDependenciasActivas>
+</respuesta></S:Body></S:Envelope>
+TID: [-1234] [2020-05-31 15:28:09,997]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:031f125b-2417-4593-b7d7-cbd2f53277cc, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:28:09,999]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:031f125b-2417-4593-b7d7-cbd2f53277cc, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:28:10,305]  INFO {API_LOGGER.wsProcesarFovissste} - To: http://www.w3.org/2005/08/addressing/anonymous, WSAction: , SOAPAction: , MessageID: urn:uuid:d27a0457-c59a-4002-8bd0-c2b57e581e9e, Direction: response, Envelope: <?xml version='1.0' encoding='utf-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><respuesta>
+  <estatusRespuesta>01</estatusRespuesta>
+  <codigoMotivoRechazo/>
+  <descripcionMotivoRechazo/>
+  <curp>AAOJ930416HDFYRR04</curp>
+  <rfc/>
+  <nombreTrabajador>JORGE CARLOS</nombreTrabajador>
+  <apellidoPaterno>AYALA</apellidoPaterno>
+  <apellidoMaterno>ORTIZ</apellidoMaterno>
+  <nssISSSTE>00000000000</nssISSSTE>
+  <fuente>PROCESAR</fuente>
+  <procesoVigente/>
+  <fueraSector>true</fueraSector>
+  <tieneCreditoFovissste>0</tieneCreditoFovissste>
+  <existe>true</existe>
+  <sueldoBaseProcesar>9331.94</sueldoBaseProcesar>
+  <sueldoBase>283690.976</sueldoBase>
+  <saldoSubcuentaVivienda>0</saldoSubcuentaVivienda>
+  <montoSAR>0</montoSAR>
+  <saldoSubcuentaVivienda92>0</saldoSubcuentaVivienda92>
+  <montoSAR92>0</montoSAR92>
+  <saldoSubcuentaVivienda08>6020.636607</saldoSubcuentaVivienda08>
+  <montoSAR08>14483.688860502716</montoSAR08>
+  <listaDependencias>
+    <idCentroPago>6091056</idCentroPago>
+    <nombreCentroPago>GOBIERNO DEL DISTRITO FEDERAL</nombreCentroPago>
+    <nombramiento>2</nombramiento>
+    <fechaBajaTrabajador/>
+    <fechaUltimaAportacion/>
+    <tieneAdeudo>true</tieneAdeudo>
+    <tieneAdeudoRespalda2M>true</tieneAdeudoRespalda2M>
+    <estatusSorteo>true</estatusSorteo>
+    <marcaBajaTrabajador>false</marcaBajaTrabajador>
+    <bimestresCotizados>20</bimestresCotizados>
+    <sueldoBasicoCotizacionIssste>18663.88</sueldoBasicoCotizacionIssste>
+  </listaDependencias>
+  <listaDependenciasActivas>
+    <idCentroPago/>
+  </listaDependenciasActivas>
+</respuesta></S:Body></S:Envelope>
+TID: [-1234] [2020-05-31 15:34:30,747]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:814cb163-78cd-46db-8624-0959ce70817e, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:34:30,749]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:814cb163-78cd-46db-8624-0959ce70817e, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 15:34:30,993]  INFO {API_LOGGER.wsProcesarFovissste} - To: http://www.w3.org/2005/08/addressing/anonymous, WSAction: , SOAPAction: , MessageID: urn:uuid:49913b9a-b3db-4e6e-a83f-91a098899771, Direction: response, Envelope: <?xml version='1.0' encoding='utf-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><respuesta>
+  <estatusRespuesta>01</estatusRespuesta>
+  <codigoMotivoRechazo/>
+  <descripcionMotivoRechazo/>
+  <curp>AAOJ930416HDFYRR04</curp>
+  <rfc/>
+  <nombreTrabajador>JORGE CARLOS</nombreTrabajador>
+  <apellidoPaterno>AYALA</apellidoPaterno>
+  <apellidoMaterno>ORTIZ</apellidoMaterno>
+  <nssISSSTE>00000000000</nssISSSTE>
+  <fuente>PROCESAR</fuente>
+  <procesoVigente/>
+  <fueraSector>true</fueraSector>
+  <tieneCreditoFovissste>0</tieneCreditoFovissste>
+  <existe>true</existe>
+  <sueldoBaseProcesar>9331.94</sueldoBaseProcesar>
+  <sueldoBase>283690.976</sueldoBase>
+  <saldoSubcuentaVivienda>0</saldoSubcuentaVivienda>
+  <montoSAR>0</montoSAR>
+  <saldoSubcuentaVivienda92>0</saldoSubcuentaVivienda92>
+  <montoSAR92>0</montoSAR92>
+  <saldoSubcuentaVivienda08>6020.636607</saldoSubcuentaVivienda08>
+  <montoSAR08>14483.688860502716</montoSAR08>
+  <listaDependencias>
+    <idCentroPago>6091056</idCentroPago>
+    <nombreCentroPago>GOBIERNO DEL DISTRITO FEDERAL</nombreCentroPago>
+    <nombramiento>2</nombramiento>
+    <fechaBajaTrabajador/>
+    <fechaUltimaAportacion/>
+    <tieneAdeudo>true</tieneAdeudo>
+    <tieneAdeudoRespalda2M>true</tieneAdeudoRespalda2M>
+    <estatusSorteo>true</estatusSorteo>
+    <marcaBajaTrabajador>false</marcaBajaTrabajador>
+    <bimestresCotizados>20</bimestresCotizados>
+    <sueldoBasicoCotizacionIssste>18663.88</sueldoBasicoCotizacionIssste>
+  </listaDependencias>
+  <listaDependenciasActivas>
+    <idCentroPago/>
+  </listaDependenciasActivas>
+</respuesta></S:Body></S:Envelope>
+TID: [-1234] [2020-05-31 16:23:44,739]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:7150e229-6b91-4121-ad61-c726efcfee22, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 16:23:44,740]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:7150e229-6b91-4121-ad61-c726efcfee22, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 16:23:45,009]  INFO {API_LOGGER.wsProcesarFovissste} - To: http://www.w3.org/2005/08/addressing/anonymous, WSAction: , SOAPAction: , MessageID: urn:uuid:d228430f-c694-42ab-8139-f2956a41a6e8, Direction: response, Envelope: <?xml version='1.0' encoding='utf-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><respuesta>
+  <estatusRespuesta>01</estatusRespuesta>
+  <codigoMotivoRechazo/>
+  <descripcionMotivoRechazo/>
+  <curp>AAOJ930416HDFYRR04</curp>
+  <rfc/>
+  <nombreTrabajador>JORGE CARLOS</nombreTrabajador>
+  <apellidoPaterno>AYALA</apellidoPaterno>
+  <apellidoMaterno>ORTIZ</apellidoMaterno>
+  <nssISSSTE>00000000000</nssISSSTE>
+  <fuente>PROCESAR</fuente>
+  <procesoVigente/>
+  <fueraSector>true</fueraSector>
+  <tieneCreditoFovissste>0</tieneCreditoFovissste>
+  <existe>true</existe>
+  <sueldoBaseProcesar>9331.94</sueldoBaseProcesar>
+  <sueldoBase>283690.976</sueldoBase>
+  <saldoSubcuentaVivienda>0</saldoSubcuentaVivienda>
+  <montoSAR>0</montoSAR>
+  <saldoSubcuentaVivienda92>0</saldoSubcuentaVivienda92>
+  <montoSAR92>0</montoSAR92>
+  <saldoSubcuentaVivienda08>6020.636607</saldoSubcuentaVivienda08>
+  <montoSAR08>14483.688860502716</montoSAR08>
+  <listaDependencias>
+    <idCentroPago>6091056</idCentroPago>
+    <nombreCentroPago>GOBIERNO DEL DISTRITO FEDERAL</nombreCentroPago>
+    <nombramiento>2</nombramiento>
+    <fechaBajaTrabajador/>
+    <fechaUltimaAportacion/>
+    <tieneAdeudo>true</tieneAdeudo>
+    <tieneAdeudoRespalda2M>true</tieneAdeudoRespalda2M>
+    <estatusSorteo>true</estatusSorteo>
+    <marcaBajaTrabajador>false</marcaBajaTrabajador>
+    <bimestresCotizados>20</bimestresCotizados>
+    <sueldoBasicoCotizacionIssste>18663.88</sueldoBasicoCotizacionIssste>
+  </listaDependencias>
+  <listaDependenciasActivas>
+    <idCentroPago/>
+  </listaDependenciasActivas>
+</respuesta></S:Body></S:Envelope>
+TID: [-1234] [2020-05-31 16:24:14,659]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:38dce414-859a-4793-bb65-c7a875d2e117, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 16:24:14,660]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:38dce414-859a-4793-bb65-c7a875d2e117, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 16:24:14,912]  INFO {API_LOGGER.wsProcesarFovissste} - To: http://www.w3.org/2005/08/addressing/anonymous, WSAction: , SOAPAction: , MessageID: urn:uuid:60c7b24e-b456-4a69-8188-14336cbe6974, Direction: response, Envelope: <?xml version='1.0' encoding='utf-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><respuesta>
+  <estatusRespuesta>01</estatusRespuesta>
+  <codigoMotivoRechazo/>
+  <descripcionMotivoRechazo/>
+  <curp>AAOJ930416HDFYRR04</curp>
+  <rfc/>
+  <nombreTrabajador>JORGE CARLOS</nombreTrabajador>
+  <apellidoPaterno>AYALA</apellidoPaterno>
+  <apellidoMaterno>ORTIZ</apellidoMaterno>
+  <nssISSSTE>00000000000</nssISSSTE>
+  <fuente>PROCESAR</fuente>
+  <procesoVigente/>
+  <fueraSector>true</fueraSector>
+  <tieneCreditoFovissste>0</tieneCreditoFovissste>
+  <existe>true</existe>
+  <sueldoBaseProcesar>9331.94</sueldoBaseProcesar>
+  <sueldoBase>283690.976</sueldoBase>
+  <saldoSubcuentaVivienda>0</saldoSubcuentaVivienda>
+  <montoSAR>0</montoSAR>
+  <saldoSubcuentaVivienda92>0</saldoSubcuentaVivienda92>
+  <montoSAR92>0</montoSAR92>
+  <saldoSubcuentaVivienda08>6020.636607</saldoSubcuentaVivienda08>
+  <montoSAR08>14483.688860502716</montoSAR08>
+  <listaDependencias>
+    <idCentroPago>6091056</idCentroPago>
+    <nombreCentroPago>GOBIERNO DEL DISTRITO FEDERAL</nombreCentroPago>
+    <nombramiento>2</nombramiento>
+    <fechaBajaTrabajador/>
+    <fechaUltimaAportacion/>
+    <tieneAdeudo>true</tieneAdeudo>
+    <tieneAdeudoRespalda2M>true</tieneAdeudoRespalda2M>
+    <estatusSorteo>true</estatusSorteo>
+    <marcaBajaTrabajador>false</marcaBajaTrabajador>
+    <bimestresCotizados>20</bimestresCotizados>
+    <sueldoBasicoCotizacionIssste>18663.88</sueldoBasicoCotizacionIssste>
+  </listaDependencias>
+  <listaDependenciasActivas>
+    <idCentroPago/>
+  </listaDependenciasActivas>
+</respuesta></S:Body></S:Envelope>
+TID: [-1234] [2020-05-31 16:25:27,781]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:364c6a01-9b9d-4578-a360-b34cf210c0f5, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 16:25:27,782]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:364c6a01-9b9d-4578-a360-b34cf210c0f5, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 16:25:28,035]  INFO {API_LOGGER.wsProcesarFovissste} - To: http://www.w3.org/2005/08/addressing/anonymous, WSAction: , SOAPAction: , MessageID: urn:uuid:349d5371-c782-40bc-b96c-4bfeee7cb2a8, Direction: response, Envelope: <?xml version='1.0' encoding='utf-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><respuesta>
+  <estatusRespuesta>01</estatusRespuesta>
+  <codigoMotivoRechazo/>
+  <descripcionMotivoRechazo/>
+  <curp>AAOJ930416HDFYRR04</curp>
+  <rfc/>
+  <nombreTrabajador>JORGE CARLOS</nombreTrabajador>
+  <apellidoPaterno>AYALA</apellidoPaterno>
+  <apellidoMaterno>ORTIZ</apellidoMaterno>
+  <nssISSSTE>00000000000</nssISSSTE>
+  <fuente>PROCESAR</fuente>
+  <procesoVigente/>
+  <fueraSector>true</fueraSector>
+  <tieneCreditoFovissste>0</tieneCreditoFovissste>
+  <existe>true</existe>
+  <sueldoBaseProcesar>9331.94</sueldoBaseProcesar>
+  <sueldoBase>283690.976</sueldoBase>
+  <saldoSubcuentaVivienda>0</saldoSubcuentaVivienda>
+  <montoSAR>0</montoSAR>
+  <saldoSubcuentaVivienda92>0</saldoSubcuentaVivienda92>
+  <montoSAR92>0</montoSAR92>
+  <saldoSubcuentaVivienda08>6020.636607</saldoSubcuentaVivienda08>
+  <montoSAR08>14483.688860502716</montoSAR08>
+  <listaDependencias>
+    <idCentroPago>6091056</idCentroPago>
+    <nombreCentroPago>GOBIERNO DEL DISTRITO FEDERAL</nombreCentroPago>
+    <nombramiento>2</nombramiento>
+    <fechaBajaTrabajador/>
+    <fechaUltimaAportacion/>
+    <tieneAdeudo>true</tieneAdeudo>
+    <tieneAdeudoRespalda2M>true</tieneAdeudoRespalda2M>
+    <estatusSorteo>true</estatusSorteo>
+    <marcaBajaTrabajador>false</marcaBajaTrabajador>
+    <bimestresCotizados>20</bimestresCotizados>
+    <sueldoBasicoCotizacionIssste>18663.88</sueldoBasicoCotizacionIssste>
+  </listaDependencias>
+  <listaDependenciasActivas>
+    <idCentroPago/>
+  </listaDependenciasActivas>
+</respuesta></S:Body></S:Envelope>
+TID: [-1234] [2020-05-31 16:41:34,488]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:c8212a64-404d-4332-a7a0-7cac6c1f74a8, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 16:41:34,490]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:c8212a64-404d-4332-a7a0-7cac6c1f74a8, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-05-31 16:41:34,925]  INFO {API_LOGGER.wsProcesarFovissste} - To: http://www.w3.org/2005/08/addressing/anonymous, WSAction: , SOAPAction: , MessageID: urn:uuid:34d03681-01c4-4c54-8668-ecb5a5731ccc, Direction: response, Envelope: <?xml version='1.0' encoding='utf-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><respuesta>
+  <estatusRespuesta>01</estatusRespuesta>
+  <codigoMotivoRechazo/>
+  <descripcionMotivoRechazo/>
+  <curp>AAOJ930416HDFYRR04</curp>
+  <rfc/>
+  <nombreTrabajador>JORGE CARLOS</nombreTrabajador>
+  <apellidoPaterno>AYALA</apellidoPaterno>
+  <apellidoMaterno>ORTIZ</apellidoMaterno>
+  <nssISSSTE>00000000000</nssISSSTE>
+  <fuente>PROCESAR</fuente>
+  <procesoVigente/>
+  <fueraSector>true</fueraSector>
+  <tieneCreditoFovissste>0</tieneCreditoFovissste>
+  <existe>true</existe>
+  <sueldoBaseProcesar>9331.94</sueldoBaseProcesar>
+  <sueldoBase>283690.976</sueldoBase>
+  <saldoSubcuentaVivienda>0</saldoSubcuentaVivienda>
+  <montoSAR>0</montoSAR>
+  <saldoSubcuentaVivienda92>0</saldoSubcuentaVivienda92>
+  <montoSAR92>0</montoSAR92>
+  <saldoSubcuentaVivienda08>6020.636607</saldoSubcuentaVivienda08>
+  <montoSAR08>14483.688860502716</montoSAR08>
+  <listaDependencias>
+    <idCentroPago>6091056</idCentroPago>
+    <nombreCentroPago>GOBIERNO DEL DISTRITO FEDERAL</nombreCentroPago>
+    <nombramiento>2</nombramiento>
+    <fechaBajaTrabajador/>
+    <fechaUltimaAportacion/>
+    <tieneAdeudo>true</tieneAdeudo>
+    <tieneAdeudoRespalda2M>true</tieneAdeudoRespalda2M>
+    <estatusSorteo>true</estatusSorteo>
+    <marcaBajaTrabajador>false</marcaBajaTrabajador>
+    <bimestresCotizados>20</bimestresCotizados>
+    <sueldoBasicoCotizacionIssste>18663.88</sueldoBasicoCotizacionIssste>
+  </listaDependencias>
+  <listaDependenciasActivas>
+    <idCentroPago/>
+  </listaDependenciasActivas>
+</respuesta></S:Body></S:Envelope>
+TID: [-1234] [2020-06-01 12:03:32,348]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:2b2a52af-2f92-49f8-a584-3e13b1b74f6d, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 12:03:32,348]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:2b2a52af-2f92-49f8-a584-3e13b1b74f6d, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 12:03:53,557]  WARN {API_LOGGER.wsProcesarFovissste} - ERROR_CODE : 101503 ERROR_MESSAGE : Error connecting to the back end
+TID: [-1234] [2020-06-01 12:03:53,557]  WARN {API_LOGGER.wsProcesarFovissste} - ERROR_CODE : 101503 ERROR_MESSAGE : Error connecting to the back end
+TID: [-1234] [2020-06-01 12:03:53,557]  WARN {API_LOGGER.wsProcesarFovissste} - Executing fault sequence mediator : fault
+TID: [-1234] [2020-06-01 12:03:53,557]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:2b2a52af-2f92-49f8-a584-3e13b1b74f6d, Direction: request, MESSAGE = Executing default 'fault' sequence, ERROR_CODE = 101503, ERROR_MESSAGE = Error connecting to the back end, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 12:06:32,564]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:9442c004-8c3f-4fb5-afb5-63d874fb693c, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 12:06:32,579]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:9442c004-8c3f-4fb5-afb5-63d874fb693c, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 12:06:53,678]  WARN {API_LOGGER.wsProcesarFovissste} - ERROR_CODE : 101503 ERROR_MESSAGE : Error connecting to the back end
+TID: [-1234] [2020-06-01 12:06:53,678]  WARN {API_LOGGER.wsProcesarFovissste} - ERROR_CODE : 101503 ERROR_MESSAGE : Error connecting to the back end
+TID: [-1234] [2020-06-01 12:06:53,678]  WARN {API_LOGGER.wsProcesarFovissste} - Executing fault sequence mediator : fault
+TID: [-1234] [2020-06-01 12:06:53,678]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:9442c004-8c3f-4fb5-afb5-63d874fb693c, Direction: request, MESSAGE = Executing default 'fault' sequence, ERROR_CODE = 101503, ERROR_MESSAGE = Error connecting to the back end, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 13:34:57,980]  INFO {API_LOGGER.wsProcesarFovissste} - Initializing API: wsProcesarFovissste
+TID: [-1234] [2020-06-01 16:40:34,410]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:15b98cca-38f5-4a0a-b7e3-09d3ce61a96d, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 16:40:34,421]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:15b98cca-38f5-4a0a-b7e3-09d3ce61a96d, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 16:40:55,743]  WARN {API_LOGGER.wsProcesarFovissste} - ERROR_CODE : 101503 ERROR_MESSAGE : Error connecting to the back end
+TID: [-1234] [2020-06-01 16:40:55,743]  WARN {API_LOGGER.wsProcesarFovissste} - ERROR_CODE : 101503 ERROR_MESSAGE : Error connecting to the back end
+TID: [-1234] [2020-06-01 16:40:55,743]  WARN {API_LOGGER.wsProcesarFovissste} - Executing fault sequence mediator : fault
+TID: [-1234] [2020-06-01 16:40:55,743]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:15b98cca-38f5-4a0a-b7e3-09d3ce61a96d, Direction: request, MESSAGE = Executing default 'fault' sequence, ERROR_CODE = 101503, ERROR_MESSAGE = Error connecting to the back end, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 16:43:34,517]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:d55936f4-dfc0-47af-be8c-bb1cf60f1937, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 16:43:34,517]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:d55936f4-dfc0-47af-be8c-bb1cf60f1937, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 16:43:55,609]  WARN {API_LOGGER.wsProcesarFovissste} - ERROR_CODE : 101503 ERROR_MESSAGE : Error connecting to the back end
+TID: [-1234] [2020-06-01 16:43:55,615]  WARN {API_LOGGER.wsProcesarFovissste} - ERROR_CODE : 101503 ERROR_MESSAGE : Error connecting to the back end
+TID: [-1234] [2020-06-01 16:43:55,615]  WARN {API_LOGGER.wsProcesarFovissste} - Executing fault sequence mediator : fault
+TID: [-1234] [2020-06-01 16:43:55,615]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:d55936f4-dfc0-47af-be8c-bb1cf60f1937, Direction: request, MESSAGE = Executing default 'fault' sequence, ERROR_CODE = 101503, ERROR_MESSAGE = Error connecting to the back end, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 19:34:22,614]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:9d03a213-0494-483a-a3fa-7e16662d1329, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 19:34:22,615]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:9d03a213-0494-483a-a3fa-7e16662d1329, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 19:34:43,700]  WARN {API_LOGGER.wsProcesarFovissste} - ERROR_CODE : 101503 ERROR_MESSAGE : Error connecting to the back end
+TID: [-1234] [2020-06-01 19:34:43,706]  WARN {API_LOGGER.wsProcesarFovissste} - ERROR_CODE : 101503 ERROR_MESSAGE : Error connecting to the back end
+TID: [-1234] [2020-06-01 19:34:43,706]  WARN {API_LOGGER.wsProcesarFovissste} - Executing fault sequence mediator : fault
+TID: [-1234] [2020-06-01 19:34:43,707]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:9d03a213-0494-483a-a3fa-7e16662d1329, Direction: request, MESSAGE = Executing default 'fault' sequence, ERROR_CODE = 101503, ERROR_MESSAGE = Error connecting to the back end, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 19:35:02,759]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:82e56e88-e4cc-4b01-8116-32d8c77aea1c, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 19:35:02,760]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:82e56e88-e4cc-4b01-8116-32d8c77aea1c, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 19:35:02,820]  INFO {API_LOGGER.wsProcesarFovissste} - FaultHandler executing impl: org.apache.synapse.mediators.MediatorFaultHandler
+TID: [-1234] [2020-06-01 19:35:02,820]  WARN {API_LOGGER.wsProcesarFovissste} - Executing fault sequence mediator : fault
+TID: [-1234] [2020-06-01 19:35:02,822]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:82e56e88-e4cc-4b01-8116-32d8c77aea1c, Direction: request, MESSAGE = Executing default 'fault' sequence, ERROR_CODE = 303001, ERROR_MESSAGE = Currently , Address endpoint : [ Name : wsSolicitudCredito ] [ State : SUSPENDED ], Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 19:35:06,791]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:291584a4-0102-4802-9c0c-6f974b5cf394, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 19:35:06,791]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:291584a4-0102-4802-9c0c-6f974b5cf394, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 19:35:06,949]  INFO {API_LOGGER.wsProcesarFovissste} - FaultHandler executing impl: org.apache.synapse.mediators.MediatorFaultHandler
+TID: [-1234] [2020-06-01 19:35:06,949]  WARN {API_LOGGER.wsProcesarFovissste} - Executing fault sequence mediator : fault
+TID: [-1234] [2020-06-01 19:35:06,952]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:291584a4-0102-4802-9c0c-6f974b5cf394, Direction: request, MESSAGE = Executing default 'fault' sequence, ERROR_CODE = 303001, ERROR_MESSAGE = Currently , Address endpoint : [ Name : wsSolicitudCredito ] [ State : SUSPENDED ], Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 19:36:19,359]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:828ea81f-0847-4031-acea-19dbb9228106, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 19:36:19,359]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:828ea81f-0847-4031-acea-19dbb9228106, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 19:36:19,644]  INFO {API_LOGGER.wsProcesarFovissste} - To: http://www.w3.org/2005/08/addressing/anonymous, WSAction: , SOAPAction: , MessageID: urn:uuid:7eae7e35-29dd-4892-9e2f-5b05e42b97c8, Direction: response, Envelope: <?xml version='1.0' encoding='utf-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><respuesta>
+  <estatusRespuesta>01</estatusRespuesta>
+  <codigoMotivoRechazo/>
+  <descripcionMotivoRechazo/>
+  <curp>AAOJ930416HDFYRR04</curp>
+  <rfc/>
+  <nombreTrabajador>JORGE CARLOS</nombreTrabajador>
+  <apellidoPaterno>AYALA</apellidoPaterno>
+  <apellidoMaterno>ORTIZ</apellidoMaterno>
+  <nssISSSTE>00000000000</nssISSSTE>
+  <fuente>PROCESAR</fuente>
+  <procesoVigente/>
+  <fueraSector>true</fueraSector>
+  <tieneCreditoFovissste>0</tieneCreditoFovissste>
+  <existe>true</existe>
+  <sueldoBaseProcesar>9331.94</sueldoBaseProcesar>
+  <sueldoBase>283690.976</sueldoBase>
+  <saldoSubcuentaVivienda>0</saldoSubcuentaVivienda>
+  <montoSAR>0</montoSAR>
+  <saldoSubcuentaVivienda92>0</saldoSubcuentaVivienda92>
+  <montoSAR92>0</montoSAR92>
+  <saldoSubcuentaVivienda08>6020.636607</saldoSubcuentaVivienda08>
+  <montoSAR08>14483.688860502716</montoSAR08>
+  <listaDependencias>
+    <idCentroPago>6091056</idCentroPago>
+    <nombreCentroPago>GOBIERNO DEL DISTRITO FEDERAL</nombreCentroPago>
+    <nombramiento>2</nombramiento>
+    <fechaBajaTrabajador/>
+    <fechaUltimaAportacion/>
+    <tieneAdeudo>true</tieneAdeudo>
+    <tieneAdeudoRespalda2M>true</tieneAdeudoRespalda2M>
+    <estatusSorteo>true</estatusSorteo>
+    <marcaBajaTrabajador>false</marcaBajaTrabajador>
+    <bimestresCotizados>20</bimestresCotizados>
+    <sueldoBasicoCotizacionIssste>18663.88</sueldoBasicoCotizacionIssste>
+  </listaDependencias>
+  <listaDependenciasActivas>
+    <idCentroPago/>
+  </listaDependenciasActivas>
+</respuesta></S:Body></S:Envelope>
+TID: [-1234] [2020-06-01 19:36:24,479]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:9cadad0a-d213-4daf-8e6a-591e47351dc5, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 19:36:24,479]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:9cadad0a-d213-4daf-8e6a-591e47351dc5, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 19:36:24,858]  INFO {API_LOGGER.wsProcesarFovissste} - To: http://www.w3.org/2005/08/addressing/anonymous, WSAction: , SOAPAction: , MessageID: urn:uuid:0b94ffec-ecb4-4d17-81d7-d5c34109eed6, Direction: response, Envelope: <?xml version='1.0' encoding='utf-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><respuesta>
+  <estatusRespuesta>01</estatusRespuesta>
+  <codigoMotivoRechazo/>
+  <descripcionMotivoRechazo/>
+  <curp>AAOJ930416HDFYRR04</curp>
+  <rfc/>
+  <nombreTrabajador>JORGE CARLOS</nombreTrabajador>
+  <apellidoPaterno>AYALA</apellidoPaterno>
+  <apellidoMaterno>ORTIZ</apellidoMaterno>
+  <nssISSSTE>00000000000</nssISSSTE>
+  <fuente>PROCESAR</fuente>
+  <procesoVigente/>
+  <fueraSector>true</fueraSector>
+  <tieneCreditoFovissste>0</tieneCreditoFovissste>
+  <existe>true</existe>
+  <sueldoBaseProcesar>9331.94</sueldoBaseProcesar>
+  <sueldoBase>283690.976</sueldoBase>
+  <saldoSubcuentaVivienda>0</saldoSubcuentaVivienda>
+  <montoSAR>0</montoSAR>
+  <saldoSubcuentaVivienda92>0</saldoSubcuentaVivienda92>
+  <montoSAR92>0</montoSAR92>
+  <saldoSubcuentaVivienda08>6020.636607</saldoSubcuentaVivienda08>
+  <montoSAR08>14483.688860502716</montoSAR08>
+  <listaDependencias>
+    <idCentroPago>6091056</idCentroPago>
+    <nombreCentroPago>GOBIERNO DEL DISTRITO FEDERAL</nombreCentroPago>
+    <nombramiento>2</nombramiento>
+    <fechaBajaTrabajador/>
+    <fechaUltimaAportacion/>
+    <tieneAdeudo>true</tieneAdeudo>
+    <tieneAdeudoRespalda2M>true</tieneAdeudoRespalda2M>
+    <estatusSorteo>true</estatusSorteo>
+    <marcaBajaTrabajador>false</marcaBajaTrabajador>
+    <bimestresCotizados>20</bimestresCotizados>
+    <sueldoBasicoCotizacionIssste>18663.88</sueldoBasicoCotizacionIssste>
+  </listaDependencias>
+  <listaDependenciasActivas>
+    <idCentroPago/>
+  </listaDependenciasActivas>
+</respuesta></S:Body></S:Envelope>
+TID: [-1234] [2020-06-01 19:36:29,338]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:12f97817-9643-4a52-af16-c1e8c74fdf41, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 19:36:29,339]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:12f97817-9643-4a52-af16-c1e8c74fdf41, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 19:36:29,571]  INFO {API_LOGGER.wsProcesarFovissste} - To: http://www.w3.org/2005/08/addressing/anonymous, WSAction: , SOAPAction: , MessageID: urn:uuid:538885e5-49ce-4d5f-99ea-7ab537de518a, Direction: response, Envelope: <?xml version='1.0' encoding='utf-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><respuesta>
+  <estatusRespuesta>01</estatusRespuesta>
+  <codigoMotivoRechazo/>
+  <descripcionMotivoRechazo/>
+  <curp>AAOJ930416HDFYRR04</curp>
+  <rfc/>
+  <nombreTrabajador>JORGE CARLOS</nombreTrabajador>
+  <apellidoPaterno>AYALA</apellidoPaterno>
+  <apellidoMaterno>ORTIZ</apellidoMaterno>
+  <nssISSSTE>00000000000</nssISSSTE>
+  <fuente>PROCESAR</fuente>
+  <procesoVigente/>
+  <fueraSector>true</fueraSector>
+  <tieneCreditoFovissste>0</tieneCreditoFovissste>
+  <existe>true</existe>
+  <sueldoBaseProcesar>9331.94</sueldoBaseProcesar>
+  <sueldoBase>283690.976</sueldoBase>
+  <saldoSubcuentaVivienda>0</saldoSubcuentaVivienda>
+  <montoSAR>0</montoSAR>
+  <saldoSubcuentaVivienda92>0</saldoSubcuentaVivienda92>
+  <montoSAR92>0</montoSAR92>
+  <saldoSubcuentaVivienda08>6020.636607</saldoSubcuentaVivienda08>
+  <montoSAR08>14483.688860502716</montoSAR08>
+  <listaDependencias>
+    <idCentroPago>6091056</idCentroPago>
+    <nombreCentroPago>GOBIERNO DEL DISTRITO FEDERAL</nombreCentroPago>
+    <nombramiento>2</nombramiento>
+    <fechaBajaTrabajador/>
+    <fechaUltimaAportacion/>
+    <tieneAdeudo>true</tieneAdeudo>
+    <tieneAdeudoRespalda2M>true</tieneAdeudoRespalda2M>
+    <estatusSorteo>true</estatusSorteo>
+    <marcaBajaTrabajador>false</marcaBajaTrabajador>
+    <bimestresCotizados>20</bimestresCotizados>
+    <sueldoBasicoCotizacionIssste>18663.88</sueldoBasicoCotizacionIssste>
+  </listaDependencias>
+  <listaDependenciasActivas>
+    <idCentroPago/>
+  </listaDependenciasActivas>
+</respuesta></S:Body></S:Envelope>
+TID: [-1234] [2020-06-01 19:37:22,861]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:15bbc26a-3a30-4bc7-a347-91df6da1b58b, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 19:37:22,863]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:15bbc26a-3a30-4bc7-a347-91df6da1b58b, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 19:37:23,142]  INFO {API_LOGGER.wsProcesarFovissste} - To: http://www.w3.org/2005/08/addressing/anonymous, WSAction: , SOAPAction: , MessageID: urn:uuid:4c1fbab9-11aa-4a58-a50a-c0f4cc7fcd89, Direction: response, Envelope: <?xml version='1.0' encoding='utf-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><respuesta>
+  <estatusRespuesta>01</estatusRespuesta>
+  <codigoMotivoRechazo/>
+  <descripcionMotivoRechazo/>
+  <curp>AAOJ930416HDFYRR04</curp>
+  <rfc/>
+  <nombreTrabajador>JORGE CARLOS</nombreTrabajador>
+  <apellidoPaterno>AYALA</apellidoPaterno>
+  <apellidoMaterno>ORTIZ</apellidoMaterno>
+  <nssISSSTE>00000000000</nssISSSTE>
+  <fuente>PROCESAR</fuente>
+  <procesoVigente/>
+  <fueraSector>true</fueraSector>
+  <tieneCreditoFovissste>0</tieneCreditoFovissste>
+  <existe>true</existe>
+  <sueldoBaseProcesar>9331.94</sueldoBaseProcesar>
+  <sueldoBase>283690.976</sueldoBase>
+  <saldoSubcuentaVivienda>0</saldoSubcuentaVivienda>
+  <montoSAR>0</montoSAR>
+  <saldoSubcuentaVivienda92>0</saldoSubcuentaVivienda92>
+  <montoSAR92>0</montoSAR92>
+  <saldoSubcuentaVivienda08>6020.636607</saldoSubcuentaVivienda08>
+  <montoSAR08>14483.688860502716</montoSAR08>
+  <listaDependencias>
+    <idCentroPago>6091056</idCentroPago>
+    <nombreCentroPago>GOBIERNO DEL DISTRITO FEDERAL</nombreCentroPago>
+    <nombramiento>2</nombramiento>
+    <fechaBajaTrabajador/>
+    <fechaUltimaAportacion/>
+    <tieneAdeudo>true</tieneAdeudo>
+    <tieneAdeudoRespalda2M>true</tieneAdeudoRespalda2M>
+    <estatusSorteo>true</estatusSorteo>
+    <marcaBajaTrabajador>false</marcaBajaTrabajador>
+    <bimestresCotizados>20</bimestresCotizados>
+    <sueldoBasicoCotizacionIssste>18663.88</sueldoBasicoCotizacionIssste>
+  </listaDependencias>
+  <listaDependenciasActivas>
+    <idCentroPago/>
+  </listaDependenciasActivas>
+</respuesta></S:Body></S:Envelope>
+TID: [-1234] [2020-06-01 20:01:37,589]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:2337519c-6964-47f9-a795-6e0408006ef7, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 20:01:37,589]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:2337519c-6964-47f9-a795-6e0408006ef7, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 20:01:58,713]  WARN {API_LOGGER.wsProcesarFovissste} - ERROR_CODE : 101503 ERROR_MESSAGE : Error connecting to the back end
+TID: [-1234] [2020-06-01 20:01:58,713]  WARN {API_LOGGER.wsProcesarFovissste} - ERROR_CODE : 101503 ERROR_MESSAGE : Error connecting to the back end
+TID: [-1234] [2020-06-01 20:01:58,713]  WARN {API_LOGGER.wsProcesarFovissste} - Executing fault sequence mediator : fault
+TID: [-1234] [2020-06-01 20:01:58,713]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:2337519c-6964-47f9-a795-6e0408006ef7, Direction: request, MESSAGE = Executing default 'fault' sequence, ERROR_CODE = 101503, ERROR_MESSAGE = Error connecting to the back end, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 20:03:02,200]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:0163afb8-7e22-4641-b844-5d6e3eb42eaf, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 20:03:02,202]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:0163afb8-7e22-4641-b844-5d6e3eb42eaf, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 20:03:02,514]  INFO {API_LOGGER.wsProcesarFovissste} - To: http://www.w3.org/2005/08/addressing/anonymous, WSAction: , SOAPAction: , MessageID: urn:uuid:c4b9a5d3-e6a7-4349-8756-0d89affb43a6, Direction: response, Envelope: <?xml version='1.0' encoding='utf-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><respuesta>
+  <estatusRespuesta>01</estatusRespuesta>
+  <codigoMotivoRechazo/>
+  <descripcionMotivoRechazo/>
+  <curp>AAOJ930416HDFYRR04</curp>
+  <rfc/>
+  <nombreTrabajador>JORGE CARLOS</nombreTrabajador>
+  <apellidoPaterno>AYALA</apellidoPaterno>
+  <apellidoMaterno>ORTIZ</apellidoMaterno>
+  <nssISSSTE>00000000000</nssISSSTE>
+  <fuente>PROCESAR</fuente>
+  <procesoVigente/>
+  <fueraSector>true</fueraSector>
+  <tieneCreditoFovissste>0</tieneCreditoFovissste>
+  <existe>true</existe>
+  <sueldoBaseProcesar>9331.94</sueldoBaseProcesar>
+  <sueldoBase>283690.976</sueldoBase>
+  <saldoSubcuentaVivienda>0</saldoSubcuentaVivienda>
+  <montoSAR>0</montoSAR>
+  <saldoSubcuentaVivienda92>0</saldoSubcuentaVivienda92>
+  <montoSAR92>0</montoSAR92>
+  <saldoSubcuentaVivienda08>6020.636607</saldoSubcuentaVivienda08>
+  <montoSAR08>14483.688860502716</montoSAR08>
+  <listaDependencias>
+    <idCentroPago>6091056</idCentroPago>
+    <nombreCentroPago>GOBIERNO DEL DISTRITO FEDERAL</nombreCentroPago>
+    <nombramiento>2</nombramiento>
+    <fechaBajaTrabajador/>
+    <fechaUltimaAportacion/>
+    <tieneAdeudo>true</tieneAdeudo>
+    <tieneAdeudoRespalda2M>true</tieneAdeudoRespalda2M>
+    <estatusSorteo>true</estatusSorteo>
+    <marcaBajaTrabajador>false</marcaBajaTrabajador>
+    <bimestresCotizados>20</bimestresCotizados>
+    <sueldoBasicoCotizacionIssste>18663.88</sueldoBasicoCotizacionIssste>
+  </listaDependencias>
+  <listaDependenciasActivas>
+    <idCentroPago/>
+  </listaDependenciasActivas>
+</respuesta></S:Body></S:Envelope>
+TID: [-1234] [2020-06-01 20:04:37,811]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:ab6ea449-2107-4949-ba0b-4c12edd81571, Direction: request, Base = uatacfov:TOR7$ZB8bt, Base64 = dWF0YWNmb3Y6VE9SNyRaQjhidA==, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 20:04:37,813]  INFO {API_LOGGER.wsProcesarFovissste} - To: /wsProcesarFovissste/consultaSaldoFovissste/AAOJ930416HDFYRR04, WSAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, SOAPAction: http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/, MessageID: urn:uuid:ab6ea449-2107-4949-ba0b-4c12edd81571, Direction: request, Envelope: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><con:consultarSaldoFovisssteRequest xmlns:con="http://www.procesar.com.mx/TraspasosInfonavitFovissste/Fovissste/SolicitudCredito/consultarSaldoFovissste/"><cuerpo><curp>AAOJ930416HDFYRR04</curp><idProcesar/></cuerpo></con:consultarSaldoFovisssteRequest></soapenv:Body></soapenv:Envelope>
+TID: [-1234] [2020-06-01 20:04:38,088]  INFO {API_LOGGER.wsProcesarFovissste} - To: http://www.w3.org/2005/08/addressing/anonymous, WSAction: , SOAPAction: , MessageID: urn:uuid:a0955f72-90e1-4ff2-8e54-66d234c9629c, Direction: response, Envelope: <?xml version='1.0' encoding='utf-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><respuesta>
+  <estatusRespuesta>01</estatusRespuesta>
+  <codigoMotivoRechazo/>
+  <descripcionMotivoRechazo/>
+  <curp>AAOJ930416HDFYRR04</curp>
+  <rfc/>
+  <nombreTrabajador>JORGE CARLOS</nombreTrabajador>
+  <apellidoPaterno>AYALA</apellidoPaterno>
+  <apellidoMaterno>ORTIZ</apellidoMaterno>
+  <nssISSSTE>00000000000</nssISSSTE>
+  <fuente>PROCESAR</fuente>
+  <procesoVigente/>
+  <fueraSector>true</fueraSector>
+  <tieneCreditoFovissste>0</tieneCreditoFovissste>
+  <existe>true</existe>
+  <sueldoBaseProcesar>9331.94</sueldoBaseProcesar>
+  <sueldoBase>283690.976</sueldoBase>
+  <saldoSubcuentaVivienda>0</saldoSubcuentaVivienda>
+  <montoSAR>0</montoSAR>
+  <saldoSubcuentaVivienda92>0</saldoSubcuentaVivienda92>
+  <montoSAR92>0</montoSAR92>
+  <saldoSubcuentaVivienda08>6020.636607</saldoSubcuentaVivienda08>
+  <montoSAR08>14483.688860502716</montoSAR08>
+  <listaDependencias>
+    <idCentroPago>6091056</idCentroPago>
+    <nombreCentroPago>GOBIERNO DEL DISTRITO FEDERAL</nombreCentroPago>
+    <nombramiento>2</nombramiento>
+    <fechaBajaTrabajador/>
+    <fechaUltimaAportacion/>
+    <tieneAdeudo>true</tieneAdeudo>
+    <tieneAdeudoRespalda2M>true</tieneAdeudoRespalda2M>
+    <estatusSorteo>true</estatusSorteo>
+    <marcaBajaTrabajador>false</marcaBajaTrabajador>
+    <bimestresCotizados>20</bimestresCotizados>
+    <sueldoBasicoCotizacionIssste>18663.88</sueldoBasicoCotizacionIssste>
+  </listaDependencias>
+  <listaDependenciasActivas>
+    <idCentroPago/>
+  </listaDependenciasActivas>
+</respuesta></S:Body></S:Envelope>

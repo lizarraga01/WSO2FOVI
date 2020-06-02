@@ -1,0 +1,4 @@
+TID: [-1] [2020-05-31 15:15:05,200]  WARN {org.apache.synapse.transport.passthru.ConnectCallback} - Connection refused or failed for : /192.168.1.237:80
+TID: [-1234] [2020-05-31 15:15:05,214]  WARN {org.apache.synapse.endpoints.EndpointContext} - Endpoint : wsSolicitudCredito with address http://192.168.1.237/TraspasosFovissste/SolicitudCredito will be marked SUSPENDED as it failed
+TID: [-1234] [2020-05-31 15:15:05,217]  WARN {org.apache.synapse.endpoints.EndpointContext} - Suspending endpoint : wsSolicitudCredito with address http://192.168.1.237/TraspasosFovissste/SolicitudCredito - current suspend duration is : 30000ms - Next retry after : Sun May 31 15:15:35 CDT 2020
+TID: [-1] [2020-05-31 15:17:44,298]  WARN {org.apache.synapse.transport.passthru.SourceHandler} - Connection time out after request is read: http-incoming-3 Socket Timeout : 180000 Remote Address : /127.0.0.1:52203

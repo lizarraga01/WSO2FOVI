@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><sequence xmlns="http://ws.apache.org/ns/synapse" name="seqProcesarBasicAuthentication">
+    <script language="js">var usuario = "uatacfov";
+var pass = "TOR7$ZB8bt";
+var base = usuario + ":" + pass;
+print(base);
+mc.setProperty("base", base.toString());</script>
+    <property xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:ns="http://org.apache.synapse/xsd" xmlns:ns3="http://org.apache.synapse/xsd" name="Authorization" expression="fn:concat('Basic ', base64Encode(get-property('base')))" scope="transport" type="STRING"/>
+    <log level="full">
+        <property xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:ns="http://org.apache.synapse/xsd" xmlns:ns3="http://org.apache.synapse/xsd" name="Base" expression="get-property('base')"/>
+        <property xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:ns="http://org.apache.synapse/xsd" xmlns:ns3="http://org.apache.synapse/xsd" name="Base64" expression="base64Encode(get-property('base'))"/>
+    </log>
+</sequence>
