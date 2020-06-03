@@ -12,7 +12,9 @@
 /updates
 /webapp-mode
 /wso2
-/repository/logs
+/repository/logs/*
+/repository/data/*
+/repository/database/*
 LICENSE.txt
 README.txt
 release-notes.html
