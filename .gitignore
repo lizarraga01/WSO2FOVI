@@ -16,4 +16,5 @@
 LICENSE.txt
 README.txt
 release-notes.html
-repository/logs/wso2carbon.log
+/repository/data
+/repository/database
