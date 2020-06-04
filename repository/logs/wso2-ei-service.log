@@ -1,0 +1,44 @@
+TID: [-1234] [2020-05-25 19:47:57,727]  INFO {SERVICE_LOGGER.__SynapseService} - main sequence executed for call to non-existent = local://services/AuthenticationAdmin
+TID: [-1234] [2020-05-25 19:47:58,758]  INFO {SERVICE_LOGGER.__SynapseService} - main sequence executed for call to non-existent = local://services/AuthenticationAdmin
+TID: [-1234] [2020-05-25 19:48:10,571]  INFO {SERVICE_LOGGER.__SynapseService} - main sequence executed for call to non-existent = local://services/AuthenticationAdmin
+TID: [-1234] [2020-05-25 19:48:10,571]  INFO {SERVICE_LOGGER.__SynapseService} - main sequence executed for call to non-existent = local://services/AuthenticationAdmin
+TID: [-1234] [2020-05-25 19:51:15,517]  INFO {SERVICE_LOGGER.__SynapseService} - main sequence executed for call to non-existent = local://services/AuthenticationAdmin
+TID: [-1234] [2020-05-25 19:51:15,540]  INFO {SERVICE_LOGGER.__SynapseService} - main sequence executed for call to non-existent = local://services/AuthenticationAdmin
+TID: [-1234] [2020-06-01 13:43:00,303]  INFO {SERVICE_LOGGER.RecibeOferentesWebService} - Building Axis service for Proxy service : RecibeOferentesWebService
+TID: [-1234] [2020-06-01 13:43:00,319]  INFO {SERVICE_LOGGER.RecibeOferentesWebService} - Adding service RecibeOferentesWebService to the Axis2 configuration
+TID: [-1234] [2020-06-01 13:43:00,341]  INFO {SERVICE_LOGGER.RecibeOferentesWebService} - Successfully created the Axis2 service for Proxy service : RecibeOferentesWebService
+TID: [-1234] [2020-06-01 13:43:00,383]  INFO {SERVICE_LOGGER.RecibeOfertasWebService} - Building Axis service for Proxy service : RecibeOfertasWebService
+TID: [-1234] [2020-06-01 13:43:00,383]  INFO {SERVICE_LOGGER.RecibeOfertasWebService} - Adding service RecibeOfertasWebService to the Axis2 configuration
+TID: [-1234] [2020-06-01 13:43:00,383]  INFO {SERVICE_LOGGER.RecibeOfertasWebService} - Successfully created the Axis2 service for Proxy service : RecibeOfertasWebService
+TID: [-1234] [2020-06-01 13:43:00,414]  INFO {SERVICE_LOGGER.RecibeVerificacionWebService} - Building Axis service for Proxy service : RecibeVerificacionWebService
+TID: [-1234] [2020-06-01 13:43:00,414]  INFO {SERVICE_LOGGER.RecibeVerificacionWebService} - Adding service RecibeVerificacionWebService to the Axis2 configuration
+TID: [-1234] [2020-06-01 13:43:00,430]  INFO {SERVICE_LOGGER.RecibeVerificacionWebService} - Successfully created the Axis2 service for Proxy service : RecibeVerificacionWebService
+TID: [-1234] [2020-06-01 17:19:15,361]  INFO {SERVICE_LOGGER.__SynapseService} - main sequence executed for call to non-existent = /carbon
+TID: [-1234] [2020-06-01 17:19:17,812]  INFO {SERVICE_LOGGER.__SynapseService} - main sequence executed for call to non-existent = /carbon
+TID: [-1234] [2020-06-02 16:50:28,731]  INFO {SERVICE_LOGGER.RecibeVerificacionWebService} - Building Axis service for Proxy service : RecibeVerificacionWebService
+TID: [-1234] [2020-06-02 16:50:28,735]  INFO {SERVICE_LOGGER.RecibeVerificacionWebService} - Adding service RecibeVerificacionWebService to the Axis2 configuration
+TID: [-1234] [2020-06-02 16:50:28,739]  INFO {SERVICE_LOGGER.RecibeVerificacionWebService} - Successfully created the Axis2 service for Proxy service : RecibeVerificacionWebService
+TID: [-1234] [2020-06-02 16:50:28,741]  INFO {SERVICE_LOGGER.RecibeOfertasWebService} - Building Axis service for Proxy service : RecibeOfertasWebService
+TID: [-1234] [2020-06-02 16:50:28,742]  INFO {SERVICE_LOGGER.RecibeOfertasWebService} - Adding service RecibeOfertasWebService to the Axis2 configuration
+TID: [-1234] [2020-06-02 16:50:28,748]  INFO {SERVICE_LOGGER.RecibeOfertasWebService} - Successfully created the Axis2 service for Proxy service : RecibeOfertasWebService
+TID: [-1234] [2020-06-02 16:50:28,751]  INFO {SERVICE_LOGGER.RecibeOferentesWebService} - Building Axis service for Proxy service : RecibeOferentesWebService
+TID: [-1234] [2020-06-02 16:50:28,752]  INFO {SERVICE_LOGGER.RecibeOferentesWebService} - Adding service RecibeOferentesWebService to the Axis2 configuration
+TID: [-1234] [2020-06-02 16:50:28,755]  INFO {SERVICE_LOGGER.RecibeOferentesWebService} - Successfully created the Axis2 service for Proxy service : RecibeOferentesWebService
+TID: [-1234] [2020-06-03 11:09:24,795]  INFO {SERVICE_LOGGER.RecibeVerificacionWebService} - Building Axis service for Proxy service : RecibeVerificacionWebService
+TID: [-1234] [2020-06-03 11:09:24,799]  INFO {SERVICE_LOGGER.RecibeVerificacionWebService} - Adding service RecibeVerificacionWebService to the Axis2 configuration
+TID: [-1234] [2020-06-03 11:09:24,805]  INFO {SERVICE_LOGGER.RecibeVerificacionWebService} - Successfully created the Axis2 service for Proxy service : RecibeVerificacionWebService
+TID: [-1234] [2020-06-03 11:09:24,806]  INFO {SERVICE_LOGGER.RecibeOfertasWebService} - Building Axis service for Proxy service : RecibeOfertasWebService
+TID: [-1234] [2020-06-03 11:09:24,807]  INFO {SERVICE_LOGGER.RecibeOfertasWebService} - Adding service RecibeOfertasWebService to the Axis2 configuration
+TID: [-1234] [2020-06-03 11:09:24,809]  INFO {SERVICE_LOGGER.RecibeOfertasWebService} - Successfully created the Axis2 service for Proxy service : RecibeOfertasWebService
+TID: [-1234] [2020-06-03 11:09:24,812]  INFO {SERVICE_LOGGER.RecibeOferentesWebService} - Building Axis service for Proxy service : RecibeOferentesWebService
+TID: [-1234] [2020-06-03 11:09:24,813]  INFO {SERVICE_LOGGER.RecibeOferentesWebService} - Adding service RecibeOferentesWebService to the Axis2 configuration
+TID: [-1234] [2020-06-03 11:09:24,815]  INFO {SERVICE_LOGGER.RecibeOferentesWebService} - Successfully created the Axis2 service for Proxy service : RecibeOferentesWebService
+TID: [-1234] [2020-06-03 17:02:30,797]  INFO {SERVICE_LOGGER.RecibeVerificacionWebService} - Building Axis service for Proxy service : RecibeVerificacionWebService
+TID: [-1234] [2020-06-03 17:02:30,804]  INFO {SERVICE_LOGGER.RecibeVerificacionWebService} - Adding service RecibeVerificacionWebService to the Axis2 configuration
+TID: [-1234] [2020-06-03 17:02:30,808]  INFO {SERVICE_LOGGER.RecibeVerificacionWebService} - Successfully created the Axis2 service for Proxy service : RecibeVerificacionWebService
+TID: [-1234] [2020-06-03 17:02:30,811]  INFO {SERVICE_LOGGER.RecibeOfertasWebService} - Building Axis service for Proxy service : RecibeOfertasWebService
+TID: [-1234] [2020-06-03 17:02:30,815]  INFO {SERVICE_LOGGER.RecibeOfertasWebService} - Adding service RecibeOfertasWebService to the Axis2 configuration
+TID: [-1234] [2020-06-03 17:02:30,819]  INFO {SERVICE_LOGGER.RecibeOfertasWebService} - Successfully created the Axis2 service for Proxy service : RecibeOfertasWebService
+TID: [-1234] [2020-06-03 17:02:30,823]  INFO {SERVICE_LOGGER.RecibeOferentesWebService} - Building Axis service for Proxy service : RecibeOferentesWebService
+TID: [-1234] [2020-06-03 17:02:30,826]  INFO {SERVICE_LOGGER.RecibeOferentesWebService} - Adding service RecibeOferentesWebService to the Axis2 configuration
+TID: [-1234] [2020-06-03 17:02:30,829]  INFO {SERVICE_LOGGER.RecibeOferentesWebService} - Successfully created the Axis2 service for Proxy service : RecibeOferentesWebService
