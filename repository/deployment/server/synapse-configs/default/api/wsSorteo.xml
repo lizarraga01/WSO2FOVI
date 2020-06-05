@@ -107,4 +107,108 @@
             <send/>
         </outSequence>
     </resource>
+    <resource methods="GET" uri-template="/consultaTitularInformacionPrincipal/{idPersona}">
+        <inSequence>
+            <script language="js">var idPersona = mc.getProperty('uri.var.idPersona');var payload = &lt;dat:consultaTitularInformacionPrincipal xmlns:dat="http://ws.wso2.org/dataservice"&gt;                 &lt;dat:P_PERSON_ID&gt;{idPersona}&lt;/dat:P_PERSON_ID&gt;              &lt;/dat:consultaTitularInformacionPrincipal&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:consultaTitularInformacionPrincipal"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" uri-template="/consultaTitularDireccion/{idPersona}">
+        <inSequence>
+            <script language="js">var idPersona = mc.getProperty('uri.var.idPersona');var payload = &lt;dat:consultaTitularDireccion xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:P_PERSON_ID&gt;{idPersona}&lt;/dat:P_PERSON_ID&gt;      &lt;/dat:consultaTitularDireccion&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:consultaTitularDireccion"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" uri-template="/consultaTitularDireccionAdicional/{idCredito}">
+        <inSequence>
+            <script language="js">var idCredito = mc.getProperty('uri.var.idCredito');var payload = &lt;dat:consultaTitularDireccionAdicional xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:P_REQUEST_ID&gt;{idCredito }&lt;/dat:P_REQUEST_ID&gt;      &lt;/dat:consultaTitularDireccionAdicional&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:consultaTitularDireccionAdicional"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" uri-template="/consultaTitularInformacionAdicional/{idCredito}">
+        <inSequence>
+            <script language="js">var idCredito = mc.getProperty('uri.var.idCredito');var payload = &lt;dat:consultaTitularInformacionAdicional xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:P_REQUEST_ID&gt;{idCredito}&lt;/dat:P_REQUEST_ID&gt;      &lt;/dat:consultaTitularInformacionAdicional&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:consultaTitularInformacionAdicional"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" uri-template="/consultaTitularDependencias/{idPersona}">
+        <inSequence>
+            <script language="js">var idPersona = mc.getProperty('uri.var.idPersona');var payload = &lt;dat:consultaTitularDependencias xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:P_PERSON_ID&gt;{idPersona}&lt;/dat:P_PERSON_ID&gt;      &lt;/dat:consultaTitularDependencias&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:consultaTitularDependencias"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" uri-template="/consultaTitularCotizacionFoviissste/{idPersona}">
+        <inSequence>
+            <script language="js">var idPersona = mc.getProperty('uri.var.idPersona');var payload = &lt;dat:consultaTitularCotizacionFoviissste xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:P_PERSON_ID&gt;{idPersona}&lt;/dat:P_PERSON_ID&gt;      &lt;/dat:consultaTitularCotizacionFoviissste&gt;;   mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:consultaTitularCotizacionFoviissste"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" uri-template="/consultaConyugeInformacion/{idPersona}">
+        <inSequence>
+            <script language="js">var idPersona = mc.getProperty('uri.var.idPersona');var payload = &lt;dat:consultaConyugeInformacion xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:P_PERSON_ID&gt;{idPersona}&lt;/dat:P_PERSON_ID&gt;      &lt;/dat:consultaConyugeInformacion&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:consultaConyugeInformacion"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" uri-template="/consultaConyugeDependecias/{idPersona}">
+        <inSequence>
+            <script language="js">var idPersona  = mc.getProperty('uri.var.idPersona');var payload = &lt;dat:consultaConyugeDependecias xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:P_PERSON_ID&gt;{idPersona}&lt;/dat:P_PERSON_ID&gt;      &lt;/dat:consultaConyugeDependecias&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:consultaConyugeDependecias"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
 </api>
