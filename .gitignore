@@ -15,8 +15,9 @@
 /repository/logs/*
 /repository/data/*
 /repository/database/*
+/icons
+/jdk
+/yajsw
 LICENSE.txt
 README.txt
 release-notes.html
-/repository/data
-/repository/database

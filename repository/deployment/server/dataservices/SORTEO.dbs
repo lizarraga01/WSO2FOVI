@@ -1,0 +1,411 @@
+<data name="SORTEO" transports="http">
+   <config enableOData="false" id="SORTEO">
+      <property name="driverClassName">oracle.jdbc.driver.OracleDriver</property>
+      <property name="url">jdbc:oracle:thin:JALONSO/Txp3cZzssDcS@10.4.1.10:1521/D_SORTEO</property>
+      <property name="username">JALONSO</property>
+      <property name="password">Txp3cZzssDcS</property>
+   </config>
+   <query id="altaOtorgamientoPuntuaje" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL sorteo.PKG_DRAWING.INSERT_DRAWING (?,?,?,?,?,?)</sql>
+      <result element="altaOtorgamientoPuntuajeResp" rowName="altaOtorgamientoPuntuaje" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param name="P_KEY" optional="false" sqlType="STRING"/>
+      <param name="P_DESCRIPTION" optional="false" sqlType="STRING"/>
+      <param name="P_YEAR" optional="false" sqlType="INTEGER"/>
+      <param name="P_NUMBER" optional="false" sqlType="INTEGER"/>
+      <param name="P_USER_ID" optional="false" sqlType="INTEGER"/>
+      <param name="P_CREDIT_NUMBER" optional="false" sqlType="INTEGER"/>
+   </query>
+   <query id="consultaHomonimias" useConfig="SORTEO">
+      <sql>CALL sorteo.PKG_DEPURATION.GET_HOMONYMS (?,?,?,?,?,?)</sql>
+      <result element="consultaHomonimias" escapeNonPrintableChar="true" rowName="Homonimia">
+         <element column="ID_PERSONA" name="ID_PERSONA" xsdType="string"/>
+         <element column="NOMBRECOMPLETO" name="NOMBRECOMPLETO" xsdType="string"/>
+         <element column="RFC" name="RFC" xsdType="string"/>
+         <element column="CURP" name="CURP" xsdType="string"/>
+         <element column="NO_SOLICITUD" name="NO_SOLICITUD" xsdType="string"/>
+         <element column="ID_SOLICITUD" name="ID_SOLICITUD" xsdType="string"/>
+         <element column="ID_ESTATUS" name="ID_ESTATUS" xsdType="string"/>
+         <element column="ESTATUS" name="ESTATUS" xsdType="string"/>
+         <element column="REVISADA" name="REVISADA" xsdType="string"/>
+         <element column="NOMBRECOMPLETOCONYUGUE" name="NOMBRECOMPLETOCONYUGUE" xsdType="string"/>
+         <element column="RFCCONYUGUE" name="RFCCONYUGUE" xsdType="string"/>
+         <element column="CURPCONYUGUE" name="CURPCONYUGUE" xsdType="string"/>
+         <element column="HOMORFCBLOQ" name="HOMORFCBLOQ" xsdType="string"/>
+         <element column="HOMOSOR" name="HOMOSOR" xsdType="string"/>
+         <element column="HOMOORI" name="HOMOORI" xsdType="string"/>
+         <element column="HOMOCAR" name="HOMOCAR" xsdType="string"/>
+      </result>
+      <param name="P_ACTIVE_DRAW_ID" optional="false" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="P_RFC" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="P_STATUS_ID" optional="true" sqlType="INTEGER"/>
+      <param defaultValue="#{NULL}" name="P_REVISED" optional="true" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="P_DATE" optional="true" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="consultaUltimoNumeroSorteo" useConfig="SORTEO">
+      <sql>CALL sorteo.PKG_DRAWING.GET_LAST_DRAWING_NUMBER (:P_YEAR,:P_RESULTSET)</sql>
+      <result element="consultaUltimoNumeroSorteoResponse" escapeNonPrintableChar="true" rowName="ultimoNumero">
+         <element column="NVL(MAX(S.Numero),0)+1" name="numero" xsdType="string"/>
+      </result>
+      <param name="P_YEAR" optional="false" sqlType="INTEGER"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="consultaSorteos" useConfig="SORTEO">
+      <sql>CALL sorteo.PKG_DRAWING.RETRIEVE_ALL (:P_RESULTSET)</sql>
+      <result element="consultaSorteosResponse" escapeNonPrintableChar="true" rowName="sorteo">
+         <element column="Id_Sorteo" name="Id_Sorteo" xsdType="string"/>
+         <element column="Clave_Sorteo" name="Clave_Sorteo" xsdType="string"/>
+         <element column="Desc_Sorteo" name="Desc_Sorteo" xsdType="string"/>
+         <element column="Estatus_Sorteo" name="Estatus_Sorteo" xsdType="string"/>
+         <element column="Estatus_Cuentas" name="Estatus_Cuentas" xsdType="string"/>
+         <element column="Estatus_Registro" name="Estatus_Registro" xsdType="string"/>
+         <element column="Estatus_Consulta" name="Estatus_Consulta" xsdType="string"/>
+         <element column="Anio" name="Anio" xsdType="string"/>
+         <element column="Numero" name="Numero" xsdType="string"/>
+         <element column="Numero_Creditos" name="Numero_Creditos" xsdType="string"/>
+      </result>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="consultaSorteo" useConfig="SORTEO">
+      <sql>CALL sorteo.PKG_DRAWING.RETRIEVE_DRAWING(:P_DRAWING_ID, :P_RESULTSET)</sql>
+      <result element="consultaSorteoResponse" escapeNonPrintableChar="true" rowName="sorteo">
+         <element column="ID_SORTEO" name="ID_SORTEO" xsdType="string"/>
+         <element column="NUMERO" name="NUMERO" xsdType="string"/>
+         <element column="CLAVE_SORTEO" name="CLAVE_SORTEO" xsdType="string"/>
+         <element column="DESC_SORTEO" name="DESC_SORTEO" xsdType="string"/>
+         <element column="FECHA_INI_INSC" name="FECHA_INI_INSC" xsdType="string"/>
+         <element column="FECHA_FIN_INSC" name="FECHA_FIN_INSC" xsdType="string"/>
+         <element column="ANIO" name="ANIO" xsdType="string"/>
+         <element column="ESTATUS_CUENTAS" name="ESTATUS_CUENTAS" xsdType="string"/>
+         <element column="NUMERO_CREDITOS" name="NUMERO_CREDITOS" xsdType="string"/>
+         <element column="ESTATUS_SORTEO" name="ESTATUS_SORTEO" xsdType="string"/>
+         <element column="ESTATUS_CONSULTA" name="ESTATUS_CONSULTA" xsdType="string"/>
+         <element column="ESTATUS_REGISTRO" name="ESTATUS_REGISTRO" xsdType="string"/>
+         <element column="FECHA_ACTIVACION_REGISTRO" name="FECHA_ACTIVACION_REGISTRO" xsdType="string"/>
+         <element column="FECHA_DESACTIVACION_REGISTRO" name="FECHA_DESACTIVACION_REGISTRO" xsdType="string"/>
+      </result>
+      <param name="P_DRAWING_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="editarSorteo" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL sorteo.PKG_DRAWING.UPDATE_DRAWING ( :P_DRAWING_ID, :P_KEY, :P_DESCRIPTION, :P_YEAR, :P_STATUS_ID, :P_ACCOUNT_STATUS, :P_QUERY_STATUS, :P_CHANGE_USER_ID, :P_START_DATE, :P_END_DATE, :P_CREDIT_NUMBER)</sql>
+      <result element="editarSorteoResponse" rowName="sorteo" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param name="P_DRAWING_ID" sqlType="STRING"/>
+      <param name="P_KEY" sqlType="STRING"/>
+      <param name="P_DESCRIPTION" sqlType="STRING"/>
+      <param name="P_YEAR" sqlType="STRING"/>
+      <param name="P_STATUS_ID" sqlType="STRING"/>
+      <param name="P_ACCOUNT_STATUS" sqlType="STRING"/>
+      <param name="P_QUERY_STATUS" sqlType="STRING"/>
+      <param name="P_CHANGE_USER_ID" sqlType="STRING"/>
+      <param name="P_START_DATE" sqlType="STRING"/>
+      <param name="P_END_DATE" sqlType="STRING"/>
+      <param name="P_CREDIT_NUMBER" sqlType="STRING"/>
+   </query>
+   <query id="consultaCreditoCurp" useConfig="SORTEO">
+      <sql>CALL sorteo.PKG_REQUEST.GET_REQUEST_BY_CURP(:P_CURP,:P_STATUS_ID,:P_RESULTSET)</sql>
+      <result element="consultaCreditoCurpResponse" escapeNonPrintableChar="true" rowName="credito">
+         <element column="SOLICITUDID" name="SOLICITUDID" xsdType="string"/>
+         <element column="ID_ESTATUS" name="ID_ESTATUS" xsdType="string"/>
+      </result>
+      <param name="P_CURP" sqlType="STRING"/>
+      <param name="P_STATUS_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="consultaCreditoDetalle" useConfig="SORTEO">
+      <sql>CALL sorteo.PKG_REQUEST.RETRIEVE_CREDIT_DATA(:P_REQUEST_ID,:P_RESULTSET)</sql>
+      <result element="consultaCreditoDetalle" escapeNonPrintableChar="true" rowName="credito">
+         <element column="NoSolicitud" name="NoSolicitud" xsdType="string"/>
+         <element column="FechaRegistroInicio" name="FechaRegistroInicio" xsdType="string"/>
+         <element column="FechaRegistroFin" name="FechaRegistroFin" xsdType="string"/>
+         <element column="FechaAlta" name="FechaAlta" xsdType="string"/>
+         <element column="HoraAlta" name="HoraAlta" xsdType="string"/>
+         <element column="TitularPersonaId" name="TitularPersonaId" xsdType="string"/>
+         <element column="TipoSolicitudId" name="TipoSolicitudId" xsdType="string"/>
+         <element column="TipoSolicitud" name="TipoSolicitud" xsdType="string"/>
+         <element column="MunicipioEjercerId" name="MunicipioEjercerId" xsdType="string"/>
+         <element column="MunicipioEjercer" name="MunicipioEjercer" xsdType="string"/>
+         <element column="EstadoEjercerId" name="EstadoEjercerId" xsdType="string"/>
+         <element column="EstadoEjercer" name="EstadoEjercer" xsdType="string"/>
+         <element column="TipoAdquisicionId" name="TipoAdquisicionId" xsdType="string"/>
+         <element column="TipoAdquisicion" name="TipoAdquisicion" xsdType="string"/>
+         <element column="LineaCreditoId" name="LineaCreditoId" xsdType="string"/>
+         <element column="LineaCredito" name="LineaCredito" xsdType="string"/>
+         <element column="TipoConstruccionLetra" name="TipoConstruccionLetra" xsdType="string"/>
+         <element column="TipoConstruccion" name="TipoConstruccion" xsdType="string"/>
+         <element column="TipoViviendaId" name="TipoViviendaId" xsdType="string"/>
+         <element column="TipoVivienda" name="TipoVivienda" xsdType="string"/>
+         <element column="MontoMaximoAlcanzado" name="MontoMaximoAlcanzado" xsdType="string"/>
+         <element column="MontoMaximoAlcanzadoSM" name="MontoMaximoAlcanzadoSM" xsdType="string"/>
+         <element column="SaldoSar" name="SaldoSar" xsdType="string"/>
+         <element column="MontoMaximoTotal" name="MontoMaximoTotal" xsdType="string"/>
+         <element column="ValorSalarioMinimo" name="ValorSalarioMinimo" xsdType="string"/>
+         <element column="CambiosProcesar" name="CambiosProcesar" xsdType="string"/>
+         <element column="PosibleHomonimiaRfcBloqueados" name="PosibleHomonimiaRfcBloqueados" xsdType="string"/>
+         <element column="PosibleHomonimiaSorteos" name="PosibleHomonimiaSorteos" xsdType="string"/>
+         <element column="PosibleHomonimiaOriginacion" name="PosibleHomonimiaOriginacion" xsdType="string"/>
+         <element column="PosibleHomonimiaCartera" name="PosibleHomonimiaCartera" xsdType="string"/>
+         <element column="EstatusId" name="EstatusId" xsdType="string"/>
+         <element column="UsuarioAltaId" name="UsuarioAltaId" xsdType="string"/>
+      </result>
+      <param name="P_REQUEST_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="consultaTitularInformacionPrincipal" useConfig="SORTEO">
+      <sql>CALL sorteo.PKG_REQUEST.RETRIEVE_MAIN_PERSON_DATA (:P_PERSON_ID, :P_RESULTSET)</sql>
+      <result element="consultaTitularInformacionPrincipalResponse" escapeNonPrintableChar="true" rowName="titular">
+         <element column="CURP" name="CURP" xsdType="string"/>
+         <element column="RFC" name="RFC" xsdType="string"/>
+         <element column="ApellidoPaterno" name="ApellidoPaterno" xsdType="string"/>
+         <element column="ApellidoMaterno" name="ApellidoMaterno" xsdType="string"/>
+         <element column="Nombre" name="Nombre" xsdType="string"/>
+         <element column="FechaNacimiento" name="FechaNacimiento" xsdType="string"/>
+         <element column="GeneroId" name="GeneroId" xsdType="string"/>
+         <element column="Genero" name="Genero" xsdType="string"/>
+         <element column="EstadoCivilId" name="EstadoCivilId" xsdType="string"/>
+         <element column="EstadoCivil" name="EstadoCivil" xsdType="string"/>
+         <element column="MadreSolteraId" name="MadreSolteraId" xsdType="string"/>
+         <element column="MadreSoltera" name="MadreSoltera" xsdType="string"/>
+         <element column="CorreoElectronico" name="CorreoElectronico" xsdType="string"/>
+         <element column="Lada" name="Lada" xsdType="string"/>
+         <element column="Telefono" name="Telefono" xsdType="string"/>
+         <element column="Celular" name="Celular" xsdType="string"/>
+         <element column="MontoMaximoAlcanzado" name="MontoMaximoAlcanzado" xsdType="string"/>
+         <element column="MontoMaximoAlcanzadoSM" name="MontoMaximoAlcanzadoSM" xsdType="string"/>
+         <element column="SaldoSar" name="SaldoSar" xsdType="string"/>
+         <element column="MontoMaximoTotal" name="MontoMaximoTotal" xsdType="string"/>
+         <element column="NivelSalarial" name="NivelSalarial" xsdType="string"/>
+         <element column="Origen" name="Origen" xsdType="string"/>
+      </result>
+      <param name="P_PERSON_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="consultaTitularDireccion" useConfig="SORTEO">
+      <sql>CALL sorteo.PKG_REQUEST.RETRIEVE_MAIN_ADDRESS_DATA (:P_PERSON_ID, :P_RESULTSET)</sql>
+      <result element="consultaTitularDireccionResponse" escapeNonPrintableChar="true" rowName="direccion">
+         <element column="Calle" name="Calle" xsdType="string"/>
+         <element column="NumeroExterior" name="NumeroExterior" xsdType="string"/>
+         <element column="NumeroInterior" name="NumeroInterior" xsdType="string"/>
+         <element column="Colonia" name="Colonia" xsdType="string"/>
+         <element column="CP" name="CP" xsdType="string"/>
+         <element column="MunicipioId" name="MunicipioId" xsdType="string"/>
+         <element column="Municipio" name="Municipio" xsdType="string"/>
+         <element column="EstadoId" name="EstadoId" xsdType="string"/>
+         <element column="Estado" name="Estado" xsdType="string"/>
+      </result>
+      <param name="P_PERSON_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="consultaTitularDireccionAdicional" useConfig="SORTEO">
+      <sql>CALL sorteo.PKG_REQUEST.RETRIEVE_ADDITIONAL_ADDRESS (:P_REQUEST_ID,:P_RESULTSET)</sql>
+      <result element="consultaTitularDireccionAdicionalResponse" escapeNonPrintableChar="true" rowName="direccion">
+         <element column="Calle" name="Calle" xsdType="string"/>
+         <element column="NumeroExterior" name="NumeroExterior" xsdType="string"/>
+         <element column="NumeroInterior" name="NumeroInterior" xsdType="string"/>
+         <element column="Colonia" name="Colonia" xsdType="string"/>
+         <element column="CP" name="CP" xsdType="string"/>
+         <element column="MunicipioId" name="MunicipioId" xsdType="string"/>
+         <element column="Municipio" name="Municipio" xsdType="string"/>
+         <element column="EstadoId" name="EstadoId" xsdType="string"/>
+         <element column="Estado" name="Estado" xsdType="string"/>
+      </result>
+      <param name="P_REQUEST_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="consultaTitularInformacionAdicional" useConfig="SORTEO">
+      <sql>CALL sorteo.PKG_REQUEST.RETRIEVE_ADDITIONAL_DATA (:P_REQUEST_ID,:P_RESULTSET)</sql>
+      <result element="consultaTitularInformacionAdicionalResponse" escapeNonPrintableChar="true" rowName="informacionAdicional">
+         <element column="GradoEscolarId" name="GradoEscolarId" xsdType="string"/>
+         <element column="GradoEscolarDesc" name="GradoEscolarDesc" xsdType="string"/>
+         <element column="IntegrantesFamilia" name="IntegrantesFamilia" xsdType="string"/>
+         <element column="FamiliarDiscapacitado" name="FamiliarDiscapacitado" xsdType="string"/>
+         <element column="DerechoHabDiscapacitado" name="DerechoHabDiscapacitado" xsdType="string"/>
+         <element column="AutorizacionFovissste" name="AutorizacionFovissste" xsdType="string"/>
+         <element column="AutorizacionFovisssteDesc" name="AutorizacionFovisssteDesc" xsdType="string"/>
+      </result>
+      <param name="P_REQUEST_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="consultaTitularDependencias" useConfig="SORTEO">
+      <sql>CALL sorteo.PKG_REQUEST.RETRIEVE_DEPENDENCIES_DATA (:P_PERSON_ID, :P_RESULTSET)</sql>
+      <result element="consultaTitularDependenciasResponse" escapeNonPrintableChar="true" rowName="dependencia">
+         <element column="Icp" name="Icp" xsdType="string"/>
+         <element column="Dependencia" name="Dependencia" xsdType="string"/>
+         <element column="Calle" name="Calle" xsdType="string"/>
+         <element column="Colonia" name="Colonia" xsdType="string"/>
+         <element column="CP" name="CP" xsdType="string"/>
+         <element column="MunicipioId" name="MunicipioId" xsdType="string"/>
+         <element column="Municipio" name="Municipio" xsdType="string"/>
+         <element column="EstadoId" name="EstadoId" xsdType="string"/>
+         <element column="Estado" name="Estado" xsdType="string"/>
+         <element column="Lada" name="Lada" xsdType="string"/>
+         <element column="Telefono" name="Telefono" xsdType="string"/>
+         <element column="Sindicato" name="Sindicato" xsdType="string"/>
+         <element column="SeccionId" name="SeccionId" xsdType="string"/>
+         <element column="EstadoSeccionId" name="EstadoSeccionId" xsdType="string"/>
+         <element column="Seccion" name="Seccion" xsdType="string"/>
+         <element column="NombramientoId" name="NombramientoId" xsdType="string"/>
+         <element column="Nombramiento" name="Nombramiento" xsdType="string"/>
+         <element column="SueldoBaseMendual" name="SueldoBaseMensual" xsdType="string"/>
+         <element column="BimestresCotizados" name="BimestresCotizados" xsdType="string"/>
+      </result>
+      <param name="P_PERSON_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="consultaTitularCotizacionFoviissste" useConfig="SORTEO">
+      <sql>CALL sorteo.PKG_REQUEST.RETRIEVE_INFONAVIT_QUOTE (:P_PERSON_ID, :P_RESULTSET)</sql>
+      <result element="consultaTitularCotizacionFoviisssteResponse" escapeNonPrintableChar="true" rowName="cotizacion">
+         <element column="Cotiza_Infonavit" name="Cotiza_Infonavit" xsdType="string"/>
+      </result>
+      <param name="P_PERSON_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="consultaConyugeInformacion" useConfig="SORTEO">
+      <sql>CALL sorteo.PKG_REQUEST.RETRIEVE_CONYUGE_PERSON_DATA (:P_PERSON_ID,:P_RESULTSET)</sql>
+      <result element="consultaConyugeInformacionResponse" escapeNonPrintableChar="true" rowName="conyuge">
+         <element column="ConyugePersonaId" name="ConyugePersonaId" xsdType="string"/>
+         <element column="CURP" name="CURP" xsdType="string"/>
+         <element column="RFC" name="RFC" xsdType="string"/>
+         <element column="ApellidoPaterno" name="ApellidoPaterno" xsdType="string"/>
+         <element column="ApellidoMaterno" name="ApellidoMaterno" xsdType="string"/>
+         <element column="Nombre" name="Nombre" xsdType="string"/>
+         <element column="FechaNacimiento" name="FechaNacimiento" xsdType="string"/>
+         <element column="GeneroId" name="GeneroId" xsdType="string"/>
+         <element column="Genero" name="Genero" xsdType="string"/>
+         <element column="NumeroSeguridadSocial" name="NumeroSeguridadSocial" xsdType="string"/>
+         <element column="ActaMatrimonio" name="ActaMatrimonio" xsdType="string"/>
+         <element column="MontoMaximoAlcanzado" name="MontoMaximoAlcanzado" xsdType="string"/>
+         <element column="MontoMaximoAlcanzadoSM" name="MontoMaximoAlcanzadoSM" xsdType="string"/>
+         <element column="SaldoSar" name="SaldoSar" xsdType="string"/>
+         <element column="MontoMaximoTotal" name="MontoMaximoTotal" xsdType="string"/>
+         <element column="NivelSalarial" name="NivelSalarial" xsdType="string"/>
+         <element column="Origen" name="Origen" xsdType="string"/>
+      </result>
+      <param name="P_PERSON_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="consultaConyugeDependecias" useConfig="SORTEO">
+      <sql>CALL sorteo.PKG_REQUEST.GET_CONYUGE_DEPENDENCIES_DATA (:P_PERSON_ID,:P_RESULTSET)</sql>
+      <result element="consultaConyugeDependeciasResponse" escapeNonPrintableChar="true" rowName="dependecia">
+         <element column="Icp" name="Icp" xsdType="string"/>
+         <element column="Dependencia" name="Dependencia" xsdType="string"/>
+         <element column="Calle" name="Calle" xsdType="string"/>
+         <element column="Colonia" name="Colonia" xsdType="string"/>
+         <element column="CP" name="CP" xsdType="string"/>
+         <element column="MunicipioId" name="MunicipioId" xsdType="string"/>
+         <element column="Municipio" name="Municipio" xsdType="string"/>
+         <element column="EstadoId" name="EstadoId" xsdType="string"/>
+         <element column="Estado" name="Estado" xsdType="string"/>
+         <element column="Lada" name="Lada" xsdType="string"/>
+         <element column="Telefono" name="Telefono" xsdType="string"/>
+         <element column="NombramientoId" name="NombramientoId" xsdType="string"/>
+         <element column="Nombramiento" name="Nombramiento" xsdType="string"/>
+         <element column="SueldoBaseMendual" name="SueldoBaseMensual" xsdType="string"/>
+         <element column="BimestresCotizados" name="BimestresCotizados" xsdType="string"/>
+      </result>
+      <param name="P_PERSON_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <operation name="altaOtorgamientoPuntuaje">
+      <call-query href="altaOtorgamientoPuntuaje">
+         <with-param name="P_KEY" query-param="P_KEY"/>
+         <with-param name="P_DESCRIPTION" query-param="P_DESCRIPTION"/>
+         <with-param name="P_YEAR" query-param="P_YEAR"/>
+         <with-param name="P_NUMBER" query-param="P_NUMBER"/>
+         <with-param name="P_USER_ID" query-param="P_USER_ID"/>
+         <with-param name="P_CREDIT_NUMBER" query-param="P_CREDIT_NUMBER"/>
+      </call-query>
+   </operation>
+   <operation name="consultaHomonimias">
+      <call-query href="consultaHomonimias">
+         <with-param name="P_ACTIVE_DRAW_ID" query-param="P_ACTIVE_DRAW_ID"/>
+         <with-param name="P_RFC" query-param="P_RFC"/>
+         <with-param name="P_STATUS_ID" query-param="P_STATUS_ID"/>
+         <with-param name="P_REVISED" query-param="P_REVISED"/>
+         <with-param name="P_DATE" query-param="P_DATE"/>
+      </call-query>
+   </operation>
+   <operation name="consultaUltimoNumeroSorteo">
+      <call-query href="consultaUltimoNumeroSorteo">
+         <with-param name="P_YEAR" query-param="P_YEAR"/>
+      </call-query>
+   </operation>
+   <operation name="consultaSorteos">
+      <call-query href="consultaSorteos"/>
+   </operation>
+   <operation name="consultaSorteo">
+      <call-query href="consultaSorteo">
+         <with-param name="P_DRAWING_ID" query-param="P_DRAWING_ID"/>
+      </call-query>
+   </operation>
+   <operation name="editarSorteo">
+      <call-query href="editarSorteo">
+         <with-param name="P_DRAWING_ID" query-param="P_DRAWING_ID"/>
+         <with-param name="P_KEY" query-param="P_KEY"/>
+         <with-param name="P_DESCRIPTION" query-param="P_DESCRIPTION"/>
+         <with-param name="P_YEAR" query-param="P_YEAR"/>
+         <with-param name="P_STATUS_ID" query-param="P_STATUS_ID"/>
+         <with-param name="P_ACCOUNT_STATUS" query-param="P_ACCOUNT_STATUS"/>
+         <with-param name="P_QUERY_STATUS" query-param="P_QUERY_STATUS"/>
+         <with-param name="P_CHANGE_USER_ID" query-param="P_CHANGE_USER_ID"/>
+         <with-param name="P_START_DATE" query-param="P_START_DATE"/>
+         <with-param name="P_END_DATE" query-param="P_END_DATE"/>
+         <with-param name="P_CREDIT_NUMBER" query-param="P_CREDIT_NUMBER"/>
+      </call-query>
+   </operation>
+   <operation name="consultaCreditoCurp">
+      <call-query href="consultaCreditoCurp">
+         <with-param name="P_CURP" query-param="P_CURP"/>
+         <with-param name="P_STATUS_ID" query-param="P_STATUS_ID"/>
+      </call-query>
+   </operation>
+   <operation name="consultaCreditoDetalle">
+      <call-query href="consultaCreditoDetalle">
+         <with-param name="P_REQUEST_ID" query-param="P_REQUEST_ID"/>
+      </call-query>
+   </operation>
+   <operation name="consultaTitularInformacionPrincipal">
+      <call-query href="consultaTitularInformacionPrincipal">
+         <with-param name="P_PERSON_ID" query-param="P_PERSON_ID"/>
+      </call-query>
+   </operation>
+   <operation name="consultaTitularDireccion">
+      <call-query href="consultaTitularDireccion">
+         <with-param name="P_PERSON_ID" query-param="P_PERSON_ID"/>
+      </call-query>
+   </operation>
+   <operation name="consultaTitularDireccionAdicional">
+      <call-query href="consultaTitularDireccionAdicional">
+         <with-param name="P_REQUEST_ID" query-param="P_REQUEST_ID"/>
+      </call-query>
+   </operation>
+   <operation name="consultaTitularInformacionAdicional">
+      <call-query href="consultaTitularInformacionAdicional">
+         <with-param name="P_REQUEST_ID" query-param="P_REQUEST_ID"/>
+      </call-query>
+   </operation>
+   <operation name="consultaTitularDependencias">
+      <call-query href="consultaTitularDependencias">
+         <with-param name="P_PERSON_ID" query-param="P_PERSON_ID"/>
+      </call-query>
+   </operation>
+   <operation name="consultaTitularCotizacionFoviissste">
+      <call-query href="consultaTitularCotizacionFoviissste">
+         <with-param name="P_PERSON_ID" query-param="P_PERSON_ID"/>
+      </call-query>
+   </operation>
+   <operation name="consultaConyugeInformacion">
+      <call-query href="consultaConyugeInformacion">
+         <with-param name="P_PERSON_ID" query-param="P_PERSON_ID"/>
+      </call-query>
+   </operation>
+   <operation name="consultaConyugeDependecias">
+      <call-query href="consultaConyugeDependecias">
+         <with-param name="P_PERSON_ID" query-param="P_PERSON_ID"/>
+      </call-query>
+   </operation>
+</data>
