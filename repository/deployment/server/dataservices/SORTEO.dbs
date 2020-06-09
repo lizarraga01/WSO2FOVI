@@ -102,8 +102,8 @@
       <param name="P_ACCOUNT_STATUS" sqlType="STRING"/>
       <param name="P_QUERY_STATUS" sqlType="STRING"/>
       <param name="P_CHANGE_USER_ID" sqlType="STRING"/>
-      <param name="P_START_DATE" sqlType="STRING"/>
-      <param name="P_END_DATE" sqlType="STRING"/>
+      <param name="P_START_DATE" optional="false" sqlType="DATE"/>
+      <param name="P_END_DATE" optional="false" sqlType="DATE"/>
       <param name="P_CREDIT_NUMBER" sqlType="STRING"/>
    </query>
    <query id="consultaCreditoCurp" useConfig="SORTEO">
@@ -310,6 +310,283 @@
       <param name="P_PERSON_ID" sqlType="STRING"/>
       <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
    </query>
+   <query id="actualizacionTitular" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.UPDATE_TITULAR(:P_SINGLE_MOTHER_ID, :P_LADA_CODE, :P_PHONE_NUMBER, :P_MOBILE_PHONE, :P_EMAIL, :P_CIVIL_STATUS_ID, :P_MAX_AMOUNT_REACH_PESOS, :P_MAX_AMT_REACH_MIN_SAL, :P_BALANCE, :P_MAX_AMT_TOTAL, :P_SALARY_LEVEL, :P_USER_ID, :P_PERSON_ID)</sql>
+      <result element="actualizacionTitularResponse" rowName="actualizacionTitular" useColumnNumbers="true">
+         <element column="1" name="resultado" xsdType="integer"/>
+      </result>
+      <param name="P_SINGLE_MOTHER_ID" sqlType="STRING"/>
+      <param name="P_LADA_CODE" sqlType="STRING"/>
+      <param name="P_PHONE_NUMBER" sqlType="STRING"/>
+      <param name="P_MOBILE_PHONE" sqlType="STRING"/>
+      <param name="P_EMAIL" sqlType="STRING"/>
+      <param name="P_CIVIL_STATUS_ID" sqlType="STRING"/>
+      <param name="P_MAX_AMOUNT_REACH_PESOS" sqlType="STRING"/>
+      <param name="P_MAX_AMT_REACH_MIN_SAL" sqlType="STRING"/>
+      <param name="P_BALANCE" sqlType="STRING"/>
+      <param name="P_MAX_AMT_TOTAL" sqlType="STRING"/>
+      <param name="P_SALARY_LEVEL" sqlType="STRING"/>
+      <param name="P_USER_ID" sqlType="STRING"/>
+      <param name="P_PERSON_ID" sqlType="STRING"/>
+   </query>
+   <query id="actualizacionCredito" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.UPDATE_CREDIT(:P_REQUEST_TYPE_ID, :P_MUNICIPALITY_ID, :P_ADQ_TYPE_ID, :P_CREDIT_LINE, :P_CONSTR_TYPE, :P_MAX_AMT_REACHED, :P_MAX_AMT_REACH_MIN_SAL, :P_SAR_BALANCE, :P_MAX_TOTAL_AMT, :P_MIN_SAL_VALUE, :P_HOUSING_TYPE_ID, :P_HOMO_RFC_BLOCK, :P_HOMO_DRAW, :P_HOMO_ORIGIN, :P_HOMO_PORTFOLIO, :P_USER_ID, :P_REQUEST_ID)</sql>
+      <result element="actualizacionCreditoResponse" rowName="actualizacionCredito" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param name="P_REQUEST_TYPE_ID" sqlType="STRING"/>
+      <param name="P_MUNICIPALITY_ID" sqlType="STRING"/>
+      <param name="P_ADQ_TYPE_ID" sqlType="STRING"/>
+      <param name="P_CREDIT_LINE" sqlType="STRING"/>
+      <param name="P_MAX_AMT_REACHED" sqlType="STRING"/>
+      <param name="P_MAX_AMT_REACH_MIN_SAL" sqlType="STRING"/>
+      <param name="P_SAR_BALANCE" sqlType="STRING"/>
+      <param name="P_MAX_TOTAL_AMT" sqlType="STRING"/>
+      <param name="P_MIN_SAL_VALUE" sqlType="STRING"/>
+      <param name="P_HOUSING_TYPE_ID" sqlType="STRING"/>
+      <param name="P_HOMO_RFC_BLOCK" sqlType="STRING"/>
+      <param name="P_HOMO_DRAW" sqlType="STRING"/>
+      <param name="P_HOMO_ORIGIN" sqlType="STRING"/>
+      <param name="P_HOMO_PORTFOLIO" sqlType="STRING"/>
+      <param name="P_USER_ID" sqlType="STRING"/>
+      <param name="P_REQUEST_ID" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="P_CONSTR_TYPE" optional="false" sqlType="STRING"/>
+   </query>
+   <query id="actualizaDireccionTitular" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.UPDATE_ADRESS(:P_MUNICIPALITY_ID, :P_STREET, :P_EXT_NUMBER, :P_INT_NUMBER, :P_ZIP, :P_NEIGHBORHOOD, :P_USER_ID, :P_PERSON_ID)</sql>
+      <result element="actualizaDireccionTitularResponse" rowName="actualizaDireccionTitular" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param name="P_MUNICIPALITY_ID" sqlType="STRING"/>
+      <param name="P_STREET" sqlType="STRING"/>
+      <param name="P_EXT_NUMBER" sqlType="STRING"/>
+      <param name="P_INT_NUMBER" sqlType="STRING"/>
+      <param name="P_ZIP" sqlType="STRING"/>
+      <param name="P_NEIGHBORHOOD" sqlType="STRING"/>
+      <param name="P_USER_ID" sqlType="STRING"/>
+      <param name="P_PERSON_ID" sqlType="STRING"/>
+   </query>
+   <query id="consultaDependenciaId" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_COORDINATORS.GET_BY_DEPENDENCY_ID(:P_DEPENDENCY_ID, :P_RESULTSET)</sql>
+      <result element="consultaDependenciaIdResponse" escapeNonPrintableChar="true" rowName="consultaDependenciaId">
+         <element column="ID_COORDINADORA" name="ID_COORDINADORA" xsdType="string"/>
+      </result>
+      <param name="P_DEPENDENCY_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="InsertaBitacora" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.Insert_IPInfo(:N_Curp, :N_IPInt, :N_IPPub, :N_Host, :N_MAC)</sql>
+      <result element="InsertaBitacoraResponse" rowName="InsertaBitacora" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param name="N_Curp" sqlType="STRING"/>
+      <param name="N_IPInt" sqlType="STRING"/>
+      <param name="N_IPPub" sqlType="STRING"/>
+      <param name="N_Host" sqlType="STRING"/>
+      <param name="N_MAC" sqlType="STRING"/>
+   </query>
+   <query id="ConsultaCoordinador" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.DETERMINE_COORDINATOR(:P_COORDINATOR_ID, :P_NOMBRAMIENTO_ID, :P_RESULTSET)</sql>
+      <result element="ConsultaCoordinadorResponse" escapeNonPrintableChar="true" rowName="ConsultaCoordinador" useColumnNumbers="true">
+         <element column="1" name="coordinadora" xsdType="string"/>
+      </result>
+      <param name="P_COORDINATOR_ID" sqlType="STRING"/>
+      <param name="P_NOMBRAMIENTO_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="consultaSeccionDomicilio" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_DEPENDENCY.GET_APPLY_RES_SECT_BY_DEP_ID(:P_DEPENDENCY_ID, :P_RESULTSET)</sql>
+      <result element="consultaSeccionDomicilioResponse" escapeNonPrintableChar="true" rowName="consultaSeccionDomicilio">
+         <element column="Aplica_Seccion_Domicilio" name="AplicaSeccionDomicilio" xsdType="string"/>
+      </result>
+      <param name="P_DEPENDENCY_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="actualizaMunicipioSorteo" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.UPDATE_DRAWING_MUNICIPALITY(:P_DEPENDENCY_ID, :P_PERSON_ID)</sql>
+      <result element="actualizaMunicipioSorteoResponse" rowName="actualizaMunicipioSorteo" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param name="P_DEPENDENCY_ID" sqlType="STRING"/>
+      <param name="P_PERSON_ID" sqlType="STRING"/>
+   </query>
+   <query id="actualizaInformacionAdicional" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.UPDATE_ADDIT_INFO(:P_SCHOLAR_GRADE, :P_FAMILY_MEMBERS,:P_HANDYCAPPED, :P_HANDYCAPPED_ME, :P_AUTH_FOVISSSTE,:P_USER_ID, :P_REQUEST_ID)</sql>
+      <result element="actualizaInformacionAdicionalResponse" rowName="actualizaInformacionAdicional" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param defaultValue="#{NULL}" name="P_SCHOLAR_GRADE" sqlType="STRING"/>
+      <param name="P_FAMILY_MEMBERS" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="P_HANDYCAPPED" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="P_HANDYCAPPED_ME" sqlType="STRING"/>
+      <param name="P_AUTH_FOVISSSTE" sqlType="STRING"/>
+      <param name="P_USER_ID" sqlType="STRING"/>
+      <param name="P_REQUEST_ID" sqlType="STRING"/>
+   </query>
+   <query id="actualizaDatosLaboralesPrincipalesTitular" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.UPDATE_MAIN_WORK_DATA(:P_NOMBRAMIENTO_ID, :P_BASE_SALARY, :P_PERIOD, :P_DESC_UNION, :P_SECTION_ID, :P_STATE_ID, :P_DEPENDENCY_ID, :P_COORD_NOMBRAM_ID, :P_USER_ID, :P_PERSON_ID)</sql>
+      <result element="actualizaDatosLaboralesPrincipalesTitularResponse" rowName="actualizaDatosLaboralesPrincipalesTitula" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param name="P_NOMBRAMIENTO_ID" sqlType="STRING"/>
+      <param name="P_BASE_SALARY" sqlType="STRING"/>
+      <param name="P_PERIOD" sqlType="STRING"/>
+      <param name="P_DESC_UNION" sqlType="STRING"/>
+      <param name="P_SECTION_ID" sqlType="STRING"/>
+      <param name="P_STATE_ID" sqlType="STRING"/>
+      <param name="P_DEPENDENCY_ID" sqlType="STRING"/>
+      <param name="P_COORD_NOMBRAM_ID" sqlType="STRING"/>
+      <param name="P_USER_ID" sqlType="STRING"/>
+      <param name="P_PERSON_ID" sqlType="STRING"/>
+   </query>
+   <query id="consultaSegundaDependecia" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.PERSON_HAD_SEC_DEPEND(:P_PERSON_ID, :P_RESULTSET)</sql>
+      <result element="consultaSegundaDependeciaResponse" escapeNonPrintableChar="true" rowName="consultaSegundaDependecia">
+         <element column="COUNT(0)" name="respuesta" xsdType="string"/>
+      </result>
+      <param name="P_PERSON_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="actualizaSegundaDependecia" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.UPDATE_SEC_WORK_DATA(:P_NOMBRAMIENTO_ID, :P_BASE_SALARY, :P_PERIOD, :P_DEPENDENCY_ID, :P_USER_ID, :P_PERSON_ID)</sql>
+      <result element="actualizaSegundaDependeciaResponse" escapeNonPrintableChar="true" rowName="actualizaSegundaDependecia" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param name="P_NOMBRAMIENTO_ID" sqlType="STRING"/>
+      <param name="P_BASE_SALARY" sqlType="STRING"/>
+      <param name="P_PERIOD" sqlType="STRING"/>
+      <param name="P_DEPENDENCY_ID" sqlType="STRING"/>
+      <param name="P_USER_ID" sqlType="STRING"/>
+      <param name="P_PERSON_ID" sqlType="STRING"/>
+   </query>
+   <query id="insertaSegundaDependencia" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.INSERT_SEC_WORK_DATA(:P_NOMBRAMIENTO_ID, :P_BASE_SALARY, :P_PERIOD, :P_DEPENDENCY_ID, :P_USER_ID, :P_PERSON_ID)</sql>
+      <result element="insertaSegundaDependenciaResponse" rowName="insertaSegundaDependencia" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param name="P_NOMBRAMIENTO_ID" sqlType="STRING"/>
+      <param name="P_BASE_SALARY" sqlType="STRING"/>
+      <param name="P_PERIOD" sqlType="STRING"/>
+      <param name="P_DEPENDENCY_ID" sqlType="STRING"/>
+      <param name="P_USER_ID" sqlType="STRING"/>
+      <param name="P_PERSON_ID" sqlType="STRING"/>
+   </query>
+   <query id="eliminarSegundaDependencia" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.DELETE_SEC_WORK_DATA(:P_PERSON_ID)</sql>
+      <result element="eliminarSegundaDependenciaResponse" rowName="eliminarSegundaDependencia" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param name="P_PERSON_ID" sqlType="STRING"/>
+   </query>
+   <query id="consultaConyuge" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.TITULAR_HAD_CONYUGE(:P_PERSON_ID, :P_RESULTSET)</sql>
+      <result element="consultaConyugeResponse" escapeNonPrintableChar="true" rowName="consultaConyuge">
+         <element column="COUNT(0)" name="existe" xsdType="string"/>
+      </result>
+      <param name="P_PERSON_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="actualizacionConyuge" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.UPDATE_CONYUGE(:P_GENRE_ID, :P_NAME, :P_FATHER_LAST_NAME, :P_MOTHER_LAST_NAME, :P_RFC, :P_CURP, :P_BIRTH_DATE, :P_MAX_AMT_REACHED, :P_MAX_AMT_REACHED_MIN_SAL, :P_SAR_BALANCE, :P_MAX_TOTAL_AMT, :P_INFONAVIT_QUOTE, :P_SOCIAL_SEC_NO, :P_MARRIAGE_ACT, :P_ORIGIN, :P_USER_ID, :P_PERSON_ID)</sql>
+      <result element="actualizacionConyugeResponse" rowName="actualizacionConyuge" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param name="P_GENRE_ID" sqlType="STRING"/>
+      <param name="P_NAME" sqlType="STRING"/>
+      <param name="P_FATHER_LAST_NAME" sqlType="STRING"/>
+      <param name="P_MOTHER_LAST_NAME" sqlType="STRING"/>
+      <param name="P_RFC" sqlType="STRING"/>
+      <param name="P_CURP" sqlType="STRING"/>
+      <param name="P_BIRTH_DATE" sqlType="STRING"/>
+      <param name="P_MAX_AMT_REACHED" sqlType="STRING"/>
+      <param name="P_MAX_AMT_REACHED_MIN_SAL" sqlType="STRING"/>
+      <param name="P_SAR_BALANCE" sqlType="STRING"/>
+      <param name="P_MAX_TOTAL_AMT" sqlType="STRING"/>
+      <param name="P_INFONAVIT_QUOTE" sqlType="STRING"/>
+      <param name="P_SOCIAL_SEC_NO" sqlType="STRING"/>
+      <param name="P_MARRIAGE_ACT" sqlType="STRING"/>
+      <param name="P_ORIGIN" sqlType="STRING"/>
+      <param name="P_USER_ID" sqlType="STRING"/>
+      <param name="P_PERSON_ID" sqlType="STRING"/>
+   </query>
+   <query id="actualizaDatosLaboralesConyuge" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.UPDATE_CONY_MAIN_WORK(:P_NOMBRAMIENTO_ID,:P_BASE_SALARY, :P_PERIOD, :P_DEPENDENCY_ID, :P_USER_ID, :P_PERSON_ID)</sql>
+      <result element="actualizaDatosLaboralesConyugeResponse" rowName="actualizaDatosLaboralesConyuge" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param name="P_NOMBRAMIENTO_ID" sqlType="STRING"/>
+      <param name="P_BASE_SALARY" sqlType="STRING"/>
+      <param name="P_PERIOD" sqlType="STRING"/>
+      <param name="P_DEPENDENCY_ID" sqlType="STRING"/>
+      <param name="P_USER_ID" sqlType="STRING"/>
+      <param name="P_PERSON_ID" sqlType="STRING"/>
+   </query>
+   <query id="insertaDatosLaboralesConyuge" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.INSERT_MAIN_WORK_DATA(:P_NOMBRAMIENTO_ID, :P_BASE_SALARY, :P_PERIOD, :P_DEPENDENCY_ID, :P_USER_ID, :P_PERSON_ID)</sql>
+      <result element="insertaDatosLaboralesConyugeResponse" rowName="insertaDatosLaboralesConyuge" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param name="P_NOMBRAMIENTO_ID" sqlType="STRING"/>
+      <param name="P_BASE_SALARY" sqlType="STRING"/>
+      <param name="P_PERIOD" sqlType="STRING"/>
+      <param name="P_DEPENDENCY_ID" sqlType="STRING"/>
+      <param name="P_USER_ID" sqlType="STRING"/>
+      <param name="P_PERSON_ID" sqlType="STRING"/>
+   </query>
+   <query id="actualizacionSolictud" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.UPDATE_REQUEST(:P_REQUEST_ID, :P_USER_ID)</sql>
+      <result element="actualizacionSolictudResponse" rowName="actualizacionSolictud" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param name="P_REQUEST_ID" sqlType="STRING"/>
+      <param name="P_USER_ID" sqlType="STRING"/>
+   </query>
+   <query id="eliminarDatosLaboralesConyuge" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.DELETE_CONY_WORK_DATA_TITULAR(:P_MAIN_PERSON_ID)</sql>
+      <result element="eliminarDatosLaboralesConyugeResponse" rowName="eliminarDatosLaboralesConyuge" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param name="P_MAIN_PERSON_ID" sqlType="STRING"/>
+   </query>
+   <query id="eliminarConyuge" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.DELETE_CONYUGE(:P_PERSON_ID)</sql>
+      <result element="eliminarConyugeResponse" rowName="eliminarConyuge" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param name="P_PERSON_ID" sqlType="STRING"/>
+   </query>
+   <query id="actualizacionSolictudNoProcesar" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.UPDATE_REQUEST_NO_PROCESS(:P_USER_ID, :P_REQUEST_ID)</sql>
+      <result element="actualizacionSolictudNoProcesarResponse" escapeNonPrintableChar="true" rowName="actualizacionSolictudNoProcesar" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param name="P_USER_ID" sqlType="STRING"/>
+      <param name="P_REQUEST_ID" sqlType="STRING"/>
+   </query>
+   <query id="recalculoPuntosEstado" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_RECALCULO_PUNTAJE.SP_RECALCULO_PUNTOS_ESTADO(:P_NO_SOLICITUD, :P_ESTADO)</sql>
+      <result element="recalculoPuntosEstadoResponse" rowName="recalculoPuntosEstado" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param name="P_NO_SOLICITUD" sqlType="STRING"/>
+      <param name="P_ESTADO" sqlType="STRING"/>
+   </query>
+   <query id="recalculoPuntosBimestre" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_RECALCULO_PUNTAJE.SP_RECALCULO_PUNTOS_BIMESTRE(:P_NO_SOLICITUD, :P_BIMESTRE)</sql>
+      <result element="recalculoPuntosBimestreResponse" escapeNonPrintableChar="true" rowName="recalculoPuntosBimestre" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param name="P_NO_SOLICITUD" sqlType="STRING"/>
+      <param name="P_BIMESTRE" sqlType="STRING"/>
+   </query>
+   <query id="recalculoPuntosFamilia" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_RECALCULO_PUNTAJE.SP_RECALCULO_PUNTOS_FAMILIA(:P_NO_SOLICITUD, :P_FAMILIA)</sql>
+      <result element="recalculoPuntosFamiliaResponse" rowName="recalculoPuntosFamilia" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param name="P_NO_SOLICITUD" sqlType="STRING"/>
+      <param name="P_FAMILIA" sqlType="STRING"/>
+   </query>
    <operation name="altaOtorgamientoPuntuaje">
       <call-query href="altaOtorgamientoPuntuaje">
          <with-param name="P_KEY" query-param="P_KEY"/>
@@ -406,6 +683,228 @@
    <operation name="consultaConyugeDependecias">
       <call-query href="consultaConyugeDependecias">
          <with-param name="P_PERSON_ID" query-param="P_PERSON_ID"/>
+      </call-query>
+   </operation>
+   <operation name="actualizacionTitular">
+      <call-query href="actualizacionTitular">
+         <with-param name="P_SINGLE_MOTHER_ID" query-param="P_SINGLE_MOTHER_ID"/>
+         <with-param name="P_LADA_CODE" query-param="P_LADA_CODE"/>
+         <with-param name="P_PHONE_NUMBER" query-param="P_PHONE_NUMBER"/>
+         <with-param name="P_MOBILE_PHONE" query-param="P_MOBILE_PHONE"/>
+         <with-param name="P_EMAIL" query-param="P_EMAIL"/>
+         <with-param name="P_CIVIL_STATUS_ID" query-param="P_CIVIL_STATUS_ID"/>
+         <with-param name="P_MAX_AMOUNT_REACH_PESOS" query-param="P_MAX_AMOUNT_REACH_PESOS"/>
+         <with-param name="P_MAX_AMT_REACH_MIN_SAL" query-param="P_MAX_AMT_REACH_MIN_SAL"/>
+         <with-param name="P_BALANCE" query-param="P_BALANCE"/>
+         <with-param name="P_MAX_AMT_TOTAL" query-param="P_MAX_AMT_TOTAL"/>
+         <with-param name="P_SALARY_LEVEL" query-param="P_SALARY_LEVEL"/>
+         <with-param name="P_USER_ID" query-param="P_USER_ID"/>
+         <with-param name="P_PERSON_ID" query-param="P_PERSON_ID"/>
+      </call-query>
+   </operation>
+   <operation name="actualizacionCredito">
+      <call-query href="actualizacionCredito">
+         <with-param name="P_REQUEST_TYPE_ID" query-param="P_REQUEST_TYPE_ID"/>
+         <with-param name="P_MUNICIPALITY_ID" query-param="P_MUNICIPALITY_ID"/>
+         <with-param name="P_ADQ_TYPE_ID" query-param="P_ADQ_TYPE_ID"/>
+         <with-param name="P_CREDIT_LINE" query-param="P_CREDIT_LINE"/>
+         <with-param name="P_MAX_AMT_REACHED" query-param="P_MAX_AMT_REACHED"/>
+         <with-param name="P_MAX_AMT_REACH_MIN_SAL" query-param="P_MAX_AMT_REACH_MIN_SAL"/>
+         <with-param name="P_SAR_BALANCE" query-param="P_SAR_BALANCE"/>
+         <with-param name="P_MAX_TOTAL_AMT" query-param="P_MAX_TOTAL_AMT"/>
+         <with-param name="P_MIN_SAL_VALUE" query-param="P_MIN_SAL_VALUE"/>
+         <with-param name="P_HOUSING_TYPE_ID" query-param="P_HOUSING_TYPE_ID"/>
+         <with-param name="P_HOMO_RFC_BLOCK" query-param="P_HOMO_RFC_BLOCK"/>
+         <with-param name="P_HOMO_DRAW" query-param="P_HOMO_DRAW"/>
+         <with-param name="P_HOMO_ORIGIN" query-param="P_HOMO_ORIGIN"/>
+         <with-param name="P_HOMO_PORTFOLIO" query-param="P_HOMO_PORTFOLIO"/>
+         <with-param name="P_USER_ID" query-param="P_USER_ID"/>
+         <with-param name="P_REQUEST_ID" query-param="P_REQUEST_ID"/>
+         <with-param name="P_CONSTR_TYPE" query-param="P_CONSTR_TYPE"/>
+      </call-query>
+   </operation>
+   <operation name="actualizaDireccionTitular">
+      <call-query href="actualizaDireccionTitular">
+         <with-param name="P_MUNICIPALITY_ID" query-param="P_MUNICIPALITY_ID"/>
+         <with-param name="P_STREET" query-param="P_STREET"/>
+         <with-param name="P_EXT_NUMBER" query-param="P_EXT_NUMBER"/>
+         <with-param name="P_INT_NUMBER" query-param="P_INT_NUMBER"/>
+         <with-param name="P_ZIP" query-param="P_ZIP"/>
+         <with-param name="P_NEIGHBORHOOD" query-param="P_NEIGHBORHOOD"/>
+         <with-param name="P_USER_ID" query-param="P_USER_ID"/>
+         <with-param name="P_PERSON_ID" query-param="P_PERSON_ID"/>
+      </call-query>
+   </operation>
+   <operation name="consultaDependenciaId">
+      <call-query href="consultaDependenciaId">
+         <with-param name="P_DEPENDENCY_ID" query-param="P_DEPENDENCY_ID"/>
+      </call-query>
+   </operation>
+   <operation name="InsertaBitacora">
+      <call-query href="InsertaBitacora">
+         <with-param name="N_Curp" query-param="N_Curp"/>
+         <with-param name="N_IPInt" query-param="N_IPInt"/>
+         <with-param name="N_IPPub" query-param="N_IPPub"/>
+         <with-param name="N_Host" query-param="N_Host"/>
+         <with-param name="N_MAC" query-param="N_MAC"/>
+      </call-query>
+   </operation>
+   <operation name="ConsultaCoordinador">
+      <call-query href="ConsultaCoordinador">
+         <with-param name="P_COORDINATOR_ID" query-param="P_COORDINATOR_ID"/>
+         <with-param name="P_NOMBRAMIENTO_ID" query-param="P_NOMBRAMIENTO_ID"/>
+      </call-query>
+   </operation>
+   <operation name="consultaSeccionDomicilio">
+      <call-query href="consultaSeccionDomicilio">
+         <with-param name="P_DEPENDENCY_ID" query-param="P_DEPENDENCY_ID"/>
+      </call-query>
+   </operation>
+   <operation name="actualizaMunicipioSorteo">
+      <call-query href="actualizaMunicipioSorteo">
+         <with-param name="P_DEPENDENCY_ID" query-param="P_DEPENDENCY_ID"/>
+         <with-param name="P_PERSON_ID" query-param="P_PERSON_ID"/>
+      </call-query>
+   </operation>
+   <operation name="actualizaInformacionAdicional">
+      <call-query href="actualizaInformacionAdicional">
+         <with-param name="P_SCHOLAR_GRADE" query-param="P_SCHOLAR_GRADE"/>
+         <with-param name="P_FAMILY_MEMBERS" query-param="P_FAMILY_MEMBERS"/>
+         <with-param name="P_HANDYCAPPED" query-param="P_HANDYCAPPED"/>
+         <with-param name="P_HANDYCAPPED_ME" query-param="P_HANDYCAPPED_ME"/>
+         <with-param name="P_AUTH_FOVISSSTE" query-param="P_AUTH_FOVISSSTE"/>
+         <with-param name="P_USER_ID" query-param="P_USER_ID"/>
+         <with-param name="P_REQUEST_ID" query-param="P_REQUEST_ID"/>
+      </call-query>
+   </operation>
+   <operation name="actualizaDatosLaboralesPrincipalesTitula">
+      <call-query href="actualizaDatosLaboralesPrincipalesTitular">
+         <with-param name="P_NOMBRAMIENTO_ID" query-param="P_NOMBRAMIENTO_ID"/>
+         <with-param name="P_BASE_SALARY" query-param="P_BASE_SALARY"/>
+         <with-param name="P_PERIOD" query-param="P_PERIOD"/>
+         <with-param name="P_DESC_UNION" query-param="P_DESC_UNION"/>
+         <with-param name="P_SECTION_ID" query-param="P_SECTION_ID"/>
+         <with-param name="P_STATE_ID" query-param="P_STATE_ID"/>
+         <with-param name="P_DEPENDENCY_ID" query-param="P_DEPENDENCY_ID"/>
+         <with-param name="P_COORD_NOMBRAM_ID" query-param="P_COORD_NOMBRAM_ID"/>
+         <with-param name="P_USER_ID" query-param="P_USER_ID"/>
+         <with-param name="P_PERSON_ID" query-param="P_PERSON_ID"/>
+      </call-query>
+   </operation>
+   <operation name="consultaSegundaDependecia">
+      <call-query href="consultaSegundaDependecia">
+         <with-param name="P_PERSON_ID" query-param="P_PERSON_ID"/>
+      </call-query>
+   </operation>
+   <operation name="actualizaSegundaDependecia">
+      <call-query href="actualizaSegundaDependecia">
+         <with-param name="P_NOMBRAMIENTO_ID" query-param="P_NOMBRAMIENTO_ID"/>
+         <with-param name="P_BASE_SALARY" query-param="P_BASE_SALARY"/>
+         <with-param name="P_PERIOD" query-param="P_PERIOD"/>
+         <with-param name="P_DEPENDENCY_ID" query-param="P_DEPENDENCY_ID"/>
+         <with-param name="P_USER_ID" query-param="P_USER_ID"/>
+         <with-param name="P_PERSON_ID" query-param="P_PERSON_ID"/>
+      </call-query>
+   </operation>
+   <operation name="insertaSegundaDependencia">
+      <call-query href="insertaSegundaDependencia">
+         <with-param name="P_NOMBRAMIENTO_ID" query-param="P_NOMBRAMIENTO_ID"/>
+         <with-param name="P_BASE_SALARY" query-param="P_BASE_SALARY"/>
+         <with-param name="P_PERIOD" query-param="P_PERIOD"/>
+         <with-param name="P_DEPENDENCY_ID" query-param="P_DEPENDENCY_ID"/>
+         <with-param name="P_USER_ID" query-param="P_USER_ID"/>
+         <with-param name="P_PERSON_ID" query-param="P_PERSON_ID"/>
+      </call-query>
+   </operation>
+   <operation name="eliminarSegundaDependencia">
+      <call-query href="eliminarSegundaDependencia">
+         <with-param name="P_PERSON_ID" query-param="P_PERSON_ID"/>
+      </call-query>
+   </operation>
+   <operation name="consultaConyuge">
+      <call-query href="consultaConyuge">
+         <with-param name="P_PERSON_ID" query-param="P_PERSON_ID"/>
+      </call-query>
+   </operation>
+   <operation name="actualizacionConyuge">
+      <call-query href="actualizacionConyuge">
+         <with-param name="P_GENRE_ID" query-param="P_GENRE_ID"/>
+         <with-param name="P_NAME" query-param="P_NAME"/>
+         <with-param name="P_FATHER_LAST_NAME" query-param="P_FATHER_LAST_NAME"/>
+         <with-param name="P_MOTHER_LAST_NAME" query-param="P_MOTHER_LAST_NAME"/>
+         <with-param name="P_RFC" query-param="P_RFC"/>
+         <with-param name="P_CURP" query-param="P_CURP"/>
+         <with-param name="P_BIRTH_DATE" query-param="P_BIRTH_DATE"/>
+         <with-param name="P_MAX_AMT_REACHED" query-param="P_MAX_AMT_REACHED"/>
+         <with-param name="P_MAX_AMT_REACHED_MIN_SAL" query-param="P_MAX_AMT_REACHED_MIN_SAL"/>
+         <with-param name="P_SAR_BALANCE" query-param="P_SAR_BALANCE"/>
+         <with-param name="P_MAX_TOTAL_AMT" query-param="P_MAX_TOTAL_AMT"/>
+         <with-param name="P_INFONAVIT_QUOTE" query-param="P_INFONAVIT_QUOTE"/>
+         <with-param name="P_SOCIAL_SEC_NO" query-param="P_SOCIAL_SEC_NO"/>
+         <with-param name="P_MARRIAGE_ACT" query-param="P_MARRIAGE_ACT"/>
+         <with-param name="P_ORIGIN" query-param="P_ORIGIN"/>
+         <with-param name="P_USER_ID" query-param="P_USER_ID"/>
+         <with-param name="P_PERSON_ID" query-param="P_PERSON_ID"/>
+      </call-query>
+   </operation>
+   <operation name="actualizaDatosLaboralesConyuge">
+      <call-query href="actualizaDatosLaboralesConyuge">
+         <with-param name="P_NOMBRAMIENTO_ID" query-param="P_NOMBRAMIENTO_ID"/>
+         <with-param name="P_BASE_SALARY" query-param="P_BASE_SALARY"/>
+         <with-param name="P_PERIOD" query-param="P_PERIOD"/>
+         <with-param name="P_DEPENDENCY_ID" query-param="P_DEPENDENCY_ID"/>
+         <with-param name="P_USER_ID" query-param="P_USER_ID"/>
+         <with-param name="P_PERSON_ID" query-param="P_PERSON_ID"/>
+      </call-query>
+   </operation>
+   <operation name="insertaDatosLaboralesConyuge">
+      <call-query href="insertaDatosLaboralesConyuge">
+         <with-param name="P_NOMBRAMIENTO_ID" query-param="P_NOMBRAMIENTO_ID"/>
+         <with-param name="P_BASE_SALARY" query-param="P_BASE_SALARY"/>
+         <with-param name="P_PERIOD" query-param="P_PERIOD"/>
+         <with-param name="P_DEPENDENCY_ID" query-param="P_DEPENDENCY_ID"/>
+         <with-param name="P_USER_ID" query-param="P_USER_ID"/>
+         <with-param name="P_PERSON_ID" query-param="P_PERSON_ID"/>
+      </call-query>
+   </operation>
+   <operation name="actualizacionSolictud">
+      <call-query href="actualizacionSolictud">
+         <with-param name="P_REQUEST_ID" query-param="P_REQUEST_ID"/>
+         <with-param name="P_USER_ID" query-param="P_USER_ID"/>
+      </call-query>
+   </operation>
+   <operation name="eliminarDatosLaboralesConyuge">
+      <call-query href="eliminarDatosLaboralesConyuge">
+         <with-param name="P_MAIN_PERSON_ID" query-param="P_MAIN_PERSON_ID"/>
+      </call-query>
+   </operation>
+   <operation name="eliminarConyuge">
+      <call-query href="eliminarConyuge">
+         <with-param name="P_PERSON_ID" query-param="P_PERSON_ID"/>
+      </call-query>
+   </operation>
+   <operation name="actualizacionSolictudNoProcesar">
+      <call-query href="actualizacionSolictudNoProcesar">
+         <with-param name="P_USER_ID" query-param="P_USER_ID"/>
+         <with-param name="P_REQUEST_ID" query-param="P_REQUEST_ID"/>
+      </call-query>
+   </operation>
+   <operation name="recalculoPuntosEstado">
+      <call-query href="recalculoPuntosEstado">
+         <with-param name="P_NO_SOLICITUD" query-param="P_NO_SOLICITUD"/>
+         <with-param name="P_ESTADO" query-param="P_ESTADO"/>
+      </call-query>
+   </operation>
+   <operation name="recalculoPuntosBimestre">
+      <call-query href="recalculoPuntosBimestre">
+         <with-param name="P_NO_SOLICITUD" query-param="P_NO_SOLICITUD"/>
+         <with-param name="P_BIMESTRE" query-param="P_BIMESTRE"/>
+      </call-query>
+   </operation>
+   <operation name="recalculoPuntosFamilia">
+      <call-query href="recalculoPuntosFamilia">
+         <with-param name="P_NO_SOLICITUD" query-param="P_NO_SOLICITUD"/>
+         <with-param name="P_FAMILIA" query-param="P_FAMILIA"/>
       </call-query>
    </operation>
 </data>

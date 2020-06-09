@@ -72,6 +72,7 @@
         <inSequence>
             <script language="js">var payload = mc.getPayloadJSON();var newPayload = &lt;dat:editarSorteo xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:P_DRAWING_ID&gt;{payload.idSorteo}&lt;/dat:P_DRAWING_ID&gt;         &lt;dat:P_KEY&gt;{payload.claveSorteo}&lt;/dat:P_KEY&gt;         &lt;dat:P_DESCRIPTION&gt;{payload.descripcionSorteo}&lt;/dat:P_DESCRIPTION&gt;         &lt;dat:P_YEAR&gt;{payload.anio}&lt;/dat:P_YEAR&gt;         &lt;dat:P_STATUS_ID&gt;{payload.idStatus}&lt;/dat:P_STATUS_ID&gt;         &lt;dat:P_ACCOUNT_STATUS&gt;{payload.idStatusCuenta}&lt;/dat:P_ACCOUNT_STATUS&gt;         &lt;dat:P_QUERY_STATUS&gt;{payload.idStatusConsulta}&lt;/dat:P_QUERY_STATUS&gt;         &lt;dat:P_CHANGE_USER_ID&gt;{payload.idUsuario}&lt;/dat:P_CHANGE_USER_ID&gt;         &lt;dat:P_START_DATE&gt;{payload.fechaInicio}&lt;/dat:P_START_DATE&gt;         &lt;dat:P_END_DATE&gt;{payload.fechaFin}&lt;/dat:P_END_DATE&gt;         &lt;dat:P_CREDIT_NUMBER&gt;{payload.numeroCreditos}&lt;/dat:P_CREDIT_NUMBER&gt;      &lt;/dat:editarSorteo&gt;;mc.setPayloadXML(newPayload);</script>
             <header name="Action" scope="default" value="urn:editarSorteo"/>
+			<log level="full"/>
             <send>
                 <endpoint key="SORTEO"/>
             </send>
@@ -202,6 +203,84 @@
         <inSequence>
             <script language="js">var idPersona  = mc.getProperty('uri.var.idPersona');var payload = &lt;dat:consultaConyugeDependecias xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:P_PERSON_ID&gt;{idPersona}&lt;/dat:P_PERSON_ID&gt;      &lt;/dat:consultaConyugeDependecias&gt;;mc.setPayloadXML(payload);</script>
             <header name="Action" scope="default" value="urn:consultaConyugeDependecias"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="PUT" url-mapping="/actualizacionTitular">
+        <inSequence>
+            <script language="js">var payload = mc.getPayloadJSON();var newPayload = &lt;dat:actualizacionTitular xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:P_SINGLE_MOTHER_ID&gt;{payload.madreSolteraId}&lt;/dat:P_SINGLE_MOTHER_ID&gt;         &lt;dat:P_LADA_CODE&gt;{payload.lada}&lt;/dat:P_LADA_CODE&gt;         &lt;dat:P_PHONE_NUMBER&gt;{payload.numeroTelefonico}&lt;/dat:P_PHONE_NUMBER&gt;         &lt;dat:P_MOBILE_PHONE&gt;{payload.numeroCelular}&lt;/dat:P_MOBILE_PHONE&gt;         &lt;dat:P_EMAIL&gt;{payload.correoElectronico}&lt;/dat:P_EMAIL&gt;         &lt;dat:P_CIVIL_STATUS_ID&gt;{payload.estadoCivilId}&lt;/dat:P_CIVIL_STATUS_ID&gt;         &lt;dat:P_MAX_AMOUNT_REACH_PESOS&gt;{payload.Titular.montoMaximoAlcanzadoPesos}&lt;/dat:P_MAX_AMOUNT_REACH_PESOS&gt;         &lt;dat:P_MAX_AMT_REACH_MIN_SAL&gt;{payload.montoMaximoAlcanzadoSalariosMinimos}&lt;/dat:P_MAX_AMT_REACH_MIN_SAL&gt;         &lt;dat:P_BALANCE&gt;{payload.saldoSar}&lt;/dat:P_BALANCE&gt;         &lt;dat:P_MAX_AMT_TOTAL&gt;{payload.montoMaximoTotal}&lt;/dat:P_MAX_AMT_TOTAL&gt;         &lt;dat:P_SALARY_LEVEL&gt;{payload.nivelSalarial}&lt;/dat:P_SALARY_LEVEL&gt;         &lt;dat:P_USER_ID&gt;{payload.idUsuario}&lt;/dat:P_USER_ID&gt;         &lt;dat:P_PERSON_ID&gt;{payload.idPersona}&lt;/dat:P_PERSON_ID&gt;      &lt;/dat:actualizacionTitular&gt;;mc.setPayloadXML(newPayload);</script>
+            <header name="Action" scope="default" value="urn:actualizacionTitular"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="PUT" url-mapping="/actualizacionCredito">
+        <inSequence>
+            <script language="js">var payload = mc.getPayloadJSON();var newPayload = &lt;dat:actualizacionCredito xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:P_REQUEST_TYPE_ID&gt;{payload.idTipoSolicitud}&lt;/dat:P_REQUEST_TYPE_ID&gt;         &lt;dat:P_MUNICIPALITY_ID&gt;{payload.idMunicipio}&lt;/dat:P_MUNICIPALITY_ID&gt;         &lt;dat:P_ADQ_TYPE_ID&gt;{payload.tipoAdquisicionId}&lt;/dat:P_ADQ_TYPE_ID&gt;         &lt;dat:P_CREDIT_LINE&gt;{payload.lineaCreditoId}&lt;/dat:P_CREDIT_LINE&gt;         &lt;dat:P_MAX_AMT_REACHED&gt;{payload.montoMaximoAlcanzadoPesos}&lt;/dat:P_MAX_AMT_REACHED&gt;         &lt;dat:P_MAX_AMT_REACH_MIN_SAL&gt;{payload.montoMaximoAlcanzadoSalariosMinimos}&lt;/dat:P_MAX_AMT_REACH_MIN_SAL&gt;         &lt;dat:P_SAR_BALANCE&gt;{payload.saldoSar}&lt;/dat:P_SAR_BALANCE&gt;         &lt;dat:P_MAX_TOTAL_AMT&gt;{payload.montoMaximoTotal}&lt;/dat:P_MAX_TOTAL_AMT&gt;         &lt;dat:P_MIN_SAL_VALUE&gt;{payload.valorSalarioMinimo}&lt;/dat:P_MIN_SAL_VALUE&gt;         &lt;dat:P_HOUSING_TYPE_ID&gt;{payload.tipoViviendaId}&lt;/dat:P_HOUSING_TYPE_ID&gt;         &lt;dat:P_HOMO_RFC_BLOCK&gt;{payload.posibleHomonimiaRfcBloqueado}&lt;/dat:P_HOMO_RFC_BLOCK&gt;         &lt;dat:P_HOMO_DRAW&gt;{payload.posibleHomonimiaSorteos}&lt;/dat:P_HOMO_DRAW&gt;         &lt;dat:P_HOMO_ORIGIN&gt;{payload.posibleHomonimiaOriginacion}&lt;/dat:P_HOMO_ORIGIN&gt;         &lt;dat:P_HOMO_PORTFOLIO&gt;{payload.posibleHomonimiaCartera}&lt;/dat:P_HOMO_PORTFOLIO&gt;         &lt;dat:P_USER_ID&gt;{payload.idUsuario}&lt;/dat:P_USER_ID&gt;         &lt;dat:P_REQUEST_ID&gt;{payload.idCredito}&lt;/dat:P_REQUEST_ID&gt;      &lt;/dat:actualizacionCredito&gt;;if(typeof(payload.tipoConstruccionLetra) !== 'undefined'){    var tipoConstruccionLetraXml = &lt;dat:P_CONSTR_TYPE xmlns:dat="http://ws.wso2.org/dataservice"&gt;{payload.tipoConstruccionLetra}&lt;/dat:P_CONSTR_TYPE&gt;;   newPayload.appendChild(tipoConstruccionLetraXml);}mc.setPayloadXML(newPayload);</script>
+            <header name="Action" scope="default" value="urn:actualizacionCredito"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="PUT" url-mapping="/actualizacionDireccion">
+        <inSequence>
+            <script language="js">var payload = mc.getPayloadJSON();var newPayload = &lt;dat:actualizaDireccionTitular xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:P_MUNICIPALITY_ID&gt;{payload.idMunicipio}&lt;/dat:P_MUNICIPALITY_ID&gt;         &lt;dat:P_STREET&gt;{payload.calle}&lt;/dat:P_STREET&gt;         &lt;dat:P_EXT_NUMBER&gt;{payload.numeroExterior}&lt;/dat:P_EXT_NUMBER&gt;         &lt;dat:P_INT_NUMBER&gt;{payload.numeroInterior}&lt;/dat:P_INT_NUMBER&gt;         &lt;dat:P_ZIP&gt;{payload.codigoPostal}&lt;/dat:P_ZIP&gt;         &lt;dat:P_NEIGHBORHOOD&gt;{payload.colonia}&lt;/dat:P_NEIGHBORHOOD&gt;         &lt;dat:P_USER_ID&gt;{payload.idUsuario}&lt;/dat:P_USER_ID&gt;         &lt;dat:P_PERSON_ID&gt;{payload.idPersona}&lt;/dat:P_PERSON_ID&gt;      &lt;/dat:actualizaDireccionTitular&gt;;mc.setPayloadXML(newPayload);</script>
+            <header name="Action" scope="default" value="urn:actualizaDireccionTitular"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" uri-template="/consultaDependencia/{IdIcp}">
+        <inSequence>
+            <script language="js">var IdIcp = mc.getProperty('uri.var.IdIcp');var payload = &lt;dat:consultaDependenciaId xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:P_DEPENDENCY_ID&gt;{IdIcp}&lt;/dat:P_DEPENDENCY_ID&gt;      &lt;/dat:consultaDependenciaId&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:consultaDependenciaId"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="POST" url-mapping="/insertaBitocora">
+        <inSequence>
+            <script language="js">var payload = mc.getPayloadJSON();var newPayload = &lt;dat:InsertaBitacora xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:N_Curp&gt;{payload.CURP}&lt;/dat:N_Curp&gt;         &lt;dat:N_IPInt&gt;{payload.ipInt}&lt;/dat:N_IPInt&gt;         &lt;dat:N_IPPub&gt;{payload.ipInt}&lt;/dat:N_IPPub&gt;         &lt;dat:N_Host&gt;{payload.host}&lt;/dat:N_Host&gt;         &lt;dat:N_MAC&gt;{payload.Mac}&lt;/dat:N_MAC&gt;      &lt;/dat:InsertaBitacora&gt;;mc.setPayloadXML(newPayload);</script>
+            <header name="Action" scope="default" value="urn:InsertaBitacora"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" uri-template="/consultaDependencia/{coordinadorId}/{nombramientoId}">
+        <inSequence>
+            <script language="js">var coordinadorId = mc.getProperty('uri.var.coordinadorId');var nombramientoId = mc.getProperty('uri.var.nombramientoId');var payload =&lt;dat:ConsultaCoordinador xmlns:dat="http://ws.wso2.org/dataservice"&gt;     &lt;dat:P_COORDINATOR_ID&gt;{coordinadorId}&lt;/dat:P_COORDINATOR_ID&gt;     &lt;dat:P_NOMBRAMIENTO_ID&gt;{nombramientoId}&lt;/dat:P_NOMBRAMIENTO_ID&gt;     &lt;/dat:ConsultaCoordinador&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:ConsultaCoordinador"/>
             <send>
                 <endpoint key="SORTEO"/>
             </send>
