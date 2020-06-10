@@ -432,8 +432,8 @@
       <param name="P_BASE_SALARY" sqlType="STRING"/>
       <param name="P_PERIOD" sqlType="STRING"/>
       <param name="P_DESC_UNION" sqlType="STRING"/>
-      <param name="P_SECTION_ID" sqlType="STRING"/>
-      <param name="P_STATE_ID" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="P_SECTION_ID" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="P_STATE_ID" sqlType="STRING"/>
       <param name="P_DEPENDENCY_ID" sqlType="STRING"/>
       <param name="P_COORD_NOMBRAM_ID" sqlType="STRING"/>
       <param name="P_USER_ID" sqlType="STRING"/>
@@ -496,16 +496,16 @@
       <param name="P_FATHER_LAST_NAME" sqlType="STRING"/>
       <param name="P_MOTHER_LAST_NAME" sqlType="STRING"/>
       <param name="P_RFC" sqlType="STRING"/>
-      <param name="P_CURP" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="P_CURP" sqlType="STRING"/>
       <param name="P_BIRTH_DATE" sqlType="STRING"/>
       <param name="P_MAX_AMT_REACHED" sqlType="STRING"/>
       <param name="P_MAX_AMT_REACHED_MIN_SAL" sqlType="STRING"/>
       <param name="P_SAR_BALANCE" sqlType="STRING"/>
       <param name="P_MAX_TOTAL_AMT" sqlType="STRING"/>
       <param name="P_INFONAVIT_QUOTE" sqlType="STRING"/>
-      <param name="P_SOCIAL_SEC_NO" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="P_SOCIAL_SEC_NO" sqlType="STRING"/>
       <param name="P_MARRIAGE_ACT" sqlType="STRING"/>
-      <param name="P_ORIGIN" sqlType="STRING"/>
+      <param defaultValue="#{NULL}" name="P_ORIGIN" sqlType="STRING"/>
       <param name="P_USER_ID" sqlType="STRING"/>
       <param name="P_PERSON_ID" sqlType="STRING"/>
    </query>
@@ -534,12 +534,11 @@
       <param name="P_PERSON_ID" sqlType="STRING"/>
    </query>
    <query id="actualizacionSolictud" returnUpdatedRowCount="true" useConfig="SORTEO">
-      <sql>CALL SORTEO.PKG_REQUEST.UPDATE_REQUEST(:P_REQUEST_ID, :P_USER_ID)</sql>
+      <sql>CALL SORTEO.PKG_REQUEST.UPDATE_REQUEST(:P_REQUEST_ID)</sql>
       <result element="actualizacionSolictudResponse" rowName="actualizacionSolictud" useColumnNumbers="true">
          <element column="1" name="registro" xsdType="integer"/>
       </result>
       <param name="P_REQUEST_ID" sqlType="STRING"/>
-      <param name="P_USER_ID" sqlType="STRING"/>
    </query>
    <query id="eliminarDatosLaboralesConyuge" returnUpdatedRowCount="true" useConfig="SORTEO">
       <sql>CALL SORTEO.PKG_REQUEST.DELETE_CONY_WORK_DATA_TITULAR(:P_MAIN_PERSON_ID)</sql>
@@ -586,6 +585,14 @@
       </result>
       <param name="P_NO_SOLICITUD" sqlType="STRING"/>
       <param name="P_FAMILIA" sqlType="STRING"/>
+   </query>
+   <query id="consultaTipoCreditoSolicitud" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.GET_CREDIT_TYPE_ID_BY_REQUEST(:P_REQUEST_ID, :P_RESULTSET)</sql>
+      <result element="consultaTipoCreditoSolicitudResponse" escapeNonPrintableChar="true" rowName="consultaTipoCreditoSolicitud">
+         <element column="Id_TipoCredito" name="tipoCredito" xsdType="string"/>
+      </result>
+      <param name="P_REQUEST_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
    </query>
    <operation name="altaOtorgamientoPuntuaje">
       <call-query href="altaOtorgamientoPuntuaje">
@@ -777,7 +784,7 @@
          <with-param name="P_REQUEST_ID" query-param="P_REQUEST_ID"/>
       </call-query>
    </operation>
-   <operation name="actualizaDatosLaboralesPrincipalesTitula">
+   <operation name="actualizaDatosLaboralesPrincipalesTitular">
       <call-query href="actualizaDatosLaboralesPrincipalesTitular">
          <with-param name="P_NOMBRAMIENTO_ID" query-param="P_NOMBRAMIENTO_ID"/>
          <with-param name="P_BASE_SALARY" query-param="P_BASE_SALARY"/>
@@ -870,7 +877,6 @@
    <operation name="actualizacionSolictud">
       <call-query href="actualizacionSolictud">
          <with-param name="P_REQUEST_ID" query-param="P_REQUEST_ID"/>
-         <with-param name="P_USER_ID" query-param="P_USER_ID"/>
       </call-query>
    </operation>
    <operation name="eliminarDatosLaboralesConyuge">
@@ -905,6 +911,11 @@
       <call-query href="recalculoPuntosFamilia">
          <with-param name="P_NO_SOLICITUD" query-param="P_NO_SOLICITUD"/>
          <with-param name="P_FAMILIA" query-param="P_FAMILIA"/>
+      </call-query>
+   </operation>
+   <operation name="consultaTipoCreditoSolicitud">
+      <call-query href="consultaTipoCreditoSolicitud">
+         <with-param name="P_REQUEST_ID" query-param="P_REQUEST_ID"/>
       </call-query>
    </operation>
 </data>
