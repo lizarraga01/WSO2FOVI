@@ -313,7 +313,7 @@
    <query id="actualizacionTitular" returnUpdatedRowCount="true" useConfig="SORTEO">
       <sql>CALL SORTEO.PKG_REQUEST.UPDATE_TITULAR(:P_SINGLE_MOTHER_ID, :P_LADA_CODE, :P_PHONE_NUMBER, :P_MOBILE_PHONE, :P_EMAIL, :P_CIVIL_STATUS_ID, :P_MAX_AMOUNT_REACH_PESOS, :P_MAX_AMT_REACH_MIN_SAL, :P_BALANCE, :P_MAX_AMT_TOTAL, :P_SALARY_LEVEL, :P_USER_ID, :P_PERSON_ID)</sql>
       <result element="actualizacionTitularResponse" rowName="actualizacionTitular" useColumnNumbers="true">
-         <element column="1" name="resultado" xsdType="integer"/>
+         <element column="1" name="registro" xsdType="integer"/>
       </result>
       <param name="P_SINGLE_MOTHER_ID" sqlType="STRING"/>
       <param name="P_LADA_CODE" sqlType="STRING"/>
@@ -425,7 +425,7 @@
    </query>
    <query id="actualizaDatosLaboralesPrincipalesTitular" returnUpdatedRowCount="true" useConfig="SORTEO">
       <sql>CALL SORTEO.PKG_REQUEST.UPDATE_MAIN_WORK_DATA(:P_NOMBRAMIENTO_ID, :P_BASE_SALARY, :P_PERIOD, :P_DESC_UNION, :P_SECTION_ID, :P_STATE_ID, :P_DEPENDENCY_ID, :P_COORD_NOMBRAM_ID, :P_USER_ID, :P_PERSON_ID)</sql>
-      <result element="actualizaDatosLaboralesPrincipalesTitularResponse" rowName="actualizaDatosLaboralesPrincipalesTitula" useColumnNumbers="true">
+      <result element="actualizaDatosLaboralesPrincipalesTitularResponse" rowName="actualizaDatosLaboralesPrincipalesTitular" useColumnNumbers="true">
          <element column="1" name="registro" xsdType="integer"/>
       </result>
       <param name="P_NOMBRAMIENTO_ID" sqlType="STRING"/>
@@ -592,6 +592,38 @@
          <element column="Id_TipoCredito" name="tipoCredito" xsdType="string"/>
       </result>
       <param name="P_REQUEST_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="insertarConyuge" returnUpdatedRowCount="true" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.INSERT_CONYUGE_PERSON(:P_MAIN_PERSON_ID, :P_GENRE_ID, :P_SINGLE_MOTHER_ID, :P_NAME, :P_FATHER_LAST_NAME, :P_MOTHER_LAST_NAME, :P_RFC, :P_CURP, :P_BIRTH_DATE, :P_MAX_AMT_REACHED, :P_MAX_AMT_REACH_MIN_SAL, :P_SAR_BALANCE, :P_MAX_TOTAL_AMT, :P_INFONAVIT_QUOTE, :P_SOCIAL_SEC_NO, :P_MARRIAGE_ACT, :P_ORIGIN,:P_USER_ID)</sql>
+      <result element="insertarConyugeResponse" escapeNonPrintableChar="true" rowName="insertarConyuge" useColumnNumbers="true">
+         <element column="1" name="registro" xsdType="integer"/>
+      </result>
+      <param name="P_MAIN_PERSON_ID" sqlType="STRING"/>
+      <param name="P_GENRE_ID" sqlType="STRING"/>
+      <param name="P_SINGLE_MOTHER_ID" sqlType="STRING"/>
+      <param name="P_NAME" sqlType="STRING"/>
+      <param name="P_FATHER_LAST_NAME" sqlType="STRING"/>
+      <param name="P_MOTHER_LAST_NAME" sqlType="STRING"/>
+      <param name="P_RFC" sqlType="STRING"/>
+      <param name="P_CURP" sqlType="STRING"/>
+      <param name="P_BIRTH_DATE" optional="false" sqlType="DATE"/>
+      <param name="P_MAX_AMT_REACHED" sqlType="STRING"/>
+      <param name="P_MAX_AMT_REACH_MIN_SAL" sqlType="STRING"/>
+      <param name="P_SAR_BALANCE" sqlType="STRING"/>
+      <param name="P_MAX_TOTAL_AMT" sqlType="STRING"/>
+      <param name="P_INFONAVIT_QUOTE" sqlType="STRING"/>
+      <param name="P_SOCIAL_SEC_NO" sqlType="STRING"/>
+      <param name="P_MARRIAGE_ACT" sqlType="STRING"/>
+      <param name="P_ORIGIN" sqlType="STRING"/>
+      <param name="P_USER_ID" sqlType="STRING"/>
+   </query>
+   <query id="consultaConyugeId" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.RETRIEVE_CONYUGE_ID_BY_TITULAR(:P_PERSON_ID, :P_RESULTSET)</sql>
+      <result element="consultaConyugeIdResponse" escapeNonPrintableChar="true" rowName="consultaConyugeId">
+         <element column="Id_Persona" name="idConyuge" xsdType="string"/>
+      </result>
+      <param name="P_PERSON_ID" sqlType="STRING"/>
       <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
    </query>
    <operation name="altaOtorgamientoPuntuaje">
@@ -916,6 +948,33 @@
    <operation name="consultaTipoCreditoSolicitud">
       <call-query href="consultaTipoCreditoSolicitud">
          <with-param name="P_REQUEST_ID" query-param="P_REQUEST_ID"/>
+      </call-query>
+   </operation>
+   <operation name="insertarConyuge">
+      <call-query href="insertarConyuge">
+         <with-param name="P_MAIN_PERSON_ID" query-param="P_MAIN_PERSON_ID"/>
+         <with-param name="P_GENRE_ID" query-param="P_GENRE_ID"/>
+         <with-param name="P_SINGLE_MOTHER_ID" query-param="P_SINGLE_MOTHER_ID"/>
+         <with-param name="P_NAME" query-param="P_NAME"/>
+         <with-param name="P_FATHER_LAST_NAME" query-param="P_FATHER_LAST_NAME"/>
+         <with-param name="P_MOTHER_LAST_NAME" query-param="P_MOTHER_LAST_NAME"/>
+         <with-param name="P_RFC" query-param="P_RFC"/>
+         <with-param name="P_CURP" query-param="P_CURP"/>
+         <with-param name="P_BIRTH_DATE" query-param="P_BIRTH_DATE"/>
+         <with-param name="P_MAX_AMT_REACHED" query-param="P_MAX_AMT_REACHED"/>
+         <with-param name="P_MAX_AMT_REACH_MIN_SAL" query-param="P_MAX_AMT_REACH_MIN_SAL"/>
+         <with-param name="P_SAR_BALANCE" query-param="P_SAR_BALANCE"/>
+         <with-param name="P_MAX_TOTAL_AMT" query-param="P_MAX_TOTAL_AMT"/>
+         <with-param name="P_INFONAVIT_QUOTE" query-param="P_INFONAVIT_QUOTE"/>
+         <with-param name="P_SOCIAL_SEC_NO" query-param="P_SOCIAL_SEC_NO"/>
+         <with-param name="P_MARRIAGE_ACT" query-param="P_MARRIAGE_ACT"/>
+         <with-param name="P_ORIGIN" query-param="P_ORIGIN"/>
+         <with-param name="P_USER_ID" query-param="P_USER_ID"/>
+      </call-query>
+   </operation>
+   <operation name="consultaConyugeId">
+      <call-query href="consultaConyugeId">
+         <with-param name="P_PERSON_ID" query-param="P_PERSON_ID"/>
       </call-query>
    </operation>
 </data>
