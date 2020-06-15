@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><endpoint xmlns="http://ws.apache.org/ns/synapse" name="wsAdeA">
+    <address uri="http://www.adea.com.mx/adeadms-ws-desa/FovisssteWS" format="soap11"/>
+</endpoint>
