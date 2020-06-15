@@ -33,6 +33,27 @@
       </result>
       <param name="xmlText" optional="false" sqlType="STRING"/>
    </query>
+   <query id="sp_wsAseguradoras" useConfig="tenantMifos">
+      <sql>CALL sp_wsAseguradoras(?,?,?,?,?,?,?,?,?,?,?,?,?,?)</sql>
+      <result element="recibirResponse" rowName="recibirReturn">
+         <element column="status_respuesta" name="status_respuesta" xsdType="string"/>
+         <element column="descripcion" name="descripcion" xsdType="string"/>
+      </result>
+      <param name="Usuario" optional="false" sqlType="STRING"/>
+      <param name="cPassword" optional="false" sqlType="STRING"/>
+      <param name="id_aseguradora" optional="false" sqlType="STRING"/>
+      <param name="id_solicitud" optional="false" sqlType="STRING"/>
+      <param name="cuv" optional="false" sqlType="STRING"/>
+      <param name="fecha_pago" optional="false" sqlType="STRING"/>
+      <param name="monto_pago" optional="false" sqlType="STRING"/>
+      <param name="fecha_vigencia" optional="false" sqlType="STRING"/>
+      <param name="certificado" optional="false" sqlType="STRING"/>
+      <param name="poliza" optional="false" sqlType="STRING"/>
+      <param name="pagado" optional="false" sqlType="STRING"/>
+      <param name="status_certificado" optional="false" sqlType="STRING"/>
+      <param name="status_respuesta" optional="false" sqlType="STRING" type="OUT"/>
+      <param name="descripcion" optional="false" sqlType="STRING" type="OUT"/>
+   </query>
    <operation name="exec_OferentesSP">
       <description>Ejecuta servicio SP para el servicio de Oferentes                                                                                                                                                                                                                                                                                                                                                                                                                                                 &#xd;                                    </description>
       <call-query href="ruv_oferentes_sp">
@@ -48,6 +69,22 @@
    <operation name="exec_OfertasSP">
       <call-query href="ruv_ofertas_sp">
          <with-param name="xmlText" query-param="xmlText"/>
+      </call-query>
+   </operation>
+   <operation name="exec_spAseguradoras">
+      <call-query href="sp_wsAseguradoras">
+         <with-param name="Usuario" query-param="Usuario"/>
+         <with-param name="cPassword" query-param="cPassword"/>
+         <with-param name="id_aseguradora" query-param="id_aseguradora"/>
+         <with-param name="id_solicitud" query-param="id_solicitud"/>
+         <with-param name="cuv" query-param="cuv"/>
+         <with-param name="fecha_pago" query-param="fecha_pago"/>
+         <with-param name="monto_pago" query-param="monto_pago"/>
+         <with-param name="fecha_vigencia" query-param="fecha_vigencia"/>
+         <with-param name="certificado" query-param="certificado"/>
+         <with-param name="poliza" query-param="poliza"/>
+         <with-param name="pagado" query-param="pagado"/>
+         <with-param name="status_certificado" query-param="status_certificado"/>
       </call-query>
    </operation>
 </data>
