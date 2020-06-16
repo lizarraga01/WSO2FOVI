@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><api xmlns="http://ws.apache.org/ns/synapse" name="wsSorteo" context="/wsSorteoFovissste">
     <resource methods="POST" url-mapping="/altaOtorgamientoPuntuaje">
         <inSequence>
-            <log level="full"/>
             <script language="js">var payload = mc.getPayloadJSON();var newPayload = &lt;dat:altaOtorgamientoPuntuaje xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:P_KEY&gt;{payload.claveSorteo}&lt;/dat:P_KEY&gt;         &lt;dat:P_DESCRIPTION&gt;{payload.descripcionSorteo}&lt;/dat:P_DESCRIPTION&gt;         &lt;dat:P_YEAR&gt;{payload.anio}&lt;/dat:P_YEAR&gt;         &lt;dat:P_NUMBER&gt;{payload.numero}&lt;/dat:P_NUMBER&gt;         &lt;dat:P_USER_ID&gt;{payload.idUsuario}&lt;/dat:P_USER_ID&gt;         &lt;dat:P_CREDIT_NUMBER&gt;{payload.numeroCreditos}&lt;/dat:P_CREDIT_NUMBER&gt;      &lt;/dat:altaOtorgamientoPuntuaje&gt;;mc.setPayloadXML(newPayload);</script>
             <header name="Action" scope="default" value="urn:altaOtorgamientoPuntuaje"/>
-            <log level="full"/>
             <send>
                 <endpoint key="SORTEO"/>
             </send>
@@ -16,10 +14,8 @@
     </resource>
     <resource methods="POST" url-mapping="/consultaHomonimias">
         <inSequence>
-            <log level="full"/>
             <script language="js">var payload = mc.getPayloadJSON();var newPayload = &lt;dat:consultaHomonimias xmlns:dat="http://ws.wso2.org/dataservice"&gt;                   &lt;dat:P_ACTIVE_DRAW_ID&gt;{payload.depuracionId}&lt;/dat:P_ACTIVE_DRAW_ID&gt;&lt;/dat:consultaHomonimias&gt;;print(payload.rfc);if(typeof(payload.rfc) !== 'undefined'){     var rfcXml = &lt;dat:P_RFC xmlns:dat="http://ws.wso2.org/dataservice"&gt;{payload.rfc}&lt;/dat:P_RFC&gt;;    newPayload.appendChild(rfcXml);  }    if(typeof(payload.statusId) !== 'undefined'){    var statusXml = &lt;dat:P_STATUS_ID xmlns:dat="http://ws.wso2.org/dataservice"&gt;{payload.statusId}&lt;/dat:P_STATUS_ID&gt;;        newPayload.appendChild(statusXml);}   if(typeof(payload.revisado) !== 'undefined'){   var revisadoXml = &lt;dat:P_REVISED xmlns:dat="http://ws.wso2.org/dataservice"&gt;{payload.revisado}&lt;/dat:P_REVISED&gt;;      newPayload.appendChild(revisadoXml);}    if(typeof(payload.fechaAlta) !== 'undefined'){   var fechaXml = &lt;dat:P_DATE xmlns:dat="http://ws.wso2.org/dataservice"&gt;{payload.fechaAlta}&lt;/dat:P_DATE&gt;;   newPayload.appendChild(fechaXml);  }mc.setPayloadXML(newPayload);</script>
             <header name="Action" scope="default" value="urn:consultaHomonimias"/>
-            <log level="full"/>
             <send>
                 <endpoint key="SORTEO"/>
             </send>
@@ -72,7 +68,6 @@
         <inSequence>
             <script language="js">var payload = mc.getPayloadJSON();var newPayload = &lt;dat:editarSorteo xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:P_DRAWING_ID&gt;{payload.idSorteo}&lt;/dat:P_DRAWING_ID&gt;         &lt;dat:P_KEY&gt;{payload.claveSorteo}&lt;/dat:P_KEY&gt;         &lt;dat:P_DESCRIPTION&gt;{payload.descripcionSorteo}&lt;/dat:P_DESCRIPTION&gt;         &lt;dat:P_YEAR&gt;{payload.anio}&lt;/dat:P_YEAR&gt;         &lt;dat:P_STATUS_ID&gt;{payload.idStatus}&lt;/dat:P_STATUS_ID&gt;         &lt;dat:P_ACCOUNT_STATUS&gt;{payload.idStatusCuenta}&lt;/dat:P_ACCOUNT_STATUS&gt;         &lt;dat:P_QUERY_STATUS&gt;{payload.idStatusConsulta}&lt;/dat:P_QUERY_STATUS&gt;         &lt;dat:P_CHANGE_USER_ID&gt;{payload.idUsuario}&lt;/dat:P_CHANGE_USER_ID&gt;         &lt;dat:P_START_DATE&gt;{payload.fechaInicio}&lt;/dat:P_START_DATE&gt;         &lt;dat:P_END_DATE&gt;{payload.fechaFin}&lt;/dat:P_END_DATE&gt;         &lt;dat:P_CREDIT_NUMBER&gt;{payload.numeroCreditos}&lt;/dat:P_CREDIT_NUMBER&gt;      &lt;/dat:editarSorteo&gt;;mc.setPayloadXML(newPayload);</script>
             <header name="Action" scope="default" value="urn:editarSorteo"/>
-            <log level="full"/>
             <send>
                 <endpoint key="SORTEO"/>
             </send>
@@ -170,46 +165,12 @@
         </inSequence>
         <outSequence>
             <script language="js">var payload = mc.getPayloadXML();</script>
-			<property name="messageType"
-					   value="application/json"
-					   scope="axis2"
-					   type="STRING"/>
-			 <filter xmlns:dat="http://ws.wso2.org/dataservice" xpath="count(//dat:dependencia) = 1">
-				<then>
-				   <script language="js">
-						 var payload = mc.getPayloadXML();
-						 var consultaTitularDependenciasResponse = {
-								"consultaTitularDependenciasResponse" : { 
-									dependencia : [] 
-								}
-						 };
-						 var i = 0; for each(var aXML in payload..*::dependencia){
-							consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i] = {};
-							consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].Icp = aXML.*::Icp.toString();
-							consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].Dependencia = aXML.*::Dependencia.toString();
-							consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].Calle = aXML.*::Calle.toString();
-							consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].Colonia = aXML.*::Colonia.toString();
-							consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].CP = aXML.*::CP.toString();
-							consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].MunicipioId = aXML.*::MunicipioId.toString();
-							consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].Municipio = aXML.*::Municipio.toString();
-							consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].EstadoId = aXML.*::EstadoId.toString();
-							consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].Estado = aXML.*::Estado.toString();
-							consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].Lada = aXML.*::Lada.toString();
-							consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].Telefono = aXML.*::Telefono.toString();
-							consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].Sindicato = aXML.*::Sindicato.toString();
-							consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].SeccionId = aXML.*::SeccionId.toString();
-							consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].Seccion = aXML.*::Seccion.toString();
-							consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].NombramientoId = aXML.*::NombramientoId.toString();
-							consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].Nombramiento = aXML.*::Nombramiento.toString();
-							consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].SueldoBaseMendual = aXML.*::SueldoBaseMendual.toString();
-							consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].BimestresCotizados = aXML.*::BimestresCotizados.toString();
-							i++; 
-						}
-						mc.setPayloadJSON(consultaTitularDependenciasResponse); 
-				   </script>
-				</then>
-			 </filter>
-			 <log level="full"/>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <filter xmlns:dat="http://ws.wso2.org/dataservice" xpath="count(//dat:dependencia) = 1">
+                <then>
+                    <script language="js">var payload = mc.getPayloadXML();       var consultaTitularDependenciasResponse = {        "consultaTitularDependenciasResponse" : {          dependencia : []         }       };       var i = 0; for each(var aXML in payload..*::dependencia){       consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i] = {};       consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].Icp = aXML.*::Icp.toString();       consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].Dependencia = aXML.*::Dependencia.toString();       consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].Calle = aXML.*::Calle.toString();       consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].Colonia = aXML.*::Colonia.toString();       consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].CP = aXML.*::CP.toString();       consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].MunicipioId = aXML.*::MunicipioId.toString();       consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].Municipio = aXML.*::Municipio.toString();       consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].EstadoId = aXML.*::EstadoId.toString();       consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].Estado = aXML.*::Estado.toString();       consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].Lada = aXML.*::Lada.toString();       consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].Telefono = aXML.*::Telefono.toString();       consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].Sindicato = aXML.*::Sindicato.toString();       consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].SeccionId = aXML.*::SeccionId.toString();       consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].Seccion = aXML.*::Seccion.toString();       consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].NombramientoId = aXML.*::NombramientoId.toString();       consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].Nombramiento = aXML.*::Nombramiento.toString();       consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].SueldoBaseMensual = aXML.*::SueldoBaseMensual.toString();       consultaTitularDependenciasResponse.consultaTitularDependenciasResponse.dependencia[i].BimestresCotizados = aXML.*::BimestresCotizados.toString();       i++;       }      mc.setPayloadJSON(consultaTitularDependenciasResponse);</script>
+                </then>
+            </filter>
             <send/>
         </outSequence>
     </resource>
@@ -609,6 +570,262 @@
         </inSequence>
         <outSequence>
             <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" url-mapping="/consultaSorteoActivo">
+        <inSequence>
+            <script language="js">var payload = &lt;dat:consultaSorteoActivo xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:P_STATE_ID&gt;1&lt;/dat:P_STATE_ID&gt;      &lt;/dat:consultaSorteoActivo&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:consultaSorteoActivo"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" uri-template="/validaCreditoSorteoCurp/{idSorteo}/{curp}">
+        <inSequence>
+            <script language="js">var idSorteo = mc.getProperty('uri.var.idSorteo');var curp = mc.getProperty('uri.var.curp');var payload = &lt;dat:validaCreditoSorteoCurp xmlns:dat="http://ws.wso2.org/dataservice"&gt;     &lt;dat:P_DRAWING_ID&gt;{idSorteo}&lt;/dat:P_DRAWING_ID&gt;     &lt;dat:P_CURP&gt;{curp}&lt;/dat:P_CURP&gt;     &lt;/dat:validaCreditoSorteoCurp&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:validaCreditoSorteoCurp"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" uri-template="/catalogoCodigoArea/{idEstado}">
+        <inSequence>
+            <script language="js">var idEstado = mc.getProperty('uri.var.idEstado');var payload = &lt;dat:catalogoCodigoArea xmlns:dat="http://ws.wso2.org/dataservice"&gt;  &lt;dat:P_STATE_ID&gt;{idEstado}&lt;/dat:P_STATE_ID&gt;       &lt;/dat:catalogoCodigoArea&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:catalogoCodigoArea"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" url-mapping="/catalogoDesignacion">
+        <inSequence>
+            <script language="js">var payload = &lt;dat:catalogoDesignacion xmlns:dat="http://ws.wso2.org/dataservice"/&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:catalogoDesignacion"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" url-mapping="/catalogoGenero">
+        <inSequence>
+            <script language="js">var payload = &lt;dat:catalogoGenero xmlns:dat="http://ws.wso2.org/dataservice"/&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:catalogoGenero"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" url-mapping="/catalogoGradosEscolares">
+        <inSequence>
+            <script language="js">var payload = &lt;dat:catalogoGradosEscolares xmlns:dat="http://ws.wso2.org/dataservice"/&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:catalogoGradosEscolares"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" url-mapping="/catalogoTipoSolicitud">
+        <inSequence>
+            <script language="js">var payload = &lt;dat:catalogoTipoSolicitud xmlns:dat="http://ws.wso2.org/dataservice"/&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:catalogoTipoSolicitud"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" uri-template="/catalogoTipoCasaByTipoSolicitud/{idLineaCredito}">
+        <inSequence>
+            <script language="js">var idLineaCredito = mc.getProperty('uri.var.idLineaCredito');var payload = &lt;dat:catalogoLineaCredito xmlns:dat="http://ws.wso2.org/dataservice"&gt;     &lt;dat:P_CREDIT_LINE_ID&gt;{idLineaCredito}&lt;/dat:P_CREDIT_LINE_ID&gt;     &lt;/dat:catalogoLineaCredito&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:catalogoLineaCredito"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" uri-template="/catalogoLineasCredito/{idTipoAdquision}">
+        <inSequence>
+            <script language="js">var idTipoAdquision = mc.getProperty('uri.var.idTipoAdquision');var payload = &lt;dat:catalogoLineasCredito xmlns:dat="http://ws.wso2.org/dataservice"&gt;     &lt;dat:P_APPLY_DRAWING&gt;1&lt;/dat:P_APPLY_DRAWING&gt;     &lt;dat:P_ADQUISITION_TYPE&gt;{idTipoAdquision}&lt;/dat:P_ADQUISITION_TYPE&gt;     &lt;/dat:catalogoLineasCredito&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:catalogoLineasCredito"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <script language="js">var payload = mc.getPayloadXML();</script>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <filter xmlns:dat="http://ws.wso2.org/dataservice" xpath="count(//dat:catalogo) = 1">
+                <then>
+                    <script language="js">var payload = mc.getPayloadXML();             var catalogoLineasCreditoResponse = {               "catalogoLineasCreditoResponse" :         {                  catalogo : []                 }              };              var i = 0; for each(var aXML in payload..*::catalogo){        catalogoLineasCreditoResponse.catalogoLineasCreditoResponse.catalogo[i] = {};        catalogoLineasCreditoResponse.catalogoLineasCreditoResponse.catalogo[i].id = aXML.*::id.toString();        catalogoLineasCreditoResponse.catalogoLineasCreditoResponse.catalogo[i].descripcion = aXML.*::descripcion.toString();        i++;              }            mc.setPayloadJSON(catalogoLineasCreditoResponse);</script>
+                </then>
+            </filter>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" uri-template="/catalogoDependencia/{idICP}">
+        <inSequence>
+            <script language="js">var idICP = mc.getProperty('uri.var.idICP');idICP = parseInt(idICP); print(idICP);if(idICP  === 0){ idICP = '';}var payload = &lt;dat:catalogoDependencia xmlns:dat="http://ws.wso2.org/dataservice"&gt;     &lt;dat:P_DEPENDENCY_ID&gt;{idICP}&lt;/dat:P_DEPENDENCY_ID&gt;     &lt;dat:P_APPLY_DRAWING_ID&gt;1&lt;/dat:P_APPLY_DRAWING_ID&gt;     &lt;/dat:catalogoDependencia&gt;;mc.setPayloadXML(payload);</script>
+            <log level="full"/>
+            <header name="Action" scope="default" value="urn:catalogoDependencia"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <filter xmlns:dat="http://ws.wso2.org/dataservice" xpath="count(//dat:catalogo) = 1">
+                <then>
+                    <script language="js">var payload = mc.getPayloadXML();             var catalogoDependenciaResponse = {               "catalogoDependenciaResponse" :         {                  catalogo : []                 }              };              var i = 0; for each(var aXML in payload..*::catalogo){        catalogoDependenciaResponse.catalogoDependenciaResponse.catalogo[i] = {};        catalogoDependenciaResponse.catalogoDependenciaResponse.catalogo[i].id = aXML.*::id.toString();        catalogoDependenciaResponse.catalogoDependenciaResponse.catalogo[i].descripcion = aXML.*::descripcion.toString();        i++;              }            mc.setPayloadJSON(catalogoDependenciaResponse);</script>
+                </then>
+            </filter>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" uri-template="/catalogoDependenciaById/{idICP}">
+        <inSequence>
+            <script language="js">var idICP = mc.getProperty('uri.var.idICP');idICP = parseInt(idICP);if(idICP  === 0){ idICP = '';}var payload = &lt;dat:catalogoDependenciaById xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:P_DEPENDENCY_ID&gt;{idICP}&lt;/dat:P_DEPENDENCY_ID&gt;      &lt;/dat:catalogoDependenciaById&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:catalogoDependenciaById"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <filter xmlns:dat="http://ws.wso2.org/dataservice" xpath="count(//dat:catalogo) = 1">
+                <then>
+                    <script language="js">var payload = mc.getPayloadXML();             var catalogoDependenciaByIdResponse = {               "catalogoDependenciaByIdResponse" :         {                  catalogo : []                 }              };              var i = 0; for each(var aXML in payload..*::catalogo){        catalogoDependenciaByIdResponse.catalogoDependenciaByIdResponse.catalogo[i] = {};        catalogoDependenciaByIdResponse.catalogoDependenciaByIdResponse.catalogo[i].id = aXML.*::id.toString();        catalogoDependenciaByIdResponse.catalogoDependenciaByIdResponse.catalogo[i].descripcion = aXML.*::descripcion.toString();        i++;              }            mc.setPayloadJSON(catalogoDependenciaByIdResponse);</script>
+                </then>
+            </filter>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" url-mapping="/catalogoEstados">
+        <inSequence>
+            <script language="js">var payload = &lt;dat:catalogoEstados xmlns:dat="http://ws.wso2.org/dataservice"&gt;     &lt;dat:P_DRAW_STATUS&gt;1&lt;/dat:P_DRAW_STATUS&gt;     &lt;/dat:catalogoEstados&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:catalogoEstados"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" uri-template="/catalogoEstadoByMunicipio/{idMunicipio}">
+        <inSequence>
+            <script language="js">var idMunicipio = mc.getProperty('uri.var.idMunicipio');var payload = &lt;dat:catalogoEstadoByMunicipio xmlns:dat="http://ws.wso2.org/dataservice"&gt;     &lt;dat:P_MUNICIPALITY_ID&gt;{idMunicipio}&lt;/dat:P_MUNICIPALITY_ID&gt;     &lt;/dat:catalogoEstadoByMunicipio&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:catalogoEstadoByMunicipio"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" uri-template="/catalogoMunicipioByCodigoPostal/{codigoPostal}">
+        <inSequence>
+            <script language="js">var codigoPostal = mc.getProperty('uri.var.codigoPostal');var payload = &lt;dat:catalogoMunicipioByCodigoPostal xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:P_ZIP&gt;{codigoPostal}&lt;/dat:P_ZIP&gt;      &lt;/dat:catalogoMunicipioByCodigoPostal&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:catalogoMunicipioByCodigoPostal"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" uri-template="/catalogoMunicipio/{idEstado}">
+        <inSequence>
+            <script language="js">var idEstado = mc.getProperty('uri.var.idEstado');var payload = &lt;dat:catalogoMunicipio xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:P_STATE&gt;{idEstado}&lt;/dat:P_STATE&gt;      &lt;/dat:catalogoMunicipio&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:catalogoMunicipio"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" uri-template="/catalogoAplicaSeccionDomicilio/{idICP}">
+        <inSequence>
+            <script language="js">var idICP = mc.getProperty('uri.var.idICP');var payload = &lt;dat:catalogoAplicaSeccionDomicilio xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:P_DEPENDENCY_ID&gt;{idICP}&lt;/dat:P_DEPENDENCY_ID&gt;      &lt;/dat:catalogoAplicaSeccionDomicilio&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:catalogoAplicaSeccionDomicilio"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+    </resource>
+    <resource methods="GET" uri-template="/catalogoColonias/{codigoPostal}">
+        <inSequence>
+            <script language="js">var codigoPostal = mc.getProperty('uri.var.codigoPostal');var payload = &lt;dat:catalogoColonias xmlns:dat="http://ws.wso2.org/dataservice"&gt;         &lt;dat:P_ZIP_CODE&gt;{codigoPostal}&lt;/dat:P_ZIP_CODE&gt;      &lt;/dat:catalogoColonias&gt;;mc.setPayloadXML(payload);</script>
+            <header name="Action" scope="default" value="urn:catalogoColonias"/>
+            <send>
+                <endpoint key="SORTEO"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+			<filter xmlns:dat="http://ws.wso2.org/dataservice" xpath="count(//dat:catalogo) = 1">
+                <then>
+                    <script language="js">
+						var payload = mc.getPayloadXML();       
+						var catalogoColoniasResponse = {
+							"catalogoColoniasResponse" : {
+								catalogo : []         
+							}      
+						};       
+						var i = 0; 
+						for each(var aXML in payload..*::catalogo){
+							catalogoColoniasResponse.catalogoColoniasResponse.catalogo[i] = {};
+							catalogoColoniasResponse.catalogoColoniasResponse.catalogo[i].colonia = aXML.*::colonia.toString();
+							i++;      
+						}      
+						mc.setPayloadJSON(catalogoColoniasResponse);</script>
+                </then>
+            </filter>
             <send/>
         </outSequence>
     </resource>

@@ -626,6 +626,153 @@
       <param name="P_PERSON_ID" sqlType="STRING"/>
       <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
    </query>
+   <query id="consultaSorteoActivo" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_DRAWING.GET_DRAWINGS_BY_STATE(:P_STATE_ID, :P_RESULTSET)</sql>
+      <result element="consultaSorteoActivoResponse" escapeNonPrintableChar="true" rowName="consultaSorteoActivo" useColumnNumbers="true">
+         <element column="1" name="idSorteo" xsdType="string"/>
+      </result>
+      <param name="P_STATE_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="validaCreditoSorteoCurp" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST.VALIDATE_REQUEST_BY_DRAW_CURP(:P_DRAWING_ID, :P_CURP, :P_RESULTSET)</sql>
+      <result element="validaCreditoSorteoCurpResponse" escapeNonPrintableChar="true" rowName="validaCreditoSorteoCurp">
+         <element column="COUNT(0)" name="registro" xsdType="string"/>
+      </result>
+      <param name="P_DRAWING_ID" sqlType="STRING"/>
+      <param name="P_CURP" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="catalogoDesignacion" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_DESIGNATION.RETRIEVE_ALL(:P_RESULTSET)</sql>
+      <result element="catalogoDesignacionResponse" escapeNonPrintableChar="true" rowName="catalogo">
+         <element column="Id_Nombramiento" name="id" xsdType="string"/>
+         <element column="Nombramiento" name="descripcion" xsdType="string"/>
+      </result>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="catalogoGradosEscolares" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_GRADE.GET_GRADES_CATALOG(:P_RESULTSET)</sql>
+      <result element="catalogoGradosEscolaresResponse" escapeNonPrintableChar="true" rowName="catalogo">
+         <element column="ID_GRADO_ESCOLAR" name="id" xsdType="string"/>
+         <element column="DESC_GRADO_ESCOLAR" name="descripcion" xsdType="string"/>
+      </result>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="catalogoTipoSolicitud" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_REQUEST_TYPE.RETRIEVE_ALL(:P_RESULTSET)</sql>
+      <result element="catalogoTipoSolicitudResponse" escapeNonPrintableChar="true" rowName="catalogo">
+         <element column="Id_TipoCredito" name="id" xsdType="string"/>
+         <element column="TipoCredito" name="descripcion" xsdType="string"/>
+      </result>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="catalogoLineaCredito" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_HOUSING_TYPE.GET_BY_CREDIT_LINE(:P_CREDIT_LINE_ID, :P_RESULTSET)</sql>
+      <result element="catalogoLineaCreditoResponse" escapeNonPrintableChar="true" rowName="catalogo">
+         <element column="Id_TipoVivienda" name="id" xsdType="string"/>
+         <element column="TipoVivienda" name="descripcion" xsdType="string"/>
+      </result>
+      <param name="P_CREDIT_LINE_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="catalogoDependencia" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_DEPENDENCY.GET_ALL_BY_DEP_APPLY_DRAW(:P_DEPENDENCY_ID, :P_APPLY_DRAWING_ID, :P_RESULTSET)</sql>
+      <result element="catalogoDependenciaResponse" escapeNonPrintableChar="true" rowName="catalogo">
+         <element column="Id_Icp" name="id" xsdType="string"/>
+         <element column="Nombre" name="descripcion" xsdType="string"/>
+      </result>
+      <param name="P_DEPENDENCY_ID" sqlType="STRING"/>
+      <param name="P_APPLY_DRAWING_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="catalogoDependenciaById" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_DEPENDENCY.GET_ALL_BY_ID (:P_DEPENDENCY_ID, :P_RESULTSET)</sql>
+      <result element="catalogoDependenciaByIdResponse" escapeNonPrintableChar="true" rowName="catalogo">
+         <element column="Id_Icp" name="id" xsdType="string"/>
+         <element column="Nombre" name="descripcion" xsdType="string"/>
+      </result>
+      <param name="P_DEPENDENCY_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="catalogoEstados" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_STATES.GET_STATES_FOR_DRAWINGS(:P_DRAW_STATUS, :P_RESULTSET)</sql>
+      <result element="catalogoEstadosResponse" escapeNonPrintableChar="true" rowName="catalogo">
+         <element column="Id_Estado" name="id" xsdType="string"/>
+         <element column="DscEdo" name="descripcion" xsdType="string"/>
+      </result>
+      <param name="P_DRAW_STATUS" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="catalogoEstadoByMunicipio" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_STATES.GET_STATE_BY_MUNICIPALITY_ID(:P_MUNICIPALITY_ID, :P_RESULTSET)</sql>
+      <result element="catalogoEstadoByMunicipioResponse" escapeNonPrintableChar="true" rowName="catalogo">
+         <element column="Id_Estado" name="id" xsdType="string"/>
+         <element column="DscEdo" name="descripcion" xsdType="string"/>
+      </result>
+      <param name="P_MUNICIPALITY_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="catalogoGenero" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_GENRES.GET_ALL(:P_RESULTSET)</sql>
+      <result element="catalogoGeneroResponse" escapeNonPrintableChar="true" rowName="catalogo">
+         <element column="Id_Genero" name="id" xsdType="string"/>
+         <element column="Desc_Genero1" name="descripcion" xsdType="string"/>
+      </result>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="catalogoCodigoArea" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_AREACODE.GET_AREA_CODES_BY_STATE(:P_STATE_ID, :P_RESULTSET)</sql>
+      <result element="catalogoCodigoAreaResponse" escapeNonPrintableChar="true" rowName="catalogo">
+         <element column="Cve_Lada" name="lada" xsdType="string"/>
+      </result>
+      <param name="P_STATE_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="catalogoLineasCredito" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_CREDITLINES.GET_BY_ADQ_TYPE_CURR_DRAWING (:P_APPLY_DRAWING, :P_ADQUISITION_TYPE, :P_RESULTSET)</sql>
+      <result element="catalogoLineasCreditoResponse" escapeNonPrintableChar="true" rowName="catalogo">
+         <element column="Id_LineaCredito" name="id" xsdType="string"/>
+         <element column="LineaCredito" name="descripcion" xsdType="string"/>
+      </result>
+      <param name="P_APPLY_DRAWING" sqlType="STRING"/>
+      <param name="P_ADQUISITION_TYPE" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="catalogoMunicipio" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_MUNICIPALITY.RETRIEVE_ALL_BY_STATE(:P_STATE, :P_RESULTSET)</sql>
+      <result element="catalogoMunicipioResponse" escapeNonPrintableChar="true" rowName="catalogo">
+         <element column="Id_Municipio" name="id" xsdType="string"/>
+         <element column="Desc_Municipio" name="descripcion" xsdType="string"/>
+      </result>
+      <param name="P_STATE" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="catalogoMunicipioByCodigoPostal" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_MUNICIPALITY.RETRIEVE_BY_ZIP(:P_ZIP, :P_RESULTSET)</sql>
+      <result element="catalogoMunicipioByCodigoPostal" escapeNonPrintableChar="true" rowName="catalogo">
+         <element column="Id_Municipio" name="id" xsdType="string"/>
+         <element column="Desc_Municipio" name="descripcion" xsdType="string"/>
+      </result>
+      <param name="P_ZIP" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="catalogoColonias" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_ZIPCODE.GET_COLONIES_BY_ZIP_CODE(:P_ZIP_CODE, :P_RESULTSET)</sql>
+      <result element="catalogoColoniasResponse" escapeNonPrintableChar="true" rowName="catalogo">
+         <element column="Colonia" name="colonia" xsdType="string"/>
+      </result>
+      <param name="P_ZIP_CODE" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
+   <query id="catalogoAplicaSeccionDomicilio" useConfig="SORTEO">
+      <sql>CALL SORTEO.PKG_DEPENDENCY.GET_APPLY_RES_SECT_BY_DEP_ID(:P_DEPENDENCY_ID, :P_RESULTSET)</sql>
+      <result element="catalogoAplicaSeccionDomicilio" escapeNonPrintableChar="true" rowName="catalogo">
+         <element column="Aplica_Seccion_Domicilio" name="AplicaSeccionDomicilio" xsdType="string"/>
+      </result>
+      <param name="P_DEPENDENCY_ID" sqlType="STRING"/>
+      <param name="P_RESULTSET" optional="false" sqlType="ORACLE_REF_CURSOR" type="OUT"/>
+   </query>
    <operation name="altaOtorgamientoPuntuaje">
       <call-query href="altaOtorgamientoPuntuaje">
          <with-param name="P_KEY" query-param="P_KEY"/>
@@ -975,6 +1122,86 @@
    <operation name="consultaConyugeId">
       <call-query href="consultaConyugeId">
          <with-param name="P_PERSON_ID" query-param="P_PERSON_ID"/>
+      </call-query>
+   </operation>
+   <operation name="consultaSorteoActivo">
+      <call-query href="consultaSorteoActivo">
+         <with-param name="P_STATE_ID" query-param="P_STATE_ID"/>
+      </call-query>
+   </operation>
+   <operation name="validaCreditoSorteoCurp">
+      <call-query href="validaCreditoSorteoCurp">
+         <with-param name="P_DRAWING_ID" query-param="P_DRAWING_ID"/>
+         <with-param name="P_CURP" query-param="P_CURP"/>
+      </call-query>
+   </operation>
+   <operation name="catalogoDesignacion">
+      <call-query href="catalogoDesignacion"/>
+   </operation>
+   <operation name="catalogoGradosEscolares">
+      <call-query href="catalogoGradosEscolares"/>
+   </operation>
+   <operation name="catalogoTipoSolicitud">
+      <call-query href="catalogoTipoSolicitud"/>
+   </operation>
+   <operation name="catalogoLineaCredito">
+      <call-query href="catalogoLineaCredito">
+         <with-param name="P_CREDIT_LINE_ID" query-param="P_CREDIT_LINE_ID"/>
+      </call-query>
+   </operation>
+   <operation name="catalogoDependencia">
+      <call-query href="catalogoDependencia">
+         <with-param name="P_DEPENDENCY_ID" query-param="P_DEPENDENCY_ID"/>
+         <with-param name="P_APPLY_DRAWING_ID" query-param="P_APPLY_DRAWING_ID"/>
+      </call-query>
+   </operation>
+   <operation name="catalogoDependenciaById">
+      <call-query href="catalogoDependenciaById">
+         <with-param name="P_DEPENDENCY_ID" query-param="P_DEPENDENCY_ID"/>
+      </call-query>
+   </operation>
+   <operation name="catalogoEstados">
+      <call-query href="catalogoEstados">
+         <with-param name="P_DRAW_STATUS" query-param="P_DRAW_STATUS"/>
+      </call-query>
+   </operation>
+   <operation name="catalogoEstadoByMunicipio">
+      <call-query href="catalogoEstadoByMunicipio">
+         <with-param name="P_MUNICIPALITY_ID" query-param="P_MUNICIPALITY_ID"/>
+      </call-query>
+   </operation>
+   <operation name="catalogoGenero">
+      <call-query href="catalogoGenero"/>
+   </operation>
+   <operation name="catalogoCodigoArea">
+      <call-query href="catalogoCodigoArea">
+         <with-param name="P_STATE_ID" query-param="P_STATE_ID"/>
+      </call-query>
+   </operation>
+   <operation name="catalogoLineasCredito">
+      <call-query href="catalogoLineasCredito">
+         <with-param name="P_APPLY_DRAWING" query-param="P_APPLY_DRAWING"/>
+         <with-param name="P_ADQUISITION_TYPE" query-param="P_ADQUISITION_TYPE"/>
+      </call-query>
+   </operation>
+   <operation name="catalogoMunicipio">
+      <call-query href="catalogoMunicipio">
+         <with-param name="P_STATE" query-param="P_STATE"/>
+      </call-query>
+   </operation>
+   <operation name="catalogoMunicipioByCodigoPostal">
+      <call-query href="catalogoMunicipioByCodigoPostal">
+         <with-param name="P_ZIP" query-param="P_ZIP"/>
+      </call-query>
+   </operation>
+   <operation name="catalogoColonias">
+      <call-query href="catalogoColonias">
+         <with-param name="P_ZIP_CODE" query-param="P_ZIP_CODE"/>
+      </call-query>
+   </operation>
+   <operation name="catalogoAplicaSeccionDomicilio">
+      <call-query href="catalogoAplicaSeccionDomicilio">
+         <with-param name="P_DEPENDENCY_ID" query-param="P_DEPENDENCY_ID"/>
       </call-query>
    </operation>
 </data>
